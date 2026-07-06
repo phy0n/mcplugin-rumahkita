@@ -6,6 +6,7 @@ public class RumahKitaGamesPlugin extends JavaPlugin {
     
     private static RumahKitaGamesPlugin instance;
     private CoinflipManager coinflipManager;
+    private RpsManager rpsManager;
 
     @Override
     public void onEnable() {
@@ -16,6 +17,10 @@ public class RumahKitaGamesPlugin extends JavaPlugin {
         coinflipManager = new CoinflipManager(this);
         getServer().getPluginManager().registerEvents(coinflipManager, this);
         getCommand("coinflip").setExecutor(new CoinflipCommand(this));
+        
+        rpsManager = new RpsManager(this);
+        getServer().getPluginManager().registerEvents(rpsManager, this);
+        getCommand("rps").setExecutor(new RpsCommand(this));
         
         getLogger().info("RumahKitaGames successfully hooked to RumahKitaEconomyV2!");
     }
@@ -31,5 +36,9 @@ public class RumahKitaGamesPlugin extends JavaPlugin {
     
     public CoinflipManager getCoinflipManager() {
         return coinflipManager;
+    }
+
+    public RpsManager getRpsManager() {
+        return rpsManager;
     }
 }

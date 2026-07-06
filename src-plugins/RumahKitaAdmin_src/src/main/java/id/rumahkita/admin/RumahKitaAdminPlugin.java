@@ -160,6 +160,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         switch (sub) {
             case "checkip": return handleCheckIp(sender, args);
             case "checkalts": return handleCheckAlts(sender, args);
+            case "allowalt": return handleAllowAlt(sender, args);
             case "clearchat": return handleClearChat(sender);
             case "freeze": return handleFreeze(sender, args);
             case "invsee": return handleInvsee(sender, args);
@@ -203,7 +204,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 List<String> subs = Arrays.asList(
                     "checkip", "checkalts", "clearchat", "freeze", "invsee", "ec", "kick", "broadcast", 
                     "vanish", "smite", "troll", "heal", "fly", "speed", "mute", "spy", "god", "maintenance",
-                    "chatlock", "setjail", "jail", "unjail", "warn", "inspect", "sudo", "spectate", "restart", "reload"
+                    "chatlock", "setjail", "jail", "unjail", "warn", "inspect", "sudo", "spectate", "restart", "reload", "allowalt"
                 );
                 return subs.stream().filter(s -> s.startsWith(args[0].toLowerCase())).collect(Collectors.toList());
             } else if (args.length == 2) {
@@ -211,7 +212,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 if (sub.equals("restart")) {
                     return Arrays.asList("now", "time", "cancel", "reload").stream().filter(s -> s.startsWith(args[1].toLowerCase())).collect(Collectors.toList());
                 }
-                List<String> targetCommands = Arrays.asList("checkip", "checkalts", "freeze", "invsee", "ec", "kick", "smite", "troll", "heal", "fly", "mute", "jail", "unjail", "warn", "inspect", "sudo", "spectate");
+                List<String> targetCommands = Arrays.asList("checkip", "checkalts", "allowalt", "freeze", "invsee", "ec", "kick", "smite", "troll", "heal", "fly", "mute", "jail", "unjail", "warn", "inspect", "sudo", "spectate");
                 if (targetCommands.contains(sub)) {
                     return Bukkit.getOnlinePlayers().stream().map(Player::getName).filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase())).collect(Collectors.toList());
                 } else if (sub.equals("speed")) {
@@ -245,6 +246,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         sender.sendMessage(ChatColor.GREEN + " /rka inspect <p> " + ChatColor.GRAY + "- Inspect player stats.");
         sender.sendMessage(ChatColor.GREEN + " /rka checkip <p> " + ChatColor.GRAY + "- Check real IP.");
         sender.sendMessage(ChatColor.GREEN + " /rka checkalts <p> " + ChatColor.GRAY + "- Find alt accounts.");
+        sender.sendMessage(ChatColor.GREEN + " /rka allowalt <p> " + ChatColor.GRAY + "- Bypass alt limit (Delete IP data).");
         sender.sendMessage(ChatColor.GREEN + " /rka invsee/ec <p> " + ChatColor.GRAY + "- View inv/enderchest.");
 
         sender.sendMessage(ChatColor.YELLOW + "\nAdmin Utility");
@@ -851,6 +853,26 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         return true;
     }
 
+    private boolean handleAllowAlt(CommandSender sender, String[] args) {
+        if (args.length < 3) {
+            sender.sendMessage(ChatColor.RED + "Penggunaan: /rka allowalt <akun lama> <akun baru>");
+            return true;
+        }
+        String mainAcc = args[1];
+        String newAlt = args[2];
+        
+        String ip = getConfig().getString("ips." + mainAcc);
+        if (ip != null) {
+            getConfig().set("ips." + newAlt, ip);
+            saveConfig();
+            sender.sendMessage(ChatColor.GREEN + "Berhasil memberikan akses bypass alt!");
+            sender.sendMessage(ChatColor.GRAY + "Akun " + ChatColor.YELLOW + newAlt + ChatColor.GRAY + " sekarang didaftarkan pada IP milik " + ChatColor.YELLOW + mainAcc + ChatColor.GRAY + ".");
+        } else {
+            sender.sendMessage(ChatColor.RED + "Data IP tidak ditemukan untuk akun: " + mainAcc);
+        }
+        return true;
+    }
+
     private boolean handleClearChat(CommandSender sender) {
         for (int i = 0; i < 100; i++) Bukkit.broadcastMessage("");
         Bukkit.broadcastMessage(ChatColor.AQUA + "Chat cleared by Admin.");
@@ -1038,6 +1060,32 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
     public void onPlayerLogin(PlayerLoginEvent event) {
         if (maintenanceMode && !event.getPlayer().hasPermission("rumahkita.admin")) {
             event.disallow(PlayerLoginEvent.Result.KICK_OTHER, getMsg("messages.maintenance.kick-message", "&cThe server is currently under Maintenance.\n&fPlease try again later."));
+            return;
+        }
+
+        if (event.getPlayer().hasPermission("rumahkita.admin")) return;
+
+        String ip = event.getAddress().getHostAddress();
+        String playerName = event.getPlayer().getName();
+        
+        int accountCount = 0;
+        boolean isExisting = false;
+        
+        if (getConfig().getConfigurationSection("ips") != null) {
+            for (String name : getConfig().getConfigurationSection("ips").getKeys(false)) {
+                if (name.equalsIgnoreCase(playerName)) {
+                    isExisting = true;
+                } else {
+                    String storedIp = getConfig().getString("ips." + name);
+                    if (ip.equals(storedIp)) {
+                        accountCount++;
+                    }
+                }
+            }
+        }
+
+        if (!isExisting && accountCount >= 2) {
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cGagal Masuk!\n\n&fAnda sudah mencapai batas maksimal &e2 Akun &fper IP.\n&7Silakan gunakan akun utama anda sebelumnya."));
         }
     }
 

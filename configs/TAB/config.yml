@@ -90,16 +90,16 @@ scoreboard:
     rumahkita:
       title: "&d&lRUMAH KITA S2"
       lines:
-        - "       &7%date%"
+        - "   &7%date%"
         - ""
-        - " &8▪ &7Nama: &f%player%"
-        - " &8▪ &7Rank: &f%luckperms_prefix%"
+        - " &8▪ &7Nama: &f%player%%essentials_afk% "
+        - " &8▪ &7Rank:&f%luckperms_prefix%"
         - " &8▪ &7Guild: &b%rumahkitaguilds_tag%"
         - " &8▪ &7Uang: &a%rke_balance% &6⛃"
         - " &8▪ &7Online: &a%online%&8/&a35"
         - " &8▪ &7Ping: %player_colored_ping%ms"
         - ""
-        - "       &drumahkita.homes"
+        - "   &drumahkita.homes"
 
 layout:
   enabled: false
@@ -165,6 +165,9 @@ placeholders:
 placeholder-output-replacements:
   "%essentials_vanished%":
     "yes": "&7| Vanished"
+    "no": ""
+  "%essentials_afk%":
+    "yes": " &8[&cAFK&8]"
     "no": ""
 
 conditions:

@@ -128,7 +128,7 @@ public class RumahKitaRestartPlugin extends JavaPlugin implements CommandExecuto
         for (Player p : Bukkit.getOnlinePlayers()) {
             p.kickPlayer(kickMsg);
         }
-        Bukkit.shutdown();
+        Bukkit.spigot().restart();
     }
 
     private void broadcastWarning(int seconds) {

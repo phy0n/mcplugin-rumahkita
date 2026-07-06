@@ -33,8 +33,7 @@
             <groupId>id.rumahkita</groupId>
             <artifactId>RumahKitaEconomyV2</artifactId>
             <version>2.2.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/../RumahKitaEconomyV2.jar</systemPath>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

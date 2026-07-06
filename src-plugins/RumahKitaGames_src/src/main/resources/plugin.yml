@@ -9,3 +9,7 @@ commands:
     description: "Main lempar koin taruhan uang"
     aliases: [cf, rkcf]
     usage: "/coinflip <create/join/cancel> [amount] [heads/tails]"
+  rps:
+    description: "Main batu gunting kertas taruhan uang"
+    aliases: [suwit, rps]
+    usage: "/rps <create/join/cancel> [amount/player] [batu/gunting/kertas]"

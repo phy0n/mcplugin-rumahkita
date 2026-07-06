@@ -15222,34 +15222,6 @@ items:
       max: -1
       restock-amount: 0
       restock-interval-minutes: 0
-  wither_rose:
-    material: WITHER_ROSE
-    display-name: '&fWither Rose'
-    trade-amount: 1
-    category: nature
-    buy:
-      enabled: true
-      price: 16
-    sell:
-      enabled: false
-      price: 0
-      daily-limit-per-player: 0
-    pricing:
-      mode: DEMAND
-      demand-enabled: true
-      min-buy-price: 8
-      max-buy-price: 32
-      min-sell-price: 0
-      max-sell-price: 0
-      max-change-percent-per-update: 2.0
-      max-change-percent-per-day: 10.0
-      admin-locked-price: false
-    stock:
-      enabled: false
-      current: -1
-      max: -1
-      restock-amount: 0
-      restock-interval-minutes: 0
   sunflower:
     material: SUNFLOWER
     display-name: '&fSunflower'
