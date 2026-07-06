@@ -1,0 +1,59 @@
+name: RumahKitaEconomyV2
+version: 2.2.0
+main: id.rumahkita.economy.RumahKitaEconomyRupiahPlugin
+api-version: '1.13'
+author: RumahKita
+softdepend: [PlaceholderAPI, Vault]
+commands:
+  market:
+    description: Buka RumahKita Market
+    usage: /market
+    aliases: [shop, rmarket, pasar, toko]
+  sellhand:
+    description: Jual item di tangan jika masuk whitelist
+    usage: /sellhand
+  sellall:
+    description: Jual semua item whitelist di inventory
+    usage: /sellall
+  bal:
+    description: Cek saldo Rupiah
+    usage: /bal
+    aliases: [balance, uang, money]
+  baltop:
+    description: Lihat pemain paling kaya
+    usage: /baltop
+    aliases: [balancetop, topmoney]
+  hidebal:
+    description: Sembunyikan/Tampilkan saldo dari baltop
+    usage: /hidebal
+  pay:
+    description: Transfer saldo Rupiah
+    usage: /pay <player> <amount>
+  rke:
+    description: Admin Economy RumahKita
+    usage: /rke
+permissions:
+  market.use:
+    default: true
+  market.sellhand:
+    default: true
+  market.sellall:
+    default: true
+  market.claim:
+    default: true
+  market.admin:
+    default: op
+  market.admin.reload:
+    default: op
+  market.admin.stats:
+    default: op
+  market.admin.refund:
+    default: op
+  market.admin.price:
+    default: op
+  market.admin.stock:
+    default: op
+  rumahkita.economy.use:
+    default: true
+  rumahkita.economy.admin:
+    default: op

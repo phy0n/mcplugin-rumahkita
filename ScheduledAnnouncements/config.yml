@@ -1,0 +1,132 @@
+# ScheduledAnnouncements Configuration
+# RumahKita S2
+# Path: plugins/ScheduledAnnouncements/config.yml
+# Cron Format: Second Minute Hour DayOfMonth Month DayOfWeek Year
+# Gunakan /scheduledannouncements reload setelah edit config ini.
+
+settings:
+  prefix:
+    text: "\n§e§lINFO §8/ "
+    color: "white"
+  message_color: "white"
+
+announcements:
+  vote_reminder:
+    cron: "0 1 * * * ? *"
+    message: "Dukung server dengan §e/vote§f. Dapatkan reward: Emerald & Diamond!\n§r"
+    message_color: "white"
+
+  how_to_play:
+    cron: "0 4 * * * ? *"
+    message: "Gunakan §e/tpr§f untuk mulai survival, dan §e/sethome§f di lokasi base-mu.\n§r"
+    message_color: "white"
+
+  command_guide:
+    cron: "0 6 * * * ? *"
+    message: "Command Penting: §e/spawn§f (lobby), §e/tpr§f (random TP), §e/sethome§f (simpan rumah), §e/home§f (pulang).\n§r"
+    message_color: "white"
+
+  market_reminder:
+    cron: "0 9 * * * ? *"
+    message: "Gunakan §e/market§f untuk jual-beli item dengan server maupun player lain.\n§r"
+    message_color: "white"
+
+  discord_invite:
+    cron: "0 12 * * * ? *"
+    message: "Join komunitas Discord kita! §bhttps://discord.gg/yaysters\n§r"
+    message_color: "white"
+
+  economy_tip:
+    cron: "0 19 * * * ? *"
+    message: "Mata uang server menggunakan Rupiah (Rp) In-game. Dapatkan uang dengan farming atau menjual mob drops di §e/market§f.\n§r"
+    message_color: "white"
+
+  guild_reminder:
+    cron: "0 22 * * * ? *"
+    message: "Bermain bersama teman? Ketik §e/guild§f untuk membuat atau gabung guild.\n§r"
+    message_color: "white"
+
+  guild_create_tip:
+    cron: "0 24 * * * ? *"
+    message: "Ingin buat guild? Siapkan 5 Diamond lalu ketik §e/guild create <TAG> <Nama>§f.\n§r"
+    message_color: "white"
+
+  helper_reminder:
+    cron: "0 27 * * * ? *"
+    message: "Butuh bantuan? Silakan bertanya dengan sopan kepada Helper atau Developer yang online.\n§r"
+    message_color: "white"
+
+  guild_home_tip:
+    cron: "0 29 * * * ? *"
+    message: "Guild punya markas bersama! Admin guild bisa set lokasi, lalu gunakan §e/guild home§f.\n§r"
+    message_color: "white"
+
+  vote_link_reminder:
+    cron: "0 32 * * * ? *"
+    message: "Dukung server dan dapatkan reward harian! Ketik command §e/vote§f sekarang.\n§r"
+    message_color: "white"
+
+  worldborder_info:
+    cron: "0 34 * * * ? *"
+    message: "Batas dunia (World Border) seluas §e10.000 x 10.000§f blok. Selamat bereksplorasi!\n§r"
+    message_color: "white"
+
+  voice_chat_tip:
+    cron: "0 37 * * * ? *"
+    message: "Server ini mendukung Simple Voice Chat. Install mod-nya untuk ngobrol langsung di dalam game!\n§r"
+    message_color: "white"
+
+  music_disc_tip:
+    cron: "0 39 * * * ? *"
+    message: "Nantikan update Custom Music Disc dan Ambience suara khusus di server ini!\n§r"
+    message_color: "white"
+
+  bedrock_scoreboard_tip:
+    cron: "0 42 * * * ? *"
+    message: "Layar terasa sempit? Sembunyikan Scoreboard di sebelah kanan dengan §e/sb§f.\n§r"
+    message_color: "white"
+
+  bossbar_tip:
+    cron: "0 44 * * * ? *"
+    message: "Sembunyikan bossbar info di atas layar dengan command §e/bossbar§f.\n§r"
+    message_color: "white"
+
+  rules_reminder:
+    cron: "0 47 * * * ? *"
+    message: "§cNo Grief, No Steal, No Cheat, No Toxic.§f Hormati sesama player agar komunitas tetap asyik.\n§r"
+    message_color: "white"
+
+  spawn_reminder:
+    cron: "0 49 * * * ? *"
+    message: "Area spawn terlindungi. Gunakan §e/tpr§f untuk mencari tempat membangun rumah.\n§r"
+    message_color: "white"
+
+  java_join_info:
+    cron: "0 52 * * * ? *"
+    message: "Bermain di Java? Pastikan pakai IP §erumahkita.homes\n§r"
+    message_color: "white"
+
+  bedrock_join_info:
+    cron: "0 54 * * * ? *"
+    message: "Bermain di Bedrock? Pakai IP §erumahkita.homes §fdengan port §e22044\n§r"
+    message_color: "white"
+
+  guild_role_tip:
+    cron: "0 57 * * * ? *"
+    message: "Guild punya role Leader, Admin, dan Member. Leader bertugas mengatur keseluruhan guild.\n§r"
+    message_color: "white"
+
+  daily_reminder_morning:
+    cron: "0 0 8 * * ? *"
+    message: "§eSelamat pagi warga RumahKita!§f Awali harimu dengan semangat baru.\n§r"
+    message_color: "white"
+
+  daily_reminder_afternoon:
+    cron: "0 0 15 * * ? *"
+    message: "§eSelamat sore!§f Lelah beraktivitas? Yuk santai sejenak di RumahKita.\n§r"
+    message_color: "white"
+
+  daily_reminder_night:
+    cron: "0 0 20 * * ? *"
+    message: "§eSelamat malam!§f Jangan lupa istirahat kalau sudah capek ya.\n§r"
+    message_color: "white"

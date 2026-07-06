@@ -1,0 +1,11 @@
+name: RumahKitaGames
+version: 1.0.0
+main: id.rumahkita.games.RumahKitaGamesPlugin
+api-version: 1.13
+depend: [RumahKitaEconomyV2]
+
+commands:
+  coinflip:
+    description: "Main lempar koin taruhan uang"
+    aliases: [cf, rkcf]
+    usage: "/coinflip <create/join/cancel> [amount] [heads/tails]"

@@ -1,0 +1,24 @@
+version: 21
+currency:
+  prefix: "Rp"
+  thousands-separator: "."
+  starting-balance: 0
+settings:
+  transaction-cooldown-ms: 700
+  auto-refund-old-player-shop-on-first-start: true
+  keep-backup-before-migration: true
+  demand-price-update-minutes: 30
+  voucher-apply-to-player-market: false
+  daily-reset-hour: 0
+sell-rules:
+  allowed-categories:
+    - mobdrops
+    - farming
+  blocked-message-category-info: "&7Untuk menjaga ekonomi server, hanya hasil &aMob Drops &7dan &aFarming &7yang bisa dijual ke server."
+old-player-shop:
+  search-files:
+    - "plugins/RumahKitaEconomy/json/player-market-rupiah.json"
+    - "plugins/RumahKitaEconomy/json/player-market.json"
+    - "plugins/RumahKitaEconomy/player-market.json"
+    - "plugins/RumahKitaEconomyRupiah/json/player-market-rupiah.json"
+    - "plugins/RumahKitaEconomyRupiah/player-market-rupiah.json"

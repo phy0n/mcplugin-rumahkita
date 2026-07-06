@@ -1,0 +1,80 @@
+ElegantLine:
+  change-interval: 300
+  texts:
+    - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&5&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&d&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&f&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&d&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&5&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+ElegantLineSmall:
+  change-interval: 300
+  texts:
+    - "&8&m--------------------"
+    - "&5&m--------------------"
+    - "&d&m--------------------"
+    - "&f&m--------------------"
+    - "&d&m--------------------"
+    - "&5&m--------------------"
+
+MobileLine:
+  change-interval: 350
+  texts:
+    - "&8&m----------------"
+    - "&5&m----------------"
+    - "&d&m----------------"
+    - "&f&m----------------"
+    - "&d&m----------------"
+    - "&5&m----------------"
+
+ServerName:
+  change-interval: 350
+  texts:
+    - "&d&lRumahKita &f&lS2"
+    - "&5&lRumahKita &f&lS2"
+    - "&f&lRumahKita &d&lS2"
+    - "&d&lRumahKita &f&lS2"
+
+WelcomeHome:
+  change-interval: 700
+  texts:
+    - "&fSelamat datang di &dRumah Kita"
+    - "&dSelamat datang &fdi Rumah Kita"
+    - "&fTempat pulang, bermain, dan bercerita"
+    - "&7Semoga betah di &dRumahKita S2"
+
+ScoreboardWelcome:
+  change-interval: 700
+  texts:
+    - "&dSelamat datang"
+    - "&fDi Rumah Kita"
+    - "&7Tempat pulang terbaik"
+    - "&dEnjoy your journey"
+
+BossbarWelcome:
+  change-interval: 700
+  texts:
+    - "&fSelamat datang di &dRumahKita S2"
+
+Welcome:
+  change-interval: 500
+  texts:
+    - "&fSelamat datang"
+    - "&dWelcome"
+    - "&fEnjoy your stay"
+
+MyAnimation1:
+  change-interval: 300
+  texts:
+    - "&8&m━━━━━━━━━━━━━━━━━━━━"
+    - "&5&m━━━━━━━━━━━━━━━━━━━━"
+    - "&d&m━━━━━━━━━━━━━━━━━━━━"
+    - "&f&m━━━━━━━━━━━━━━━━━━━━"
+    - "&d&m━━━━━━━━━━━━━━━━━━━━"
+    - "&5&m━━━━━━━━━━━━━━━━━━━━"
+
+time:
+  change-interval: 1000
+  texts:
+    - "%time%"

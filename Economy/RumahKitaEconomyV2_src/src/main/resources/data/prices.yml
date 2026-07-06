@@ -1,0 +1,177 @@
+rotten_flesh:
+  buy: 2000
+  sell: 100
+bone:
+  buy: 5000
+  sell: 300
+string:
+  buy: 5000
+  sell: 300
+spider_eye:
+  buy: 3500
+  sell: 220
+gunpowder:
+  buy: 10000
+  sell: 535
+ender_pearl:
+  buy: 18000
+  sell: 900
+slime_ball:
+  buy: 11000
+  sell: 650
+blaze_rod:
+  buy: 15000
+  sell: 737
+ghast_tear:
+  buy: 24000
+  sell: 1200
+phantom_membrane:
+  buy: 21000
+  sell: 1000
+wheat:
+  buy: 3000
+  sell: 1000
+carrot:
+  buy: 2800
+  sell: 900
+potato:
+  buy: 2800
+  sell: 900
+beetroot:
+  buy: 2500
+  sell: 800
+sugar_cane:
+  buy: 2700
+  sell: 850
+pumpkin:
+  buy: 2600
+  sell: 800
+melon:
+  buy: 2400
+  sell: 720
+bamboo:
+  buy: 1700
+  sell: 400
+cactus:
+  buy: 2300
+  sell: 518
+cocoa_beans:
+  buy: 2800
+  sell: 900
+nether_wart:
+  buy: 4200
+  sell: 1150
+dirt:
+  buy: 719
+  sell: 0
+cobblestone:
+  buy: 719
+  sell: 0
+stone:
+  buy: 900
+  sell: 0
+stone_bricks:
+  buy: 1259
+  sell: 0
+smooth_stone:
+  buy: 1436
+  sell: 0
+deepslate:
+  buy: 719
+  sell: 0
+polished_deepslate:
+  buy: 1080
+  sell: 0
+oak_log:
+  buy: 1794
+  sell: 0
+oak_planks:
+  buy: 1259
+  sell: 0
+spruce_log:
+  buy: 1794
+  sell: 0
+spruce_planks:
+  buy: 1259
+  sell: 0
+sand:
+  buy: 923
+  sell: 0
+bricks:
+  buy: 1617
+  sell: 0
+terracotta:
+  buy: 1794
+  sell: 0
+white_concrete:
+  buy: 2155
+  sell: 0
+glass:
+  buy: 1285
+  sell: 0
+grass_block:
+  buy: 1102
+  sell: 0
+coarse_dirt:
+  buy: 719
+  sell: 0
+gravel:
+  buy: 900
+  sell: 0
+red_sand:
+  buy: 900
+  sell: 0
+cobbled_deepslate:
+  buy: 719
+  sell: 0
+deepslate_bricks:
+  buy: 1259
+  sell: 0
+gray_concrete:
+  buy: 2155
+  sell: 0
+black_concrete:
+  buy: 2155
+  sell: 0
+birch_log:
+  buy: 1794
+  sell: 0
+birch_planks:
+  buy: 1259
+  sell: 0
+jungle_log:
+  buy: 1794
+  sell: 0
+jungle_planks:
+  buy: 1259
+  sell: 0
+acacia_log:
+  buy: 1794
+  sell: 0
+acacia_planks:
+  buy: 1259
+  sell: 0
+dark_oak_log:
+  buy: 1794
+  sell: 0
+dark_oak_planks:
+  buy: 1259
+  sell: 0
+mangrove_log:
+  buy: 1794
+  sell: 0
+mangrove_planks:
+  buy: 1259
+  sell: 0
+cherry_log:
+  buy: 1794
+  sell: 0
+cherry_planks:
+  buy: 1259
+  sell: 0
+lantern:
+  buy: 1794
+  sell: 0
+torch:
+  buy: 540
+  sell: 0

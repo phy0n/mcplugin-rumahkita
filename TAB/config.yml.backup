@@ -1,0 +1,266 @@
+header-footer:
+  enabled: true
+  designs:
+    default:
+      header:
+        - "%animation:ElegantLine%"
+        - "%animation:ServerName%"
+        - "%animation:WelcomeHome%"
+        - "&7Halo &d%player%&7, selamat datang di rumah kita."
+        - "&7Guild: %rumahkitaguilds_tag% &8| &7Role Guild: &f%rumahkitaguilds_role%"
+        - ""
+      footer:
+        - ""
+        - "&7Online: &d%online% &8| &7Ping: &d%ping%ms"
+        - "&7Jam WIB: &f%animation:time%"
+        - "%animation:ElegantLine%"
+
+tablist-name-formatting:
+  enabled: true
+  disable-condition: '%world%=disabledworld'
+
+scoreboard-teams:
+  enabled: true
+  enable-collision: true
+  invisible-nametags: false
+  sorting-types:
+    - "GROUPS:developer,helper,streamer,default"
+    - "PLACEHOLDER_A_TO_Z:%player%"
+  case-sensitive-sorting: false
+  can-see-friendly-invisibles: false
+  disable-condition: '%world%=disabledworld'
+
+playerlist-objective:
+  enabled: true
+  value: "%ping%"
+  fancy-value: "&7Ping: %ping%"
+  title: "RumahKita S2"
+  render-type: INTEGER
+  disable-condition: '%world%=disabledworld'
+
+belowname-objective:
+  enabled: false
+  value: "%health%"
+  fancy-value: "&c%health%"
+  fancy-value-default: "NPC"
+  title: "&cHealth"
+  disable-condition: '%world%=disabledworld'
+
+prevent-spectator-effect:
+  enabled: false
+
+bossbar:
+  enabled: true
+  toggle-command: /bossbar
+  remember-toggle-choice: false
+  hidden-by-default: false
+  bars:
+    WelcomeInfo:
+      style: "PROGRESS"
+      color: "PINK"
+      progress: "100"
+      text: "%animation:BossbarWelcome%"
+
+scoreboard:
+  enabled: true
+  toggle-command: /sb
+  remember-toggle-choice: true
+  hidden-by-default: false
+  delay-on-join-milliseconds: 800
+  scoreboards:
+    ctf_event:
+      title: "&6&lCAPTURE FLAG"
+      display-condition: "%rumahkitactf_active%=true"
+      lines:
+        - "&8&m----------------"
+        - "&e&lEvent CTF"
+        - " &8» &7Status: &f%rumahkitactf_state%"
+        - " &8» &7Waktu: &e%rumahkitactf_time%"
+        - ""
+        - "&f&lScore Kamu"
+        - " &8» &7Point: &a%rumahkitactf_score%"
+        - " &8» &7Rank: &b#%rumahkitactf_rank%"
+        - ""
+        - "&f&lTop Player"
+        - " &61. &f%rumahkitactf_top_1%"
+        - " &72. &f%rumahkitactf_top_2%"
+        - " &c3. &f%rumahkitactf_top_3%"
+        - ""
+        - "&7Berdiri di tengah untuk point"
+        - "&8&m----------------"
+        
+    rumahkita:
+      title: "%animation:ServerName%"
+      lines:
+        - "%animation:ElegantLineSmall%"
+        - "&f&lProfil Pemain"
+        - " &8» &7Nama: &f%player%"
+        - " &8» &7Rank: %luckperms_prefix%"
+        - " &8» &7Guild: %rumahkitaguilds_tag%"
+        - " &8» &7Role Guild: &f%rumahkitaguilds_role%"
+        - ""
+        - "&f&lEkonomi"
+        - " &8» &7Uang: &a%rke_balance%"
+        - " &8» &7Voucher: &d%rke_voucher%"
+        - ""
+        - "&f&lInfo Server"
+        - " &8» &7Online: &d%online%&8/&d35"
+        - " &8» &7Lokasi: &b%world%"
+        - " &8» &7Ping: &e%ping%ms"
+        - ""
+        - "%animation:ScoreboardWelcome%"
+        - "&7Nikmati suasana server"
+        - "%animation:ElegantLineSmall%"
+
+layout:
+  enabled: false
+  direction: COLUMNS
+  default-skin: mineskin:37e93c8e12cd426cb28fce31969e0674
+  enable-remaining-players-text: true
+  remaining-players-text: '... and %s more'
+  empty-slot-ping-value: 1000
+  layouts:
+    default:
+      slot-count: 80
+      fixed-slots:
+        - '1|&dRumahKita &fS2'
+        - '2|&7Survival Server'
+        - '3|&8&m                               '
+        - '4|&dName&f:'
+        - '5|&f%player%'
+        - '7|&dRank&f:'
+        - '8|%luckperms_prefix%'
+        - '10|&dGuild&f:'
+        - '11|%rumahkitaguilds_tag%'
+        - '13|&dWorld&f:'
+        - '14|&f%world%'
+        - '16|&dPing&f:'
+        - '17|&f%ping%ms'
+      groups:
+        staff:
+          display-condition: permission:tab.staff
+          slots:
+            - 24-40
+        players:
+          slots:
+            - 44-80
+
+ping-spoof:
+  enabled: false
+  value: 0
+
+global-playerlist:
+  enabled: false
+  display-others-as-spectators: false
+  display-vanished-players-as-spectators: true
+  isolate-unlisted-servers: false
+  update-latency: false
+  spy-servers:
+    - spyserver1
+    - spyserver2
+  server-groups:
+    lobbies:
+      - lobby1
+      - lobby2
+    group2:
+      - server1
+      - server2
+
+placeholders:
+  date-format: "dd.MM.yyyy"
+  time-format: "[HH:mm:ss]"
+  time-offset: 7
+  register-tab-expansion: false
+  locale: id-ID
+
+placeholder-output-replacements:
+  "%essentials_vanished%":
+    "yes": "&7| Vanished"
+    "no": ""
+
+conditions:
+  nick:
+    conditions:
+      - "%player%=%essentials_nickname%"
+    true: "%player%"
+    false: "~%essentials_nickname%"
+
+placeholder-refresh-intervals:
+  default-refresh-interval: 500
+  "%server_uptime%": 1000
+  "%server_tps_1_colored%": 1000
+  "%server_unique_joins%": 5000
+  "%player_health%": 200
+  "%player_ping%": 1000
+  "%vault_prefix%": 1000
+  "%luckperms_prefix%": 1000
+  "%rel_factionsuuid_relation_color%": 1000
+  "%rumahkitaguilds_tag%": 1000
+  "%rumahkitaguilds_tag_raw%": 1000
+  "%rumahkitaguilds_name%": 1000
+  "%rumahkitaguilds_role%": 1000
+  "%rke_balance%": 1000
+  "%rke_balance_raw%": 1000
+  "%rke_balance_short%": 1000
+  "%rke_currency%": 5000
+  "%rke_voucher%": 1000
+  "%rke_voucher_percent%": 1000
+
+assign-groups-by-permissions: false
+
+primary-group-finding-list:
+  - developer
+  - helper
+  - streamer
+  - default
+
+permission-refresh-interval: 1000
+
+debug: false
+
+mysql:
+  enabled: false
+  host: 127.0.0.1
+  port: 3306
+  database: tab
+  username: user
+  password: password
+  useSSL: true
+
+proxy-support:
+  enabled: false
+  channel-name-suffix: "TAB"
+  type: PLUGIN
+  plugin:
+    name: RedisBungee
+  redis:
+    url: 'redis://:password@localhost:6379/0'
+  rabbitmq:
+    exchange: 'plugin'
+    url: 'amqp://guest:guest@localhost:5672/%2F'
+
+components:
+  minimessage-support: true
+  disable-shadow-for-heads: true
+
+config-version: 6
+
+per-world-playerlist:
+  enabled: false
+  allow-bypass-permission: false
+  ignore-effect-in-worlds:
+    - ignoredworld
+    - build
+  shared-playerlist-world-groups:
+    lobby:
+      - lobby1
+      - lobby2
+    minigames:
+      - paintball
+      - bedwars
+
+compensate-for-packetevents-bug: false
+
+use-bukkit-permissions-manager: false
+
+use-online-uuid-in-tablist: true

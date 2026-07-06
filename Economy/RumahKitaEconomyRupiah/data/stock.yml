@@ -1,0 +1,162 @@
+gunpowder:
+  last_restock: 1783082502968
+  current: 10000
+ender_pearl:
+  last_restock: 1783168909817
+  current: 9920
+slime_ball:
+  last_restock: 1783082502968
+  current: 10000
+blaze_rod:
+  last_restock: 1783168909817
+  current: 10000
+ghast_tear:
+  last_restock: 1782996074733
+phantom_membrane:
+  last_restock: 1782996074733
+diamond:
+  last_restock: 1783168909817
+  current: 127
+emerald:
+  last_restock: 1783168909817
+  current: 310
+netherite_scrap:
+  last_restock: 1783168909817
+  current: 10
+ancient_debris:
+  last_restock: 1783168909817
+  current: 7
+totem:
+  last_restock: 1782996074733
+  current: 2
+dirt:
+  last_restock: 1782997691790
+cobblestone:
+  last_restock: 1783172029823
+  current: 32768
+stone:
+  last_restock: 1782997691790
+stone_bricks:
+  last_restock: 1782997691790
+smooth_stone:
+  last_restock: 1782997691790
+deepslate:
+  last_restock: 1783196940735
+  current: 24576
+polished_deepslate:
+  last_restock: 1783084122974
+  current: 24576
+oak_log:
+  last_restock: 1783172089817
+  current: 12288
+oak_planks:
+  last_restock: 1782997691790
+spruce_log:
+  last_restock: 1782997691790
+spruce_planks:
+  last_restock: 1782997691790
+sand:
+  last_restock: 1783196160744
+  current: 24576
+glass:
+  last_restock: 1783223640736
+  current: 24576
+bricks:
+  last_restock: 1782997691790
+terracotta:
+  last_restock: 1782997691790
+white_concrete:
+  last_restock: 1783093843317
+  current: 12288
+rotten_flesh:
+  last_restock: 1783087062967
+  current: 10000
+bone:
+  last_restock: 1783173529824
+  current: 10000
+string:
+  last_restock: 1783000615963
+spider_eye:
+  last_restock: 1783087062967
+  current: 10000
+wheat:
+  last_restock: 1783173529824
+  current: 24576
+carrot:
+  last_restock: 1783087062967
+  current: 24576
+potato:
+  last_restock: 1783181880736
+  current: 24576
+beetroot:
+  last_restock: 1783087062967
+  current: 24576
+sugar_cane:
+  last_restock: 1783173529824
+  current: 24576
+pumpkin:
+  last_restock: 1783173529824
+  current: 12288
+melon:
+  last_restock: 1783087062967
+  current: 12288
+bamboo:
+  last_restock: 1783173529824
+  current: 32768
+cactus:
+  last_restock: 1783173529824
+  current: 24576
+cocoa_beans:
+  last_restock: 1783181880736
+  current: 12288
+nether_wart:
+  last_restock: 1783087062967
+  current: 8192
+grass_block:
+  last_restock: 1783223340736
+  current: 24576
+coarse_dirt:
+  last_restock: 1783000615963
+gravel:
+  last_restock: 1783000615963
+red_sand:
+  last_restock: 1783000615963
+cobbled_deepslate:
+  last_restock: 1783110523322
+  current: 24576
+deepslate_bricks:
+  last_restock: 1783000615963
+gray_concrete:
+  last_restock: 1783000615963
+black_concrete:
+  last_restock: 1783000615963
+birch_log:
+  last_restock: 1783000615963
+birch_planks:
+  last_restock: 1783000615963
+jungle_log:
+  last_restock: 1783000615963
+jungle_planks:
+  last_restock: 1783087062967
+  current: 24576
+acacia_log:
+  last_restock: 1783000615963
+acacia_planks:
+  last_restock: 1783000615963
+dark_oak_log:
+  last_restock: 1783087062967
+  current: 12288
+dark_oak_planks:
+  last_restock: 1783000615963
+mangrove_log:
+  last_restock: 1783000615963
+mangrove_planks:
+  last_restock: 1783000615963
+cherry_log:
+  last_restock: 1783000615963
+cherry_planks:
+  last_restock: 1783000615963
+lantern:
+  last_restock: 1783000615963
+torch:
+  last_restock: 1783000615963

@@ -1,0 +1,5 @@
+# RumahKitaWarps Configuration
+cost:
+  create: 50000
+messages:
+  prefix: "&8[&ePWarp&8] "

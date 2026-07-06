@@ -1,0 +1,11 @@
+name: RumahKitaWarps
+version: 1.0.0
+main: id.rumahkita.warps.RumahKitaWarpsPlugin
+api-version: 1.13
+depend: [RumahKitaEconomyV2]
+
+commands:
+  pwarp:
+    description: "Player Warp Commands"
+    aliases: [pw, warps, playerwarp]
+    usage: "/pwarp <set/delete/list>"

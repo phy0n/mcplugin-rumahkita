@@ -1,0 +1,17 @@
+{
+  "version": 5,
+  "note": "Dipakai migrasi harga lama DIAMOND/EMERALD/NETHERITE_SCRAP ke Rupiah. Silakan ubah sebelum /rke migrate rupiah kalau mau rate beda.",
+  "rates": {
+    "EMERALD": 1000,
+    "DIAMOND": 15000,
+    "NETHERITE_SCRAP": 80000,
+    "IRON_INGOT": 250,
+    "GOLD_INGOT": 500,
+    "COPPER_INGOT": 80,
+    "COAL": 75,
+    "REDSTONE": 60,
+    "LAPIS_LAZULI": 120,
+    "QUARTZ": 150,
+    "AMETHYST_SHARD": 120
+  }
+}

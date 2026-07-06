@@ -1,0 +1,30 @@
+{
+  "version": 5,
+  "prefix": "&8[&aRp&8] ",
+  "currency": {
+    "name": "Rupiah",
+    "symbol": "Rp.",
+    "format": "DOT",
+    "minPrice": 1,
+    "maxPrice": 2000000000
+  },
+  "settings": {
+    "autoSaveSeconds": 180,
+    "maxListingsPerPlayer": 16,
+    "allowBuyOwnListing": false
+  },
+  "voucher": {
+    "enabled": true,
+    "maxDiscountPercent": 90,
+    "minFinalPrice": 1,
+    "roundingMode": "CEIL",
+    "applyToServerMarket": true,
+    "applyToPlayerMarket": false
+  },
+  "gui": {
+    "mainTitle": "&8RumahKita Market Rp",
+    "serverTitle": "&8Server Market Rp",
+    "onlineTitle": "&8Player Market Rp",
+    "voucherTitle": "&8Pilih Voucher Diskon"
+  }
+}

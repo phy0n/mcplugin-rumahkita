@@ -1,0 +1,1377 @@
+version: 24
+gui:
+  main:
+    title: '&8Market Categories'
+    size: 54
+    fill: GRAY_STAINED_GLASS_PANE
+    slots:
+      voucher: 48
+      info: 49
+      admin: 50
+categories:
+  blocks_stone:
+    display-name: '&bBuilding Blocks (Stone)'
+    material: STONE_BRICKS
+    lore:
+      - '&7Berbagai macam block batu untuk build.'
+      - '&7Hanya bisa dibeli (Buy Only).'
+    slot: 10
+  blocks_wood:
+    display-name: '&6Wood & Planks'
+    material: OAK_LOG
+    lore:
+      - '&7Berbagai macam kayu dan papan.'
+      - '&7Hanya bisa dibeli (Buy Only).'
+    slot: 12
+  blocks_color:
+    display-name: '&dColors & Decor'
+    material: RED_WOOL
+    lore:
+      - '&7Wool, Concrete, Terracotta, Glass.'
+      - '&7Hanya bisa dibeli (Buy Only).'
+    slot: 14
+  nature_plants:
+    display-name: '&aNature (Tanah & Pohon)'
+    material: OAK_SAPLING
+    lore:
+      - '&7Dirt, Sand, Sapling, Daun.'
+      - '&7Hanya bisa dibeli (Buy Only).'
+    slot: 16
+  nature_flowers:
+    display-name: '&eNature (Bunga & Tanaman)'
+    material: POPPY
+    lore:
+      - '&7Semua jenis bunga dan hiasan alam.'
+      - '&7Hanya bisa dibeli (Buy Only).'
+    slot: 19
+  furniture:
+    display-name: '&fFurniture & Functional'
+    material: CRAFTING_TABLE
+    lore:
+      - '&7Meja, lampu, kasur, alat.'
+      - '&7Hanya bisa dibeli (Buy Only).'
+    slot: 21
+  mobdrops:
+    display-name: '&cMob Drops'
+    material: ROTTEN_FLESH
+    lore:
+      - '&7Jual hasil mob farm kamu di sini.'
+      - '&aBisa Dijual (Sellable).'
+    slot: 23
+  farming:
+    display-name: '&eFarming'
+    material: WHEAT
+    lore:
+      - '&7Jual hasil ladang kamu di sini.'
+      - '&aBisa Dijual (Sellable).'
+    slot: 25
+items:
+  stone:
+    material: STONE
+    display-name: '&fStone'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  cobblestone:
+    material: COBBLESTONE
+    display-name: '&fCobblestone'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  stone_bricks:
+    material: STONE_BRICKS
+    display-name: '&fStone Bricks'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  granite:
+    material: GRANITE
+    display-name: '&fGranite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  polished_granite:
+    material: POLISHED_GRANITE
+    display-name: '&fPolished Granite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  diorite:
+    material: DIORITE
+    display-name: '&fDiorite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  polished_diorite:
+    material: POLISHED_DIORITE
+    display-name: '&fPolished Diorite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  andesite:
+    material: ANDESITE
+    display-name: '&fAndesite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  polished_andesite:
+    material: POLISHED_ANDESITE
+    display-name: '&fPolished Andesite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  bricks:
+    material: BRICKS
+    display-name: '&fBricks'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  sandstone:
+    material: SANDSTONE
+    display-name: '&fSandstone'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  calcite:
+    material: CALCITE
+    display-name: '&fCalcite'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  tuff:
+    material: TUFF
+    display-name: '&fTuff'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  dripstone_block:
+    material: DRIPSTONE_BLOCK
+    display-name: '&fDripstone Block'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  deepslate:
+    material: DEEPSLATE
+    display-name: '&fDeepslate'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  cobbled_deepslate:
+    material: COBBLED_DEEPSLATE
+    display-name: '&fCobbled Deepslate'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  deepslate_bricks:
+    material: DEEPSLATE_BRICKS
+    display-name: '&fDeepslate Bricks'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  mud:
+    material: MUD
+    display-name: '&fMud'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  obsidian:
+    material: OBSIDIAN
+    display-name: '&fObsidian'
+    trade-amount: 32
+    category: blocks_stone
+    buy:
+      enabled: true
+      price: 800
+    sell:
+      enabled: false
+      price: 0
+  oak_log:
+    material: OAK_LOG
+    display-name: '&fOak Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  oak_planks:
+    material: OAK_PLANKS
+    display-name: '&fOak Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  spruce_log:
+    material: SPRUCE_LOG
+    display-name: '&fSpruce Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  spruce_planks:
+    material: SPRUCE_PLANKS
+    display-name: '&fSpruce Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  birch_log:
+    material: BIRCH_LOG
+    display-name: '&fBirch Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  birch_planks:
+    material: BIRCH_PLANKS
+    display-name: '&fBirch Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  jungle_log:
+    material: JUNGLE_LOG
+    display-name: '&fJungle Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  jungle_planks:
+    material: JUNGLE_PLANKS
+    display-name: '&fJungle Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  acacia_log:
+    material: ACACIA_LOG
+    display-name: '&fAcacia Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  acacia_planks:
+    material: ACACIA_PLANKS
+    display-name: '&fAcacia Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  dark_oak_log:
+    material: DARK_OAK_LOG
+    display-name: '&fDark oak Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  dark_oak_planks:
+    material: DARK_OAK_PLANKS
+    display-name: '&fDark oak Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  mangrove_log:
+    material: MANGROVE_LOG
+    display-name: '&fMangrove Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  mangrove_planks:
+    material: MANGROVE_PLANKS
+    display-name: '&fMangrove Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  cherry_log:
+    material: CHERRY_LOG
+    display-name: '&fCherry Log'
+    trade-amount: 16
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  cherry_planks:
+    material: CHERRY_PLANKS
+    display-name: '&fCherry Planks'
+    trade-amount: 32
+    category: blocks_wood
+    buy:
+      enabled: true
+      price: 100
+    sell:
+      enabled: false
+      price: 0
+  white_concrete:
+    material: WHITE_CONCRETE
+    display-name: '&fWhite Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  white_wool:
+    material: WHITE_WOOL
+    display-name: '&fWhite Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  orange_concrete:
+    material: ORANGE_CONCRETE
+    display-name: '&fOrange Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  orange_wool:
+    material: ORANGE_WOOL
+    display-name: '&fOrange Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  magenta_concrete:
+    material: MAGENTA_CONCRETE
+    display-name: '&fMagenta Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  magenta_wool:
+    material: MAGENTA_WOOL
+    display-name: '&fMagenta Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  light_blue_concrete:
+    material: LIGHT_BLUE_CONCRETE
+    display-name: '&fLight Blue Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  light_blue_wool:
+    material: LIGHT_BLUE_WOOL
+    display-name: '&fLight Blue Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  yellow_concrete:
+    material: YELLOW_CONCRETE
+    display-name: '&fYellow Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  yellow_wool:
+    material: YELLOW_WOOL
+    display-name: '&fYellow Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  lime_concrete:
+    material: LIME_CONCRETE
+    display-name: '&fLime Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  lime_wool:
+    material: LIME_WOOL
+    display-name: '&fLime Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  pink_concrete:
+    material: PINK_CONCRETE
+    display-name: '&fPink Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  pink_wool:
+    material: PINK_WOOL
+    display-name: '&fPink Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  gray_concrete:
+    material: GRAY_CONCRETE
+    display-name: '&fGray Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  gray_wool:
+    material: GRAY_WOOL
+    display-name: '&fGray Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  light_gray_concrete:
+    material: LIGHT_GRAY_CONCRETE
+    display-name: '&fLight Gray Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  light_gray_wool:
+    material: LIGHT_GRAY_WOOL
+    display-name: '&fLight Gray Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  cyan_concrete:
+    material: CYAN_CONCRETE
+    display-name: '&fCyan Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  cyan_wool:
+    material: CYAN_WOOL
+    display-name: '&fCyan Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  purple_concrete:
+    material: PURPLE_CONCRETE
+    display-name: '&fPurple Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  purple_wool:
+    material: PURPLE_WOOL
+    display-name: '&fPurple Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  blue_concrete:
+    material: BLUE_CONCRETE
+    display-name: '&fBlue Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  blue_wool:
+    material: BLUE_WOOL
+    display-name: '&fBlue Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  brown_concrete:
+    material: BROWN_CONCRETE
+    display-name: '&fBrown Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  brown_wool:
+    material: BROWN_WOOL
+    display-name: '&fBrown Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  green_concrete:
+    material: GREEN_CONCRETE
+    display-name: '&fGreen Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  green_wool:
+    material: GREEN_WOOL
+    display-name: '&fGreen Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  red_concrete:
+    material: RED_CONCRETE
+    display-name: '&fRed Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  red_wool:
+    material: RED_WOOL
+    display-name: '&fRed Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  black_concrete:
+    material: BLACK_CONCRETE
+    display-name: '&fBlack Concrete'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 225
+    sell:
+      enabled: false
+      price: 0
+  black_wool:
+    material: BLACK_WOOL
+    display-name: '&fBlack Wool'
+    trade-amount: 32
+    category: blocks_color
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  oak_sapling:
+    material: OAK_SAPLING
+    display-name: '&fOak Sapling'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  spruce_sapling:
+    material: SPRUCE_SAPLING
+    display-name: '&fSpruce Sapling'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  birch_sapling:
+    material: BIRCH_SAPLING
+    display-name: '&fBirch Sapling'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  oak_leaves:
+    material: OAK_LEAVES
+    display-name: '&fOak Leaves'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  spruce_leaves:
+    material: SPRUCE_LEAVES
+    display-name: '&fSpruce Leaves'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  birch_leaves:
+    material: BIRCH_LEAVES
+    display-name: '&fBirch Leaves'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  dirt:
+    material: DIRT
+    display-name: '&fDirt'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  coarse_dirt:
+    material: COARSE_DIRT
+    display-name: '&fCoarse Dirt'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  rooted_dirt:
+    material: ROOTED_DIRT
+    display-name: '&fRooted Dirt'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  sand:
+    material: SAND
+    display-name: '&fSand'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  red_sand:
+    material: RED_SAND
+    display-name: '&fRed Sand'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  gravel:
+    material: GRAVEL
+    display-name: '&fGravel'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  podzol:
+    material: PODZOL
+    display-name: '&fPodzol'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  mycelium:
+    material: MYCELIUM
+    display-name: '&fMycelium'
+    trade-amount: 32
+    category: nature_plants
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  dandelion:
+    material: DANDELION
+    display-name: '&fDandelion'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  poppy:
+    material: POPPY
+    display-name: '&fPoppy'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  blue_orchid:
+    material: BLUE_ORCHID
+    display-name: '&fBlue Orchid'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  allium:
+    material: ALLIUM
+    display-name: '&fAllium'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  azure_bluet:
+    material: AZURE_BLUET
+    display-name: '&fAzure Bluet'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  red_tulip:
+    material: RED_TULIP
+    display-name: '&fRed Tulip'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  lily_pad:
+    material: LILY_PAD
+    display-name: '&fLily Pad'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  vine:
+    material: VINE
+    display-name: '&fVine'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  glow_lichen:
+    material: GLOW_LICHEN
+    display-name: '&fGlow Lichen'
+    trade-amount: 32
+    category: nature_flowers
+    buy:
+      enabled: true
+      price: 125
+    sell:
+      enabled: false
+      price: 0
+  crafting_table:
+    material: CRAFTING_TABLE
+    display-name: '&fCrafting Table'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 150
+    sell:
+      enabled: false
+      price: 0
+  furnace:
+    material: FURNACE
+    display-name: '&fFurnace'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  chest:
+    material: CHEST
+    display-name: '&fChest'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  barrel:
+    material: BARREL
+    display-name: '&fBarrel'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 200
+    sell:
+      enabled: false
+      price: 0
+  lantern:
+    material: LANTERN
+    display-name: '&fLantern'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 400
+    sell:
+      enabled: false
+      price: 0
+  campfire:
+    material: CAMPFIRE
+    display-name: '&fCampfire'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 250
+    sell:
+      enabled: false
+      price: 0
+  bookshelf:
+    material: BOOKSHELF
+    display-name: '&fBookshelf'
+    trade-amount: 32
+    category: furniture
+    buy:
+      enabled: true
+      price: 750
+    sell:
+      enabled: false
+      price: 0
+  painting:
+    material: PAINTING
+    display-name: '&fPainting'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 300
+    sell:
+      enabled: false
+      price: 0
+  armor_stand:
+    material: ARMOR_STAND
+    display-name: '&fArmor Stand'
+    trade-amount: 16
+    category: furniture
+    buy:
+      enabled: true
+      price: 500
+    sell:
+      enabled: false
+      price: 0
+  rotten_flesh:
+    material: ROTTEN_FLESH
+    display-name: '&fRotten Flesh'
+    trade-amount: 32
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 750
+  bone:
+    material: BONE
+    display-name: '&fBone'
+    trade-amount: 32
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 1000
+  string:
+    material: STRING
+    display-name: '&fString'
+    trade-amount: 32
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 1000
+  spider_eye:
+    material: SPIDER_EYE
+    display-name: '&fSpider Eye'
+    trade-amount: 16
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 1250
+  gunpowder:
+    material: GUNPOWDER
+    display-name: '&fGunpowder'
+    trade-amount: 16
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 1750
+  slime_ball:
+    material: SLIME_BALL
+    display-name: '&fSlimeball'
+    trade-amount: 16
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 2000
+  magma_cream:
+    material: MAGMA_CREAM
+    display-name: '&fMagma Cream'
+    trade-amount: 16
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 2500
+  blaze_rod:
+    material: BLAZE_ROD
+    display-name: '&fBlaze Rod'
+    trade-amount: 16
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 3000
+  ghast_tear:
+    material: GHAST_TEAR
+    display-name: '&fGhast Tear'
+    trade-amount: 8
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 5000
+  ender_pearl:
+    material: ENDER_PEARL
+    display-name: '&fEnder Pearl'
+    trade-amount: 16
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 2500
+  phantom_membrane:
+    material: PHANTOM_MEMBRANE
+    display-name: '&fPhantom Membrane'
+    trade-amount: 8
+    category: mobdrops
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 2500
+  wheat:
+    material: WHEAT
+    display-name: '&fWheat'
+    trade-amount: 16
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 450
+  carrot:
+    material: CARROT
+    display-name: '&fCarrot'
+    trade-amount: 16
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 450
+  potato:
+    material: POTATO
+    display-name: '&fPotato'
+    trade-amount: 16
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 450
+  beetroot:
+    material: BEETROOT
+    display-name: '&fBeetroot'
+    trade-amount: 16
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 450
+  sugar_cane:
+    material: SUGAR_CANE
+    display-name: '&fSugar Cane'
+    trade-amount: 16
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 550
+  melon_slice:
+    material: MELON_SLICE
+    display-name: '&fMelon Slice'
+    trade-amount: 8
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 150
+  pumpkin:
+    material: PUMPKIN
+    display-name: '&fPumpkin'
+    trade-amount: 8
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 312
+  sweet_berries:
+    material: SWEET_BERRIES
+    display-name: '&fSweet Berries'
+    trade-amount: 16
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 375
+  bamboo:
+    material: BAMBOO
+    display-name: '&fBamboo'
+    trade-amount: 32
+    category: farming
+    buy:
+      enabled: false
+      price: 0
+    sell:
+      enabled: true
+      price: 500

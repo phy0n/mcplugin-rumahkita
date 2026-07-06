@@ -1,0 +1,3258 @@
+{
+  "version": 5,
+  "currency": "RUPIAH",
+  "description": "Server market versi Rp. Buy/sell pakai field rp, bukan item currency.",
+  "items": [
+    {
+      "key": "cobblestone",
+      "enabled": true,
+      "category": "blocks",
+      "material": "COBBLESTONE",
+      "displayName": "&7Cobblestone",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Batu murah untuk build awal."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "stone",
+      "enabled": true,
+      "category": "blocks",
+      "material": "STONE",
+      "displayName": "&7Stone",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Batu halus siap bangun."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "stone_bricks",
+      "enabled": true,
+      "category": "blocks",
+      "material": "STONE_BRICKS",
+      "displayName": "&7Stone Bricks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Cocok untuk rumah dan castle."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "dirt",
+      "enabled": true,
+      "category": "blocks",
+      "material": "DIRT",
+      "displayName": "&6Dirt",
+      "tradeAmount": 64,
+      "lore": [
+        "&7Tanah basic untuk terraform."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "grass_block",
+      "enabled": true,
+      "category": "blocks",
+      "material": "GRASS_BLOCK",
+      "displayName": "&aGrass Block",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Untuk dekorasi area hijau."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "sand",
+      "enabled": true,
+      "category": "blocks",
+      "material": "SAND",
+      "displayName": "&eSand",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Untuk kaca dan bangunan pantai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "gravel",
+      "enabled": true,
+      "category": "blocks",
+      "material": "GRAVEL",
+      "displayName": "&7Gravel",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Untuk jalan dan concrete powder."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "glass",
+      "enabled": true,
+      "category": "blocks",
+      "material": "GLASS",
+      "displayName": "&fGlass",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Kaca siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "clay",
+      "enabled": true,
+      "category": "blocks",
+      "material": "CLAY",
+      "displayName": "&bClay",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan brick dan dekorasi."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "bricks",
+      "enabled": true,
+      "category": "blocks",
+      "material": "BRICKS",
+      "displayName": "&cBricks",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok bata dekoratif."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "deepslate",
+      "enabled": true,
+      "category": "blocks",
+      "material": "DEEPSLATE",
+      "displayName": "&8Deepslate",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Blok gelap untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "deepslate_bricks",
+      "enabled": true,
+      "category": "blocks",
+      "material": "DEEPSLATE_BRICKS",
+      "displayName": "&8Deepslate Bricks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Material gelap rapi."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "blackstone",
+      "enabled": true,
+      "category": "blocks",
+      "material": "BLACKSTONE",
+      "displayName": "&8Blackstone",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Material Nether gelap."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "polished_blackstone_bricks",
+      "enabled": true,
+      "category": "blocks",
+      "material": "POLISHED_BLACKSTONE_BRICKS",
+      "displayName": "&8Polished Blackstone Bricks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Cocok untuk castle dan tower."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "stock": -1
+    },
+    {
+      "key": "basalt",
+      "enabled": true,
+      "category": "blocks",
+      "material": "BASALT",
+      "displayName": "&8Basalt",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Material Nether untuk pilar."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "netherrack",
+      "enabled": true,
+      "category": "blocks",
+      "material": "NETHERRACK",
+      "displayName": "&cNetherrack",
+      "tradeAmount": 64,
+      "lore": [
+        "&7Blok Nether murah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "end_stone",
+      "enabled": true,
+      "category": "blocks",
+      "material": "END_STONE",
+      "displayName": "&eEnd Stone",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Blok dari End, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "stock": 256
+    },
+    {
+      "key": "obsidian",
+      "enabled": true,
+      "category": "blocks",
+      "material": "OBSIDIAN",
+      "displayName": "&5Obsidian",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Untuk portal dan build kuat."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "stock": 128
+    },
+    {
+      "key": "crying_obsidian",
+      "enabled": true,
+      "category": "blocks",
+      "material": "CRYING_OBSIDIAN",
+      "displayName": "&5Crying Obsidian",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Dekorasi langka."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 14000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 7000
+      },
+      "stock": 64
+    },
+    {
+      "key": "oak_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "OAK_LOG",
+      "displayName": "&aOak Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "oak_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "OAK_PLANKS",
+      "displayName": "&aOak Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "oak_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "OAK_SAPLING",
+      "displayName": "&aOak Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "spruce_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "SPRUCE_LOG",
+      "displayName": "&2Spruce Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "spruce_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "SPRUCE_PLANKS",
+      "displayName": "&2Spruce Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "spruce_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "SPRUCE_SAPLING",
+      "displayName": "&2Spruce Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "birch_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "BIRCH_LOG",
+      "displayName": "&eBirch Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "birch_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "BIRCH_PLANKS",
+      "displayName": "&eBirch Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "birch_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "BIRCH_SAPLING",
+      "displayName": "&eBirch Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "jungle_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "JUNGLE_LOG",
+      "displayName": "&6Jungle Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "jungle_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "JUNGLE_PLANKS",
+      "displayName": "&6Jungle Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "jungle_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "JUNGLE_SAPLING",
+      "displayName": "&6Jungle Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "acacia_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "ACACIA_LOG",
+      "displayName": "&cAcacia Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "acacia_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "ACACIA_PLANKS",
+      "displayName": "&cAcacia Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "acacia_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "ACACIA_SAPLING",
+      "displayName": "&cAcacia Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "dark_oak_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "DARK_OAK_LOG",
+      "displayName": "&4Dark Oak Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "dark_oak_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "DARK_OAK_PLANKS",
+      "displayName": "&4Dark Oak Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "dark_oak_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "DARK_OAK_SAPLING",
+      "displayName": "&4Dark Oak Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "mangrove_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "MANGROVE_LOG",
+      "displayName": "&cMangrove Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "mangrove_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "MANGROVE_PLANKS",
+      "displayName": "&cMangrove Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "mangrove_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "MANGROVE_SAPLING",
+      "displayName": "&cMangrove Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "cherry_log",
+      "enabled": true,
+      "category": "wood",
+      "material": "CHERRY_LOG",
+      "displayName": "&dCherry Log",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Kayu untuk build dan crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cherry_planks",
+      "enabled": true,
+      "category": "wood",
+      "material": "CHERRY_PLANKS",
+      "displayName": "&dCherry Planks",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Papan kayu siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cherry_sapling",
+      "enabled": true,
+      "category": "farming",
+      "material": "CHERRY_SAPLING",
+      "displayName": "&dCherry Sapling",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bibit pohon untuk farming kayu."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "bread",
+      "enabled": true,
+      "category": "food",
+      "material": "BREAD",
+      "displayName": "&eBread",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan simple untuk survival."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "cooked_beef",
+      "enabled": true,
+      "category": "food",
+      "material": "COOKED_BEEF",
+      "displayName": "&6Cooked Beef",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan kenyang untuk mining."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cooked_porkchop",
+      "enabled": true,
+      "category": "food",
+      "material": "COOKED_PORKCHOP",
+      "displayName": "&6Cooked Porkchop",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan kenyang untuk survival."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cooked_chicken",
+      "enabled": true,
+      "category": "food",
+      "material": "COOKED_CHICKEN",
+      "displayName": "&fCooked Chicken",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan ringan."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cooked_mutton",
+      "enabled": true,
+      "category": "food",
+      "material": "COOKED_MUTTON",
+      "displayName": "&fCooked Mutton",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan dari domba."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "baked_potato",
+      "enabled": true,
+      "category": "food",
+      "material": "BAKED_POTATO",
+      "displayName": "&eBaked Potato",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan murah dari farm."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "apple",
+      "enabled": true,
+      "category": "food",
+      "material": "APPLE",
+      "displayName": "&cApple",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Makanan dan bahan golden apple."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "golden_carrot",
+      "enabled": true,
+      "category": "food",
+      "material": "GOLDEN_CARROT",
+      "displayName": "&6Golden Carrot",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Makanan premium, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 128
+    },
+    {
+      "key": "golden_apple",
+      "enabled": true,
+      "category": "rare",
+      "material": "GOLDEN_APPLE",
+      "displayName": "&6Golden Apple",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Untuk PvP/event, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 32000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 32
+    },
+    {
+      "key": "wheat_seeds",
+      "enabled": true,
+      "category": "farming",
+      "material": "WHEAT_SEEDS",
+      "displayName": "&aWheat Seeds",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bibit gandum."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "wheat",
+      "enabled": true,
+      "category": "farming",
+      "material": "WHEAT",
+      "displayName": "&eWheat",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan bread dan breeding."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "carrot",
+      "enabled": true,
+      "category": "farming",
+      "material": "CARROT",
+      "displayName": "&6Carrot",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Makanan dan breeding villager."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "potato",
+      "enabled": true,
+      "category": "farming",
+      "material": "POTATO",
+      "displayName": "&ePotato",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan farm dan baked potato."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "beetroot",
+      "enabled": true,
+      "category": "farming",
+      "material": "BEETROOT",
+      "displayName": "&cBeetroot",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Tanaman farm."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "beetroot_seeds",
+      "enabled": true,
+      "category": "farming",
+      "material": "BEETROOT_SEEDS",
+      "displayName": "&cBeetroot Seeds",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bibit beetroot."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "pumpkin_seeds",
+      "enabled": true,
+      "category": "farming",
+      "material": "PUMPKIN_SEEDS",
+      "displayName": "&6Pumpkin Seeds",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bibit pumpkin."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "melon_seeds",
+      "enabled": true,
+      "category": "farming",
+      "material": "MELON_SEEDS",
+      "displayName": "&aMelon Seeds",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bibit melon."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "sugar_cane",
+      "enabled": true,
+      "category": "farming",
+      "material": "SUGAR_CANE",
+      "displayName": "&aSugar Cane",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan paper dan rocket."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "bamboo",
+      "enabled": true,
+      "category": "farming",
+      "material": "BAMBOO",
+      "displayName": "&aBamboo",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Bahan scaffold dan fuel."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cactus",
+      "enabled": true,
+      "category": "farming",
+      "material": "CACTUS",
+      "displayName": "&aCactus",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan green dye dan dekorasi."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "bone_meal",
+      "enabled": true,
+      "category": "farming",
+      "material": "BONE_MEAL",
+      "displayName": "&fBone Meal",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Mempercepat tanaman."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "coal",
+      "enabled": true,
+      "category": "minerals",
+      "material": "COAL",
+      "displayName": "&8Coal",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan bakar dan torch."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "charcoal",
+      "enabled": true,
+      "category": "minerals",
+      "material": "CHARCOAL",
+      "displayName": "&8Charcoal",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan bakar alternatif."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 1000
+      },
+      "stock": -1
+    },
+    {
+      "key": "iron_ingot",
+      "enabled": true,
+      "category": "minerals",
+      "material": "IRON_INGOT",
+      "displayName": "&fIron Ingot",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Material survival penting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "stock": -1
+    },
+    {
+      "key": "copper_ingot",
+      "enabled": true,
+      "category": "minerals",
+      "material": "COPPER_INGOT",
+      "displayName": "&6Copper Ingot",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Material dekorasi dan lightning rod."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "gold_ingot",
+      "enabled": true,
+      "category": "minerals",
+      "material": "GOLD_INGOT",
+      "displayName": "&6Gold Ingot",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan golden food dan trading."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 7000
+      },
+      "stock": -1
+    },
+    {
+      "key": "redstone",
+      "enabled": true,
+      "category": "redstone",
+      "material": "REDSTONE",
+      "displayName": "&cRedstone Dust",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan mesin redstone."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "stock": -1
+    },
+    {
+      "key": "lapis_lazuli",
+      "enabled": true,
+      "category": "minerals",
+      "material": "LAPIS_LAZULI",
+      "displayName": "&9Lapis Lazuli",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "quartz",
+      "enabled": true,
+      "category": "minerals",
+      "material": "QUARTZ",
+      "displayName": "&fQuartz",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan comparator dan build putih."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "stock": -1
+    },
+    {
+      "key": "amethyst_shard",
+      "enabled": true,
+      "category": "minerals",
+      "material": "AMETHYST_SHARD",
+      "displayName": "&dAmethyst Shard",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan spyglass dan tinted glass."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "stock": -1
+    },
+    {
+      "key": "diamond",
+      "enabled": true,
+      "category": "rare",
+      "material": "DIAMOND",
+      "displayName": "&bDiamond",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Item mahal, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 32000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 24000
+      },
+      "stock": 246
+    },
+    {
+      "key": "emerald",
+      "enabled": true,
+      "category": "rare",
+      "material": "EMERALD",
+      "displayName": "&aEmerald",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Mata uang utama market."
+      ],
+      "buy": {
+        "enabled": false,
+        "rp": 0
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "netherite_scrap",
+      "enabled": true,
+      "category": "rare",
+      "material": "NETHERITE_SCRAP",
+      "displayName": "&8Netherite Scrap",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Super langka, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 96000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 64000
+      },
+      "stock": 32
+    },
+    {
+      "key": "ancient_debris",
+      "enabled": true,
+      "category": "rare",
+      "material": "ANCIENT_DEBRIS",
+      "displayName": "&8Ancient Debris",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Hanya sell ke market, buy dimatikan."
+      ],
+      "buy": {
+        "enabled": false,
+        "rp": 0
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 80000
+      },
+      "stock": 0
+    },
+    {
+      "key": "rotten_flesh",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "ROTTEN_FLESH",
+      "displayName": "&2Rotten Flesh",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Jual hasil mob farm.",
+        "&8Harga jual rendah agar ekonomi aman."
+      ],
+      "buy": {
+        "enabled": false,
+        "rp": 0
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 50
+      },
+      "stock": -1
+    },
+    {
+      "key": "bone",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "BONE",
+      "displayName": "&fBone",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan bone meal.",
+        "&8Mob farm item, sell rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 200
+      },
+      "stock": -1
+    },
+    {
+      "key": "string",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "STRING",
+      "displayName": "&fString",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan bow, wool, scaffold.",
+        "&8Mob farm item, sell rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 200
+      },
+      "stock": -1
+    },
+    {
+      "key": "spider_eye",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "SPIDER_EYE",
+      "displayName": "&4Spider Eye",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan potion.",
+        "&8Harga jual rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 100
+      },
+      "stock": -1
+    },
+    {
+      "key": "gunpowder",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "GUNPOWDER",
+      "displayName": "&7Gunpowder",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan rocket dan TNT.",
+        "&8Harga beli tinggi karena item penting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 30000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 500
+      },
+      "stock": 256
+    },
+    {
+      "key": "leather",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "LEATHER",
+      "displayName": "&6Leather",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan book dan armor leather.",
+        "&8Harga jual rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 300
+      },
+      "stock": -1
+    },
+    {
+      "key": "feather",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "FEATHER",
+      "displayName": "&fFeather",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan arrow dan book & quill.",
+        "&8Harga jual rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 150
+      },
+      "stock": -1
+    },
+    {
+      "key": "slime_ball",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "SLIME_BALL",
+      "displayName": "&aSlime Ball",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan sticky piston dan lead.",
+        "&8Harga beli tinggi, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 40000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 500
+      },
+      "stock": 128
+    },
+    {
+      "key": "ender_pearl",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "ENDER_PEARL",
+      "displayName": "&5Ender Pearl",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bahan teleport dan eye of ender.",
+        "&8Harga beli tinggi, sell rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 35000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 500
+      },
+      "stock": 128
+    },
+    {
+      "key": "blaze_rod",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "BLAZE_ROD",
+      "displayName": "&6Blaze Rod",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bahan brewing dan eye of ender.",
+        "&8Harga beli tinggi, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 50000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 700
+      },
+      "stock": 96
+    },
+    {
+      "key": "magma_cream",
+      "enabled": true,
+      "category": "mobdrops",
+      "material": "MAGMA_CREAM",
+      "displayName": "&6Magma Cream",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Bahan potion fire resistance.",
+        "&8Harga jual rendah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 18000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 200
+      },
+      "stock": -1
+    },
+    {
+      "key": "repeater",
+      "enabled": true,
+      "category": "redstone",
+      "material": "REPEATER",
+      "displayName": "&cRedstone Repeater",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Komponen redstone."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "comparator",
+      "enabled": true,
+      "category": "redstone",
+      "material": "COMPARATOR",
+      "displayName": "&cRedstone Comparator",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Komponen redstone advance."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "piston",
+      "enabled": true,
+      "category": "redstone",
+      "material": "PISTON",
+      "displayName": "&7Piston",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Komponen mesin."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "sticky_piston",
+      "enabled": true,
+      "category": "redstone",
+      "material": "STICKY_PISTON",
+      "displayName": "&aSticky Piston",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Piston lengket untuk mesin."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "observer",
+      "enabled": true,
+      "category": "redstone",
+      "material": "OBSERVER",
+      "displayName": "&7Observer",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Detector block update."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "hopper",
+      "enabled": true,
+      "category": "redstone",
+      "material": "HOPPER",
+      "displayName": "&7Hopper",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Transfer item otomatis."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 16000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "dispenser",
+      "enabled": true,
+      "category": "redstone",
+      "material": "DISPENSER",
+      "displayName": "&7Dispenser",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Komponen otomatis."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "dropper",
+      "enabled": true,
+      "category": "redstone",
+      "material": "DROPPER",
+      "displayName": "&7Dropper",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Komponen item transfer."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "rail",
+      "enabled": true,
+      "category": "redstone",
+      "material": "RAIL",
+      "displayName": "&7Rail",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Rel minecart."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "powered_rail",
+      "enabled": true,
+      "category": "redstone",
+      "material": "POWERED_RAIL",
+      "displayName": "&6Powered Rail",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Rel bertenaga."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "lever",
+      "enabled": true,
+      "category": "redstone",
+      "material": "LEVER",
+      "displayName": "&7Lever",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Saklar redstone murah."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "redstone_torch",
+      "enabled": true,
+      "category": "redstone",
+      "material": "REDSTONE_TORCH",
+      "displayName": "&cRedstone Torch",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Sumber redstone signal."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 3000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "torch",
+      "enabled": true,
+      "category": "utility",
+      "material": "TORCH",
+      "displayName": "&eTorch",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Penerangan mining."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "lantern",
+      "enabled": true,
+      "category": "utility",
+      "material": "LANTERN",
+      "displayName": "&6Lantern",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Penerangan dekoratif."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "chest",
+      "enabled": true,
+      "category": "utility",
+      "material": "CHEST",
+      "displayName": "&6Chest",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Storage basic."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "barrel",
+      "enabled": true,
+      "category": "utility",
+      "material": "BARREL",
+      "displayName": "&6Barrel",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Storage dekoratif."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "crafting_table",
+      "enabled": true,
+      "category": "utility",
+      "material": "CRAFTING_TABLE",
+      "displayName": "&6Crafting Table",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Meja crafting."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "furnace",
+      "enabled": true,
+      "category": "utility",
+      "material": "FURNACE",
+      "displayName": "&7Furnace",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Masak dan smelt item."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "blast_furnace",
+      "enabled": true,
+      "category": "utility",
+      "material": "BLAST_FURNACE",
+      "displayName": "&7Blast Furnace",
+      "tradeAmount": 2,
+      "lore": [
+        "&7Smelt ore lebih cepat."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "smoker",
+      "enabled": true,
+      "category": "utility",
+      "material": "SMOKER",
+      "displayName": "&7Smoker",
+      "tradeAmount": 2,
+      "lore": [
+        "&7Masak makanan lebih cepat."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "anvil",
+      "enabled": true,
+      "category": "utility",
+      "material": "ANVIL",
+      "displayName": "&7Anvil",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Rename dan repair item."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 32000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 64
+    },
+    {
+      "key": "enchanting_table",
+      "enabled": true,
+      "category": "utility",
+      "material": "ENCHANTING_TABLE",
+      "displayName": "&5Enchanting Table",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Meja enchant, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 64000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 32
+    },
+    {
+      "key": "bookshelf",
+      "enabled": true,
+      "category": "utility",
+      "material": "BOOKSHELF",
+      "displayName": "&6Bookshelf",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Untuk enchant room."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "book",
+      "enabled": true,
+      "category": "utility",
+      "material": "BOOK",
+      "displayName": "&fBook",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan bookshelf dan enchant book."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "white_bed",
+      "enabled": true,
+      "category": "utility",
+      "material": "WHITE_BED",
+      "displayName": "&fWhite Bed",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Tempat tidur survival."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "bucket",
+      "enabled": true,
+      "category": "utility",
+      "material": "BUCKET",
+      "displayName": "&7Bucket",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Ember kosong."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "water_bucket",
+      "enabled": true,
+      "category": "utility",
+      "material": "WATER_BUCKET",
+      "displayName": "&bWater Bucket",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Air siap pakai."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "lava_bucket",
+      "enabled": true,
+      "category": "utility",
+      "material": "LAVA_BUCKET",
+      "displayName": "&6Lava Bucket",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Lava untuk fuel/build, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 16000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 64
+    },
+    {
+      "key": "shears",
+      "enabled": true,
+      "category": "utility",
+      "material": "SHEARS",
+      "displayName": "&7Shears",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Gunting daun dan wool."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "shield",
+      "enabled": true,
+      "category": "utility",
+      "material": "SHIELD",
+      "displayName": "&7Shield",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Perisai survival."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "fishing_rod",
+      "enabled": true,
+      "category": "utility",
+      "material": "FISHING_ROD",
+      "displayName": "&bFishing Rod",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Untuk mancing."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "name_tag",
+      "enabled": true,
+      "category": "utility",
+      "material": "NAME_TAG",
+      "displayName": "&eName Tag",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Untuk nama mob/pet."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 24000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 64
+    },
+    {
+      "key": "saddle",
+      "enabled": true,
+      "category": "utility",
+      "material": "SADDLE",
+      "displayName": "&6Saddle",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Untuk horse/pig/strider."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 32000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 64
+    },
+    {
+      "key": "lead",
+      "enabled": true,
+      "category": "utility",
+      "material": "LEAD",
+      "displayName": "&fLead",
+      "tradeAmount": 4,
+      "lore": [
+        "&7Tali untuk mob/pet."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "scaffolding",
+      "enabled": true,
+      "category": "utility",
+      "material": "SCAFFOLDING",
+      "displayName": "&eScaffolding",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Bantu build tinggi."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "soul_sand",
+      "enabled": true,
+      "category": "nether",
+      "material": "SOUL_SAND",
+      "displayName": "&8Soul Sand",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Untuk elevator air dan Nether build."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "stock": -1
+    },
+    {
+      "key": "soul_soil",
+      "enabled": true,
+      "category": "nether",
+      "material": "SOUL_SOIL",
+      "displayName": "&8Soul Soil",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan soul fire dan dekorasi."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "stock": -1
+    },
+    {
+      "key": "glowstone",
+      "enabled": true,
+      "category": "nether",
+      "material": "GLOWSTONE",
+      "displayName": "&eGlowstone",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Lampu terang Nether."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "stock": -1
+    },
+    {
+      "key": "nether_wart",
+      "enabled": true,
+      "category": "nether",
+      "material": "NETHER_WART",
+      "displayName": "&4Nether Wart",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Bahan brewing."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "stock": -1
+    },
+    {
+      "key": "magma_block",
+      "enabled": true,
+      "category": "nether",
+      "material": "MAGMA_BLOCK",
+      "displayName": "&6Magma Block",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Untuk bubble elevator turun/dekorasi."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "stock": -1
+    },
+    {
+      "key": "chorus_fruit",
+      "enabled": true,
+      "category": "end",
+      "material": "CHORUS_FRUIT",
+      "displayName": "&5Chorus Fruit",
+      "tradeAmount": 8,
+      "lore": [
+        "&7Buah dari End."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 8000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "stock": 128
+    },
+    {
+      "key": "purpur_block",
+      "enabled": true,
+      "category": "end",
+      "material": "PURPUR_BLOCK",
+      "displayName": "&5Purpur Block",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi End."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "stock": 128
+    },
+    {
+      "key": "iron_pickaxe",
+      "enabled": true,
+      "category": "tools",
+      "material": "IRON_PICKAXE",
+      "displayName": "&fIron Pickaxe",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Pickaxe basic tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 18000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "iron_axe",
+      "enabled": true,
+      "category": "tools",
+      "material": "IRON_AXE",
+      "displayName": "&fIron Axe",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Axe basic tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 18000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "iron_shovel",
+      "enabled": true,
+      "category": "tools",
+      "material": "IRON_SHOVEL",
+      "displayName": "&fIron Shovel",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Shovel basic tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 10000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "iron_sword",
+      "enabled": true,
+      "category": "tools",
+      "material": "IRON_SWORD",
+      "displayName": "&fIron Sword",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Sword basic tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 16000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "diamond_pickaxe",
+      "enabled": true,
+      "category": "tools",
+      "material": "DIAMOND_PICKAXE",
+      "displayName": "&bDiamond Pickaxe",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Pickaxe premium tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 96000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 16
+    },
+    {
+      "key": "diamond_sword",
+      "enabled": true,
+      "category": "tools",
+      "material": "DIAMOND_SWORD",
+      "displayName": "&bDiamond Sword",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Sword premium tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 80000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": 16
+    },
+    {
+      "key": "white_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "WHITE_WOOL",
+      "displayName": "&fWhite Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "white_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "WHITE_CONCRETE",
+      "displayName": "&fWhite Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "black_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "BLACK_WOOL",
+      "displayName": "&0Black Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "black_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "BLACK_CONCRETE",
+      "displayName": "&0Black Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "gray_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "GRAY_WOOL",
+      "displayName": "&7Gray Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "gray_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "GRAY_CONCRETE",
+      "displayName": "&7Gray Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "red_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "RED_WOOL",
+      "displayName": "&cRed Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "red_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "RED_CONCRETE",
+      "displayName": "&cRed Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "blue_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "BLUE_WOOL",
+      "displayName": "&9Blue Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "blue_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "BLUE_CONCRETE",
+      "displayName": "&9Blue Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "green_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "GREEN_WOOL",
+      "displayName": "&aGreen Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "green_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "GREEN_CONCRETE",
+      "displayName": "&aGreen Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "yellow_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "YELLOW_WOOL",
+      "displayName": "&eYellow Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "yellow_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "YELLOW_CONCRETE",
+      "displayName": "&eYellow Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "pink_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "PINK_WOOL",
+      "displayName": "&dPink Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "pink_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "PINK_CONCRETE",
+      "displayName": "&dPink Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "purple_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "PURPLE_WOOL",
+      "displayName": "&5Purple Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "purple_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "PURPLE_CONCRETE",
+      "displayName": "&5Purple Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cyan_wool",
+      "enabled": true,
+      "category": "decoration",
+      "material": "CYAN_WOOL",
+      "displayName": "&bCyan Wool",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Blok dekorasi warna."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "cyan_concrete",
+      "enabled": true,
+      "category": "decoration",
+      "material": "CYAN_CONCRETE",
+      "displayName": "&bCyan Concrete",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Concrete untuk build modern."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 5000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "paper",
+      "enabled": true,
+      "category": "utility",
+      "material": "PAPER",
+      "displayName": "&fPaper",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Bahan rocket dan map."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 4000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 2000
+      },
+      "stock": -1
+    },
+    {
+      "key": "firework_rocket",
+      "enabled": true,
+      "category": "utility",
+      "material": "FIREWORK_ROCKET",
+      "displayName": "&fFirework Rocket",
+      "tradeAmount": 16,
+      "lore": [
+        "&7Rocket untuk event/elytra."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 16000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "arrow",
+      "enabled": true,
+      "category": "combat",
+      "material": "ARROW",
+      "displayName": "&fArrow",
+      "tradeAmount": 32,
+      "lore": [
+        "&7Amunisi bow."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 6000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "bow",
+      "enabled": true,
+      "category": "combat",
+      "material": "BOW",
+      "displayName": "&6Bow",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Bow basic tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 12000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "crossbow",
+      "enabled": true,
+      "category": "combat",
+      "material": "CROSSBOW",
+      "displayName": "&6Crossbow",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Crossbow basic tanpa enchant."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 18000
+      },
+      "sell": {
+        "enabled": false,
+        "rp": 0
+      },
+      "stock": -1
+    },
+    {
+      "key": "trident",
+      "enabled": true,
+      "category": "combat",
+      "material": "TRIDENT",
+      "displayName": "&bTrident",
+      "tradeAmount": 1,
+      "lore": [
+        "&7Langka, stock terbatas."
+      ],
+      "buy": {
+        "enabled": true,
+        "rp": 96000
+      },
+      "sell": {
+        "enabled": true,
+        "rp": 48000
+      },
+      "stock": 12
+    }
+  ]
+}

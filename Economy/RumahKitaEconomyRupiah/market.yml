@@ -1,0 +1,1872 @@
+version: 24
+gui:
+  main:
+    title: "&8RumahKita Market"
+    size: 27
+    fill: "GRAY_STAINED_GLASS_PANE"
+    slots:
+      mobdrops: 10
+      farming: 12
+      servermarket: 14
+      voucher: 16
+      info: 22
+      admin: 26
+categories:
+  mobdrops:
+    display-name: '&aMob Drops'
+    material: ROTTEN_FLESH
+    lore:
+    - '&7Jual hasil mob farm kamu di sini.'
+    - '&7Kategori ini aman untuk ekonomi server.'
+    - '&fKlik untuk melihat item.'
+  farming:
+    display-name: '&aFarming'
+    material: WHEAT
+    lore:
+    - '&7Jual hasil farming kamu di sini.'
+    - '&7Cocok untuk player yang suka bercocok tanam.'
+    - '&fKlik untuk melihat item.'
+  servermarket:
+    display-name: '&aServer Market'
+    material: GRASS_BLOCK
+    lore:
+    - '&7Bahan building simple dan item server.'
+    - '&7Semua item di market bisa dibeli.'
+    - '&7Hanya Mob Drops & Farming yang bisa dijual.'
+    - '&fKlik untuk melihat item.'
+items:
+  rotten_flesh:
+    enabled: true
+    category: mobdrops
+    material: ROTTEN_FLESH
+    display-name: '&2Rotten Flesh'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 70
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 50
+      max-sell-price: 100
+      min-buy-price: 2000
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  bone:
+    enabled: true
+    category: mobdrops
+    material: BONE
+    display-name: '&fBone'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 6000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 220
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 160
+      max-sell-price: 300
+      min-buy-price: 5000
+      max-buy-price: 8500
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  string:
+    enabled: true
+    category: mobdrops
+    material: STRING
+    display-name: '&fString'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 6000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 220
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 160
+      max-sell-price: 300
+      min-buy-price: 5000
+      max-buy-price: 8500
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  spider_eye:
+    enabled: true
+    category: mobdrops
+    material: SPIDER_EYE
+    display-name: '&4Spider Eye'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 4500
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 160
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 120
+      max-sell-price: 220
+      min-buy-price: 3500
+      max-buy-price: 6500
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  gunpowder:
+    enabled: true
+    category: mobdrops
+    material: GUNPOWDER
+    display-name: '&7Gunpowder'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 13000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 450
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 350
+      max-sell-price: 600
+      min-buy-price: 10000
+      max-buy-price: 18000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  ender_pearl:
+    enabled: true
+    category: mobdrops
+    material: ENDER_PEARL
+    display-name: '&5Ender Pearl'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 22000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 650
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 500
+      max-sell-price: 900
+      min-buy-price: 18000
+      max-buy-price: 30000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  slime_ball:
+    enabled: true
+    category: mobdrops
+    material: SLIME_BALL
+    display-name: '&aSlime Ball'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 14000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 460
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 350
+      max-sell-price: 650
+      min-buy-price: 11000
+      max-buy-price: 19000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  blaze_rod:
+    enabled: true
+    category: mobdrops
+    material: BLAZE_ROD
+    display-name: '&6Blaze Rod'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 18000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 550
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 400
+      max-sell-price: 800
+      min-buy-price: 15000
+      max-buy-price: 24000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  ghast_tear:
+    enabled: true
+    category: mobdrops
+    material: GHAST_TEAR
+    display-name: '&fGhast Tear'
+    trade-amount: 8
+    buy:
+      enabled: true
+      price: 30000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 900
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 650
+      max-sell-price: 1200
+      min-buy-price: 24000
+      max-buy-price: 40000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  phantom_membrane:
+    enabled: true
+    category: mobdrops
+    material: PHANTOM_MEMBRANE
+    display-name: '&9Phantom Membrane'
+    trade-amount: 8
+    buy:
+      enabled: true
+      price: 26000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 750
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 10000
+      max: 10000
+      restock-amount: 10000
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 550
+      max-sell-price: 1000
+      min-buy-price: 21000
+      max-buy-price: 35000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  wheat:
+    enabled: true
+    category: farming
+    material: WHEAT
+    display-name: '&eWheat'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 4000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 700
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 550
+      max-sell-price: 1000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 3000
+      max-buy-price: 5500
+  carrot:
+    enabled: true
+    category: farming
+    material: CARROT
+    display-name: '&6Carrot'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 3800
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 650
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 500
+      max-sell-price: 900
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2800
+      max-buy-price: 5200
+  potato:
+    enabled: true
+    category: farming
+    material: POTATO
+    display-name: '&ePotato'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 3800
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 650
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 500
+      max-sell-price: 900
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2800
+      max-buy-price: 5200
+  beetroot:
+    enabled: true
+    category: farming
+    material: BEETROOT
+    display-name: '&cBeetroot'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 3400
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 550
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 400
+      max-sell-price: 800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2500
+      max-buy-price: 4700
+  sugar_cane:
+    enabled: true
+    category: farming
+    material: SUGAR_CANE
+    display-name: '&aSugar Cane'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 3600
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 600
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 450
+      max-sell-price: 850
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2700
+      max-buy-price: 5000
+  pumpkin:
+    enabled: true
+    category: farming
+    material: PUMPKIN
+    display-name: '&6Pumpkin'
+    trade-amount: 8
+    buy:
+      enabled: true
+      price: 3500
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 550
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 420
+      max-sell-price: 800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2600
+      max-buy-price: 4800
+  melon:
+    enabled: true
+    category: farming
+    material: MELON
+    display-name: '&aMelon'
+    trade-amount: 8
+    buy:
+      enabled: true
+      price: 3200
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 500
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 380
+      max-sell-price: 720
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2400
+      max-buy-price: 4500
+  bamboo:
+    enabled: true
+    category: farming
+    material: BAMBOO
+    display-name: '&aBamboo'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 2200
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 280
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 32768
+      max: 32768
+      restock-amount: 32768
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 220
+      max-sell-price: 400
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 1700
+      max-buy-price: 3200
+  cactus:
+    enabled: true
+    category: farming
+    material: CACTUS
+    display-name: '&2Cactus'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 3000
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 450
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 350
+      max-sell-price: 650
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2300
+      max-buy-price: 4200
+  cocoa_beans:
+    enabled: true
+    category: farming
+    material: COCOA_BEANS
+    display-name: '&6Cocoa Beans'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 3800
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 650
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 500
+      max-sell-price: 900
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 2800
+      max-buy-price: 5200
+  nether_wart:
+    enabled: true
+    category: farming
+    material: NETHER_WART
+    display-name: '&4Nether Wart'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 5500
+      daily-limit-per-player: 15000
+    sell:
+      enabled: true
+      price: 800
+      daily-limit-per-player: 15000
+    stock:
+      enabled: true
+      current: 8192
+      max: 8192
+      restock-amount: 8192
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-sell-price: 650
+      max-sell-price: 1150
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+      min-buy-price: 4200
+      max-buy-price: 7500
+  diamond:
+    enabled: true
+    category: servermarket
+    material: DIAMOND
+    display-name: '&bDiamond'
+    trade-amount: 1
+    buy:
+      enabled: true
+      price: 150000
+      daily-limit-per-player: 8
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 128
+      max: 128
+      restock-amount: 32
+      restock-interval-minutes: 1440
+    pricing:
+      mode: MANUAL
+      demand-enabled: false
+      min-buy-price: 100000
+      max-buy-price: 250000
+      max-change-percent-per-update: 0
+      max-change-percent-per-day: 0
+      admin-locked-price: true
+  emerald:
+    enabled: true
+    category: servermarket
+    material: EMERALD
+    display-name: '&aEmerald'
+    trade-amount: 1
+    buy:
+      enabled: true
+      price: 10000
+      daily-limit-per-player: 64
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 512
+      max: 512
+      restock-amount: 128
+      restock-interval-minutes: 1440
+    pricing:
+      mode: MANUAL
+      demand-enabled: false
+      min-buy-price: 8000
+      max-buy-price: 20000
+      max-change-percent-per-update: 0
+      max-change-percent-per-day: 0
+      admin-locked-price: true
+  netherite_scrap:
+    enabled: true
+    category: servermarket
+    material: NETHERITE_SCRAP
+    display-name: '&6Netherite Scrap'
+    trade-amount: 1
+    buy:
+      enabled: true
+      price: 250000
+      daily-limit-per-player: 4
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24
+      max: 24
+      restock-amount: 4
+      restock-interval-minutes: 1440
+    pricing:
+      mode: MANUAL
+      demand-enabled: false
+      min-buy-price: 200000
+      max-buy-price: 400000
+      max-change-percent-per-update: 0
+      max-change-percent-per-day: 0
+      admin-locked-price: true
+  ancient_debris:
+    enabled: true
+    category: servermarket
+    material: ANCIENT_DEBRIS
+    display-name: '&6Ancient Debris'
+    trade-amount: 1
+    buy:
+      enabled: true
+      price: 220000
+      daily-limit-per-player: 4
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24
+      max: 24
+      restock-amount: 4
+      restock-interval-minutes: 1440
+    pricing:
+      mode: MANUAL
+      demand-enabled: false
+      min-buy-price: 180000
+      max-buy-price: 350000
+      max-change-percent-per-update: 0
+      max-change-percent-per-day: 0
+      admin-locked-price: true
+  totem:
+    enabled: true
+    category: servermarket
+    material: TOTEM_OF_UNDYING
+    display-name: '&eTotem of Undying'
+    trade-amount: 1
+    buy:
+      enabled: true
+      price: 350000
+      daily-limit-per-player: 2
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12
+      max: 12
+      restock-amount: 2
+      restock-interval-minutes: 10080
+    pricing:
+      mode: MANUAL
+      demand-enabled: false
+      min-buy-price: 300000
+      max-buy-price: 600000
+      max-change-percent-per-update: 0
+      max-change-percent-per-day: 0
+      admin-locked-price: true
+  dirt:
+    enabled: true
+    category: servermarket
+    material: DIRT
+    display-name: '&6Dirt'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 32768
+      max: 32768
+      restock-amount: 32768
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 700
+      max-buy-price: 1600
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  cobblestone:
+    enabled: true
+    category: servermarket
+    material: COBBLESTONE
+    display-name: '&7Cobblestone'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 32768
+      max: 32768
+      restock-amount: 32768
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 700
+      max-buy-price: 1600
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  stone:
+    enabled: true
+    category: servermarket
+    material: STONE
+    display-name: '&7Stone'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1250
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 32768
+      max: 32768
+      restock-amount: 32768
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 875
+      max-buy-price: 2000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  stone_bricks:
+    enabled: true
+    category: servermarket
+    material: STONE_BRICKS
+    display-name: '&7Stone Bricks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  smooth_stone:
+    enabled: true
+    category: servermarket
+    material: SMOOTH_STONE
+    display-name: '&fSmooth Stone'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 2000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1400
+      max-buy-price: 3200
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  deepslate:
+    enabled: true
+    category: servermarket
+    material: DEEPSLATE
+    display-name: '&8Deepslate'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 700
+      max-buy-price: 1600
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  polished_deepslate:
+    enabled: true
+    category: servermarket
+    material: POLISHED_DEEPSLATE
+    display-name: '&8Polished Deepslate'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1050
+      max-buy-price: 2400
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  oak_log:
+    enabled: true
+    category: servermarket
+    material: OAK_LOG
+    display-name: '&6Oak Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  oak_planks:
+    enabled: true
+    category: servermarket
+    material: OAK_PLANKS
+    display-name: '&6Oak Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  spruce_log:
+    enabled: true
+    category: servermarket
+    material: SPRUCE_LOG
+    display-name: '&6Spruce Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  spruce_planks:
+    enabled: true
+    category: servermarket
+    material: SPRUCE_PLANKS
+    display-name: '&6Spruce Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  sand:
+    enabled: true
+    category: servermarket
+    material: SAND
+    display-name: '&eSand'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1250
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 875
+      max-buy-price: 2000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  glass:
+    enabled: true
+    category: servermarket
+    material: GLASS
+    display-name: '&fGlass'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  bricks:
+    enabled: true
+    category: servermarket
+    material: BRICKS
+    display-name: '&cBricks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 2250
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1575
+      max-buy-price: 3600
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  terracotta:
+    enabled: true
+    category: servermarket
+    material: TERRACOTTA
+    display-name: '&6Terracotta'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  white_concrete:
+    enabled: true
+    category: servermarket
+    material: WHITE_CONCRETE
+    display-name: '&fWhite Concrete'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 3000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 2100
+      max-buy-price: 4800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  grass_block:
+    enabled: true
+    category: servermarket
+    material: GRASS_BLOCK
+    display-name: '&aGrass Block'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1050
+      max-buy-price: 2400
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  coarse_dirt:
+    enabled: true
+    category: servermarket
+    material: COARSE_DIRT
+    display-name: '&6Coarse Dirt'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 700
+      max-buy-price: 1600
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  gravel:
+    enabled: true
+    category: servermarket
+    material: GRAVEL
+    display-name: '&7Gravel'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1250
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 875
+      max-buy-price: 2000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  red_sand:
+    enabled: true
+    category: servermarket
+    material: RED_SAND
+    display-name: '&6Red Sand'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1250
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 875
+      max-buy-price: 2000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  cobbled_deepslate:
+    enabled: true
+    category: servermarket
+    material: COBBLED_DEEPSLATE
+    display-name: '&8Cobbled Deepslate'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 700
+      max-buy-price: 1600
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  deepslate_bricks:
+    enabled: true
+    category: servermarket
+    material: DEEPSLATE_BRICKS
+    display-name: '&8Deepslate Bricks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  gray_concrete:
+    enabled: true
+    category: servermarket
+    material: GRAY_CONCRETE
+    display-name: '&7Gray Concrete'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 3000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 2100
+      max-buy-price: 4800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  black_concrete:
+    enabled: true
+    category: servermarket
+    material: BLACK_CONCRETE
+    display-name: '&0Black Concrete'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 3000
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 2100
+      max-buy-price: 4800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  birch_log:
+    enabled: true
+    category: servermarket
+    material: BIRCH_LOG
+    display-name: '&eBirch Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  birch_planks:
+    enabled: true
+    category: servermarket
+    material: BIRCH_PLANKS
+    display-name: '&eBirch Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  jungle_log:
+    enabled: true
+    category: servermarket
+    material: JUNGLE_LOG
+    display-name: '&6Jungle Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  jungle_planks:
+    enabled: true
+    category: servermarket
+    material: JUNGLE_PLANKS
+    display-name: '&6Jungle Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  acacia_log:
+    enabled: true
+    category: servermarket
+    material: ACACIA_LOG
+    display-name: '&6Acacia Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  acacia_planks:
+    enabled: true
+    category: servermarket
+    material: ACACIA_PLANKS
+    display-name: '&6Acacia Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  dark_oak_log:
+    enabled: true
+    category: servermarket
+    material: DARK_OAK_LOG
+    display-name: '&6Dark Oak Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  dark_oak_planks:
+    enabled: true
+    category: servermarket
+    material: DARK_OAK_PLANKS
+    display-name: '&6Dark Oak Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  mangrove_log:
+    enabled: true
+    category: servermarket
+    material: MANGROVE_LOG
+    display-name: '&cMangrove Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  mangrove_planks:
+    enabled: true
+    category: servermarket
+    material: MANGROVE_PLANKS
+    display-name: '&cMangrove Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  cherry_log:
+    enabled: true
+    category: servermarket
+    material: CHERRY_LOG
+    display-name: '&dCherry Log'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 12288
+      max: 12288
+      restock-amount: 12288
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  cherry_planks:
+    enabled: true
+    category: servermarket
+    material: CHERRY_PLANKS
+    display-name: '&dCherry Planks'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 1750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1225
+      max-buy-price: 2800
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  lantern:
+    enabled: true
+    category: servermarket
+    material: LANTERN
+    display-name: '&6Lantern'
+    trade-amount: 16
+    buy:
+      enabled: true
+      price: 2500
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 4096
+      max: 4096
+      restock-amount: 4096
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 1750
+      max-buy-price: 4000
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+  torch:
+    enabled: true
+    category: servermarket
+    material: TORCH
+    display-name: '&eTorch'
+    trade-amount: 32
+    buy:
+      enabled: true
+      price: 750
+      daily-limit-per-player: -1
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    stock:
+      enabled: true
+      current: 24576
+      max: 24576
+      restock-amount: 24576
+      restock-interval-minutes: 1440
+    pricing:
+      mode: HYBRID
+      demand-enabled: true
+      min-buy-price: 525
+      max-buy-price: 1200
+      max-change-percent-per-update: 5
+      max-change-percent-per-day: 15
+      admin-locked-price: false
+

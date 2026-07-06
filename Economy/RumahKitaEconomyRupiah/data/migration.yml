@@ -1,0 +1,7 @@
+old-player-shop-refund:
+  done: true
+  last_run: 1782998855651
+  last_created: 0
+legacy-balances:
+  backup-created: true
+  backup-file: balances-v5-backup-1782997209087.yml

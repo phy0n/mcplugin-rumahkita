@@ -1,0 +1,221 @@
+# ScheduledAnnouncements Configuration
+# RumahKita S2
+# Path: plugins/ScheduledAnnouncements/config.yml
+# Cron Format: Second Minute Hour DayOfMonth Month DayOfWeek Year
+# Gunakan /scheduledannouncements reload setelah edit config ini.
+# Kalau masih belum muncul, restart server dan cek console untuk error YAML / Invalid cron.
+
+settings:
+  prefix:
+    text: "[RumahKita]"
+    color: "light_purple"
+  message_color: "white"
+
+announcements:
+  vote_reminder:
+    cron: "0 0/30 * * * ? *"
+    message: "Dukung RumahKita S2 dengan vote! Ketik /vote lalu klik RumahKita Voting - Click Here. Reward vote: 1 Emerald + 2 Diamond."
+    prefix:
+      text: "[Vote]"
+      color: "green"
+    message_color: "white"
+
+  vote_link_reminder:
+    cron: "0 15/30 * * * ? *"
+    message: "Vote server RumahKita S2 di Minecraft-MP dan dapatkan reward otomatis! | https://minecraft-mp.com/server/359445/vote/"
+    prefix:
+      text: "[Voting]"
+      color: "light_purple"
+    message_color: "white"
+
+  how_to_play:
+    cron: "0 10/30 * * * ? *"
+    message: "Newbie tips: klik NPC Random Teleport atau pakai /tpr, ambil kayu, buat tools, cari makanan, lalu pakai /sethome di lokasi rumahmu."
+    prefix:
+      text: "[Tutor]"
+      color: "green"
+    message_color: "white"
+
+  command_guide:
+    cron: "0 20/30 * * * ? *"
+    message: "Command penting: /spawn untuk kembali ke lobby, /tpr untuk random teleport, /sethome untuk simpan rumah, /home untuk balik ke rumah, dan /msg untuk chat private."
+    prefix:
+      text: "[Guide]"
+      color: "aqua"
+    message_color: "white"
+
+  market_reminder:
+    cron: "0 5/30 * * * ? *"
+    message: "Market sudah aktif! Gunakan /market untuk membuka Server Market, Online Market, Wallet, dan menu jual beli item."
+    prefix:
+      text: "[Market]"
+      color: "green"
+    message_color: "white"
+
+  online_market_tip:
+    cron: "0 25/30 * * * ? *"
+    message: "Mau jual item ke player lain? Pegang item di tangan lalu pakai /market sellhand <currency> <harga> <jumlah>. Contoh: /market sellhand emerald 10 all"
+    prefix:
+      text: "[OnlineMarket]"
+      color: "aqua"
+    message_color: "white"
+
+  wallet_tip:
+    cron: "0 55 * * * ? *"
+    message: "Hasil penjualan dari Online Market akan masuk ke Wallet. Cek dengan /market wallet dan ambil hasilnya dengan /market withdraw <currency|all>."
+    prefix:
+      text: "[Wallet]"
+      color: "gold"
+    message_color: "yellow"
+
+  economy_tip:
+    cron: "0 40 */2 * * ? *"
+    message: "Economy RumahKita memakai item fisik seperti Emerald, Diamond, Gold, Iron, Coal, Redstone, Lapis, Copper, dan Netherite Scrap. Simpan item berhargamu dengan aman."
+    prefix:
+      text: "[Economy]"
+      color: "yellow"
+    message_color: "white"
+
+  guild_reminder:
+    cron: "0 35/30 * * * ? *"
+    message: "Guild System sudah aktif! Gunakan /guild untuk membuka menu guild, membuat guild, invite teman, cek member, atau keluar guild."
+    prefix:
+      text: "[Guild]"
+      color: "aqua"
+    message_color: "white"
+
+  guild_create_tip:
+    cron: "0 20 */4 * * ? *"
+    message: "Ingin buat guild sendiri? Siapkan 5 Diamond lalu gunakan /guild create <TAG> <NamaGuild>. Setiap player hanya bisa join 1 guild."
+    prefix:
+      text: "[Guild]"
+      color: "gold"
+    message_color: "yellow"
+
+  guild_home_tip:
+    cron: "0 45/30 * * * ? *"
+    message: "Guild punya fitur base bersama! Leader/Admin bisa pakai /guild sethome, lalu semua member bisa kembali ke base guild dengan /guild home."
+    prefix:
+      text: "[GuildHome]"
+      color: "light_purple"
+    message_color: "white"
+
+  guild_role_tip:
+    cron: "0 12/30 * * * ? *"
+    message: "Guild punya role Leader, Admin, dan Member. Leader bisa manage guild, Admin bisa bantu invite/sethome, Member bisa pakai /guild home."
+    prefix:
+      text: "[GuildRole]"
+      color: "aqua"
+    message_color: "white"
+
+  worldborder_info:
+    cron: "0 5 */4 * * ? *"
+    message: "World Border RumahKita S2 sudah diperluas ke area 10.000 x 10.000 block. Eksplorasi bebas, tapi tetap jaga base dan jangan grief."
+    prefix:
+      text: "[World]"
+      color: "green"
+    message_color: "white"
+
+  voice_chat_tip:
+    cron: "0 15 */3 * * ? *"
+    message: "Server mendukung Simple Voice Chat. Kalau kamu pakai Java, install mod Simple Voice Chat agar bisa ngobrol proximity voice dengan player lain."
+    prefix:
+      text: "[Voice]"
+      color: "aqua"
+    message_color: "white"
+
+  music_disc_tip:
+    cron: "0 45 */4 * * ? *"
+    message: "RumahKita sedang menyiapkan fitur custom music disc dan ambience server. Nantinya area event, spawn, atau cafe bisa punya musik sendiri."
+    prefix:
+      text: "[Music]"
+      color: "light_purple"
+    message_color: "white"
+
+  bedrock_scoreboard_tip:
+    cron: "0 10/40 * * * ? *"
+    message: "Untuk player Bedrock/HP, kalau scoreboard kanan terasa terlalu besar, ketik /sb untuk menyembunyikan atau menampilkannya kembali."
+    prefix:
+      text: "[Bedrock]"
+      color: "light_purple"
+    message_color: "white"
+
+  bossbar_tip:
+    cron: "0 20/40 * * * ? *"
+    message: "Kalau bar info di atas layar terasa mengganggu, kamu bisa pakai /bossbar untuk hide/show bossbar."
+    prefix:
+      text: "[Tips]"
+      color: "yellow"
+    message_color: "white"
+
+  rules_reminder:
+    cron: "0 0 */2 * * ? *"
+    message: "Jaga suasana RumahKita tetap nyaman. No grief, no steal, no cheat, no x-ray, no spam, no toxic. Kalau ada masalah, hubungi Helper/Admin."
+    prefix:
+      text: "[Rules]"
+      color: "red"
+    message_color: "white"
+
+  spawn_reminder:
+    cron: "0 30 */2 * * ? *"
+    message: "Area spawn RumahKita sudah diproteksi. Jangan coba merusak lobby, gunakan NPC atau /tpr untuk mulai survival."
+    prefix:
+      text: "[Spawn]"
+      color: "gold"
+    message_color: "white"
+
+  java_join_info:
+    cron: "0 0 */4 * * ? *"
+    message: "Info join Java: gunakan address rumahkita.homes:22044 karena port Java server bukan port default."
+    prefix:
+      text: "[Java]"
+      color: "green"
+    message_color: "white"
+
+  bedrock_join_info:
+    cron: "0 30 */4 * * ? *"
+    message: "Info join Bedrock/HP: gunakan address rumahkita.homes dan port Bedrock yang diberikan admin."
+    prefix:
+      text: "[Bedrock]"
+      color: "aqua"
+    message_color: "white"
+
+  discord_invite:
+    cron: "0 0 */3 * * ? *"
+    message: "Join Discord RumahKita untuk info update, event, bantuan, dan ngobrol bareng komunitas! | https://discord.gg/yaysters"
+    prefix:
+      text: "[Discord]"
+      color: "light_purple"
+    message_color: "white"
+
+  helper_reminder:
+    cron: "0 45 */2 * * ? *"
+    message: "Butuh bantuan? Tanya Helper/Admin dengan sopan. Jelaskan masalahnya biar cepat dibantu."
+    prefix:
+      text: "[Help]"
+      color: "yellow"
+    message_color: "white"
+
+  daily_reminder_morning:
+    cron: "0 0 8 * * ? *"
+    message: "Selamat pagi warga RumahKita! Jangan lupa cek rumah, lanjut mining, bangun base, dan tetap jaga server tetap nyaman."
+    prefix:
+      text: "[Daily]"
+      color: "light_purple"
+    message_color: "white"
+
+  daily_reminder_afternoon:
+    cron: "0 0 15 * * ? *"
+    message: "Reminder sore! Gunakan /tpr untuk eksplorasi, /sethome untuk simpan rumah, dan /home untuk kembali ke base kamu."
+    prefix:
+      text: "[Reminder]"
+      color: "aqua"
+    message_color: "white"
+
+  daily_reminder_night:
+    cron: "0 0 20 * * ? *"
+    message: "Malam warga RumahKita! Jangan lupa rapikan item, simpan lokasi rumah dengan /sethome, dan bantu player baru kalau ada yang bingung."
+    prefix:
+      text: "[Daily]"
+      color: "gold"
+    message_color: "yellow"

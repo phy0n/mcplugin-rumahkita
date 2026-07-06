@@ -1,0 +1,401 @@
+limits:
+  '2026-07-02':
+    00000000-0000-0000-0009-01f3a31b06ab:
+      netherite_scrap:
+        BUY: 3
+      dark_oak_log:
+        BUY: 16
+      wheat:
+        BUY: 128
+        SELL: 256
+      bone:
+        SELL: 128
+      rotten_flesh:
+        SELL: 80
+      potato:
+        SELL: 112
+      carrot:
+        SELL: 48
+      bamboo:
+        SELL: 32
+    fefd8109-a6b8-3201-90f4-e167e3d1d055:
+      blaze_rod:
+        SELL: 4680
+    f6cb784d-86ed-3145-bb94-88e1817d00d5:
+      gunpowder:
+        SELL: 10000
+      carrot:
+        BUY: 8192
+        SELL: 8192
+      nether_wart:
+        BUY: 4096
+        SELL: 4096
+      wheat:
+        BUY: 8192
+        SELL: 8192
+      potato:
+        BUY: 8192
+        SELL: 8192
+      beetroot:
+        BUY: 8192
+        SELL: 8192
+      sugar_cane:
+        BUY: 8192
+        SELL: 8000
+      pumpkin:
+        BUY: 4096
+        SELL: 3968
+      melon:
+        BUY: 4096
+        SELL: 3968
+      bamboo:
+        BUY: 16384
+        SELL: 16384
+      cocoa_beans:
+        BUY: 4096
+        SELL: 4096
+      cactus:
+        BUY: 8192
+        SELL: 8192
+      bone:
+        BUY: 16
+        SELL: 16
+    9fd59232-7480-3add-a231-806c47850bd6:
+      emerald:
+        BUY: 4
+    c17b341a-fa98-3b78-85a0-b3ac53239cf0:
+      carrot:
+        BUY: 8192
+        SELL: 8176
+      nether_wart:
+        BUY: 4096
+        SELL: 4096
+      cocoa_beans:
+        BUY: 4096
+        SELL: 4096
+      cactus:
+        BUY: 8192
+        SELL: 8192
+      bamboo:
+        BUY: 16384
+        SELL: 16384
+      wheat:
+        BUY: 8192
+        SELL: 8192
+      potato:
+        BUY: 8192
+        SELL: 8192
+      beetroot:
+        BUY: 8192
+        SELL: 8192
+      pumpkin:
+        BUY: 4096
+        SELL: 4096
+      melon:
+        BUY: 4096
+        SELL: 4096
+      sugar_cane:
+        BUY: 8192
+        SELL: 8192
+      rotten_flesh:
+        BUY: 10000
+        SELL: 10000
+      bone:
+        SELL: 7504
+      blaze_rod:
+        SELL: 108
+    00000000-0000-0000-0009-01fd7c39b221:
+      rotten_flesh:
+        SELL: 64
+      gunpowder:
+        SELL: 64
+    00000000-0000-0000-0009-01ffb6009a69:
+      rotten_flesh:
+        SELL: 512
+    b82cf1fb-0272-3869-a829-576d39bef31f:
+      pumpkin:
+        BUY: 688
+        SELL: 664
+      sugar_cane:
+        BUY: 112
+      cocoa_beans:
+        BUY: 96
+      cactus:
+        BUY: 176
+    914929ce-0c7c-3bee-9628-8166c5ad2d1b:
+      rotten_flesh:
+        SELL: 176
+      bone:
+        SELL: 128
+    8228bfba-295d-3073-b84f-43b01d6ffe84:
+      gunpowder:
+        SELL: 472
+      bone:
+        SELL: 304
+      rotten_flesh:
+        SELL: 432
+      wheat:
+        SELL: 112
+  '2026-07-03':
+    f6cb784d-86ed-3145-bb94-88e1817d00d5:
+      gunpowder:
+        SELL: 10000
+      wheat:
+        BUY: 8064
+        SELL: 8064
+      carrot:
+        BUY: 8192
+        SELL: 8192
+      potato:
+        BUY: 8192
+        SELL: 8192
+      beetroot:
+        BUY: 8192
+        SELL: 8192
+      sugar_cane:
+        BUY: 8064
+        SELL: 7296
+      pumpkin:
+        BUY: 3224
+        SELL: 3232
+      melon:
+        BUY: 4096
+        SELL: 4032
+      cactus:
+        BUY: 8000
+        SELL: 8000
+      cocoa_beans:
+        BUY: 3968
+        SELL: 3968
+      blaze_rod:
+        SELL: 468
+      nether_wart:
+        SELL: 32
+      bone:
+        SELL: 1424
+      rotten_flesh:
+        SELL: 8672
+      phantom_membrane:
+        SELL: 2
+    fefd8109-a6b8-3201-90f4-e167e3d1d055:
+      sugar_cane:
+        BUY: 16
+        SELL: 16
+      pumpkin:
+        BUY: 16
+        SELL: 16
+      cocoa_beans:
+        BUY: 32
+        SELL: 32
+      ender_pearl:
+        SELL: 8
+      blaze_rod:
+        SELL: 9996
+      cactus:
+        BUY: 16
+        SELL: 16
+      rotten_flesh:
+        SELL: 176
+      bone:
+        BUY: 32
+        SELL: 32
+      spider_eye:
+        BUY: 16
+        SELL: 16
+      wheat:
+        SELL: 304
+      cobblestone:
+        BUY: 128
+      oak_log:
+        BUY: 16
+    145c25d8-5842-38be-8c85-4004ce6f4051:
+      netherite_scrap:
+        BUY: 1
+    b8305575-9232-335f-832e-eef187eaf10d:
+      jungle_planks:
+        BUY: 32
+    00000000-0000-0000-0009-01f3a31b06ab:
+      potato:
+        SELL: 256
+      carrot:
+        SELL: 32
+      wheat:
+        SELL: 192
+    914929ce-0c7c-3bee-9628-8166c5ad2d1b:
+      spider_eye:
+        SELL: 16
+      string:
+        SELL: 32
+      bone:
+        SELL: 32
+      rotten_flesh:
+        SELL: 32
+    c17b341a-fa98-3b78-85a0-b3ac53239cf0:
+      bone:
+        SELL: 1024
+    00000000-0000-0000-0009-01f1b430bb6c:
+      emerald:
+        BUY: 64
+      white_concrete:
+        BUY: 32
+    8c382a0f-b367-3299-ad77-31069b70c4f9:
+      blaze_rod:
+        SELL: 3328
+      spider_eye:
+        SELL: 16
+      wheat:
+        SELL: 112
+    00000000-0000-0000-0009-01fee6823501:
+      sugar_cane:
+        SELL: 32
+    00000000-0000-0000-0009-01f4acf6638f:
+      cactus:
+        BUY: 16
+      pumpkin:
+        BUY: 16
+      cobbled_deepslate:
+        BUY: 320
+      deepslate:
+        BUY: 384
+      blaze_rod:
+        BUY: 16
+      bamboo:
+        BUY: 32
+    ffe04391-7f9b-3356-b3ce-64a6e1862f88:
+      nether_wart:
+        SELL: 4096
+      sugar_cane:
+        SELL: 2704
+      blaze_rod:
+        SELL: 9600
+      cactus:
+        BUY: 192
+      sand:
+        BUY: 768
+    5b8b41dd-896f-3f16-9033-d4ee6cdf6832:
+      ancient_debris:
+        BUY: 4
+  '2026-07-04':
+    00000000-0000-0000-0009-01f3a31b06ab:
+      sugar_cane:
+        SELL: 64
+      bamboo:
+        SELL: 192
+      wheat:
+        SELL: 128
+    914929ce-0c7c-3bee-9628-8166c5ad2d1b:
+      bone:
+        SELL: 128
+        BUY: 32
+      slime_ball:
+        SELL: 48
+    f6cb784d-86ed-3145-bb94-88e1817d00d5:
+      gunpowder:
+        SELL: 10000
+      blaze_rod:
+        SELL: 320
+      ender_pearl:
+        BUY: 80
+      oak_log:
+        BUY: 16
+      cobblestone:
+        BUY: 32
+    00000000-0000-0000-0009-01f93ebe6bb1:
+      emerald:
+        BUY: 2
+      sugar_cane:
+        BUY: 16
+      wheat:
+        SELL: 112
+        BUY: 48
+      deepslate:
+        BUY: 32
+    c17b341a-fa98-3b78-85a0-b3ac53239cf0:
+      gunpowder:
+        SELL: 10000
+      oak_log:
+        BUY: 64
+    73ab722a-80ca-3187-8960-2e3df6404ac1:
+      gunpowder:
+        SELL: 10000
+    1fa4cd36-3ece-3965-a274-317967dd8482:
+      ender_pearl:
+        BUY: 16
+    fefd8109-a6b8-3201-90f4-e167e3d1d055:
+      blaze_rod:
+        SELL: 12240
+      gunpowder:
+        SELL: 8768
+      nether_wart:
+        SELL: 2224
+      cactus:
+        SELL: 10304
+    8074364b-9232-3b74-b1a9-99a6a0446011:
+      blaze_rod:
+        SELL: 10000
+    b8305575-9232-335f-832e-eef187eaf10d:
+      blaze_rod:
+        SELL: 10000
+      cocoa_beans:
+        SELL: 64
+    ffe04391-7f9b-3356-b3ce-64a6e1862f88:
+      sand:
+        BUY: 1088
+      cactus:
+        BUY: 1232
+        SELL: 6784
+      nether_wart:
+        SELL: 1536
+    e8c7609a-7b03-3bcd-a46a-a114b5fc5dc3:
+      gunpowder:
+        SELL: 10000
+    00000000-0000-0000-0009-01ffa0fe009d:
+      potato:
+        BUY: 16
+        SELL: 16
+      cocoa_beans:
+        BUY: 16
+        SELL: 16
+      rotten_flesh:
+        SELL: 32
+  '2026-07-05':
+    fefd8109-a6b8-3201-90f4-e167e3d1d055:
+      gunpowder:
+        SELL: 2656
+      nether_wart:
+        SELL: 2560
+      cactus:
+        SELL: 12288
+      blaze_rod:
+        SELL: 14992
+    8074364b-9232-3b74-b1a9-99a6a0446011:
+      blaze_rod:
+        SELL: 1472
+      cactus:
+        SELL: 3664
+      gunpowder:
+        SELL: 672
+    f6cb784d-86ed-3145-bb94-88e1817d00d5:
+      gunpowder:
+        SELL: 14992
+      ender_pearl:
+        BUY: 16
+    e8c7609a-7b03-3bcd-a46a-a114b5fc5dc3:
+      gunpowder:
+        SELL: 14992
+    ffe04391-7f9b-3356-b3ce-64a6e1862f88:
+      grass_block:
+        BUY: 512
+      glass:
+        BUY: 384
+      cactus:
+        SELL: 8000
+      blaze_rod:
+        SELL: 3584
+    00000000-0000-0000-0009-01fd7c39b221:
+      rotten_flesh:
+        SELL: 384
+      bone:
+        SELL: 160
+      gunpowder:
+        SELL: 832

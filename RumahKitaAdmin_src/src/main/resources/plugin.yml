@@ -1,0 +1,16 @@
+name: RumahKitaAdmin
+version: 1.0.0
+main: id.rumahkita.admin.RumahKitaAdminPlugin
+api-version: 1.13
+description: Admin Moderation Plugin for RumahKita
+commands:
+  rka:
+    description: Main command for RumahKita Admin
+    permission: rumahkita.admin
+    permission-message: "Unknown command. Type \"/help\" for help."
+    usage: "/rka"
+  sc:
+    description: Staff Chat
+    permission: rumahkita.admin
+    permission-message: "Unknown command. Type \"/help\" for help."
+    usage: "/sc <message>"

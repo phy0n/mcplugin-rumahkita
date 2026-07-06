@@ -1,0 +1,59 @@
+# ==================================================
+# RumahKita Admin - Configuration
+# ==================================================
+
+# Server Auto-Restart Times (HH:mm format)
+# The timezone relies on the server's local machine timezone.
+restart-times:
+  - "07:00"
+  - "19:00"
+
+# How long before restart should warnings appear?
+# Use 'm' for minutes, 's' for seconds
+warnings:
+  - "10m"
+  - "5m"
+  - "1m"
+  - "30s"
+  - "10s"
+  - "5s"
+  - "4s"
+  - "3s"
+  - "2s"
+  - "1s"
+
+settings:
+  warn:
+    max-warnings: 3
+  jail:
+    distance-limit: 10
+
+messages:
+  no-permission: "&cUnknown command. Type \"/help\" for help."
+  restart:
+    kick-message: "&cServer is restarting! Please rejoin in a few minutes."
+    warning-message: "&8[&c&l!&8] &c&lRESTART &8\u00bb &eServer is restarting in &c&l%time%&e!"
+  maintenance:
+    kick-message: "&cThe server is currently under Maintenance.\n&fPlease try again later."
+    enable-broadcast: "&4&lSERVER MAINTENANCE ENABLED!"
+    disable-broadcast: "&a&lMAINTENANCE COMPLETE!"
+  warn:
+    title: "&4&lWARNING!"
+    kick-message: "&cYou have been kicked for reaching maximum warnings.\n&fReason: &e%reason%"
+  jail:
+    jailed: "&cYou have been jailed by an Admin!"
+    unjailed: "&aYou have been unjailed. Don't break the rules again!"
+    cannot-escape: "&cYou cannot escape Jail!"
+  mute:
+    muted: "&cYou have been muted by an Admin! You cannot send messages."
+    unmuted: "&aYou have been unmuted. You can chat again."
+    cannot-chat: "&cYou cannot send messages because you are muted by an Admin."
+  freeze:
+    frozen: "&cYou have been frozen by an Admin!"
+    unfrozen: "&aYou have been unfrozen."
+
+# (Internal Data)
+# ips:
+# jailed_players:
+# warnings:
+# warnings:

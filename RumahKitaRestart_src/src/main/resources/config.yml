@@ -1,0 +1,25 @@
+# Waktu Server Restart (Gunakan format HH:mm)
+# Timezone disesuaikan dengan timezone server Pterodactyl/Mesin
+restart-times:
+  - "00:00"
+  - "06:00"
+  - "12:00"
+  - "18:00"
+
+# Berapa menit/detik sebelumnya notifikasi muncul
+# Gunakan m untuk menit, s untuk detik
+warnings:
+  - "10m"
+  - "5m"
+  - "1m"
+  - "30s"
+  - "10s"
+  - "5s"
+  - "4s"
+  - "3s"
+  - "2s"
+  - "1s"
+
+messages:
+  kick-message: "&cServer sedang direstart! Silakan join kembali dalam 1-2 menit."
+  warning-message: "&c[AutoRestart] &eServer akan direstart dalam &f%time%&e!"

@@ -1,0 +1,298 @@
+items:
+  string:
+    total_sold: 400
+    window_sell_amount: 0
+    sell_rp: 4915
+    window_buy_amount: 0
+    total_bought: 16
+    buy_rp: 9800
+  rotten_flesh:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 21984
+    sell_rp: 62560
+    total_bought: 10000
+    buy_rp: 0
+  bone:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 11728
+    sell_rp: 143693
+    total_bought: 80
+    buy_rp: 20338
+  spider_eye:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 32
+    buy_rp: 21680
+    total_sold: 560
+    sell_rp: 7023
+  gunpowder:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 8
+    buy_rp: 29400
+    total_sold: 103832
+    sell_rp: 5039993
+  ender_pearl:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 120
+    buy_rp: 160300
+    total_sold: 88
+    sell_rp: 5734
+  slime_ball:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 16
+    buy_rp: 78400
+    total_sold: 48
+    sell_rp: 2700
+  blaze_rod:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 112
+    buy_rp: 405060
+    total_sold: 91096
+    sell_rp: 5018109
+  ghast_tear:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  phantom_membrane:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 2
+    sell_rp: 766
+  wheat:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 26128
+    sell_rp: 1389095
+    total_bought: 24624
+    buy_rp: 9000
+  carrot:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 25232
+    sell_rp: 1161500
+    total_bought: 24576
+    buy_rp: 0
+  potato:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 25328
+    sell_rp: 1167428
+    total_bought: 24592
+    buy_rp: 2800
+  beetroot:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 24576
+    buy_rp: 0
+    total_sold: 24576
+    sell_rp: 989184
+  sugar_cane:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 24592
+    buy_rp: 2700
+    total_sold: 26304
+    sell_rp: 908153
+  pumpkin:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 12304
+    buy_rp: 5689
+    total_sold: 11976
+    sell_rp: 785584
+  melon:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 12288
+    buy_rp: 0
+    total_sold: 12096
+    sell_rp: 739520
+  bamboo:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 32800
+    buy_rp: 1712
+    total_sold: 32992
+    sell_rp: 216824
+  cactus:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 26016
+    buy_rp: 207165
+    total_sold: 65440
+    sell_rp: 2184992
+  cocoa_beans:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 12304
+    buy_rp: 2800
+    total_sold: 12272
+    sell_rp: 413788
+  nether_wart:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_sold: 18816
+    sell_rp: 1227886
+    total_bought: 8192
+    buy_rp: 0
+  diamond:
+    total_bought: 1
+    window_buy_amount: 1
+    buy_rp: 150000
+  emerald:
+    total_bought: 74
+    window_buy_amount: 74
+    buy_rp: 740000
+  ancient_debris:
+    total_bought: 9
+    window_buy_amount: 9
+    buy_rp: 1980000
+  totem:
+    total_bought: 3
+    window_buy_amount: 3
+    buy_rp: 1050000
+  netherite_scrap:
+    total_bought: 8
+    window_buy_amount: 8
+    buy_rp: 2000000
+  glass:
+    total_bought: 448
+    window_buy_amount: 0
+    buy_rp: 24052
+    window_sell_amount: 0
+  dirt:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  cobblestone:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 160
+    buy_rp: 11116
+  stone:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  stone_bricks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  smooth_stone:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  deepslate:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 416
+    buy_rp: 27056
+  polished_deepslate:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 64
+    buy_rp: 6243
+  oak_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 96
+    buy_rp: 24585
+  oak_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  spruce_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  spruce_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  sand:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 1856
+    buy_rp: 108964
+  bricks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  terracotta:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  white_concrete:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 32
+    buy_rp: 5493
+  grass_block:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 512
+    buy_rp: 19488
+  coarse_dirt:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  gravel:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  red_sand:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  cobbled_deepslate:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 320
+    buy_rp: 21380
+  deepslate_bricks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  gray_concrete:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  black_concrete:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  birch_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  birch_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  jungle_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  jungle_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 32
+    buy_rp: 3500
+  acacia_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  acacia_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  dark_oak_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+    total_bought: 16
+    buy_rp: 11525
+  dark_oak_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  mangrove_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  mangrove_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  cherry_log:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  cherry_planks:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  lantern:
+    window_buy_amount: 0
+    window_sell_amount: 0
+  torch:
+    window_buy_amount: 0
+    window_sell_amount: 0
