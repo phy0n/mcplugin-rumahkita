@@ -204,12 +204,12 @@ public class WarpManager implements Listener {
             return;
         }
 
-        p.sendMessage(getPrefix() + ChatColor.YELLOW + "Teleportasi dalam 3 detik. Jangan bergerak!");
+        p.sendMessage(getPrefix() + ChatColor.YELLOW + "Teleportasi dalam 5 detik. Jangan bergerak!");
         
         Location startLoc = p.getLocation();
 
         new BukkitRunnable() {
-            int countdown = 3;
+            int countdown = 5;
 
             @Override
             public void run() {
@@ -225,12 +225,13 @@ public class WarpManager implements Listener {
                 }
 
                 if (countdown > 0) {
-                    p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 1.0f);
+                    p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
+                    p.sendTitle(ChatColor.translateAlternateColorCodes('&', "&a&l" + countdown), ChatColor.YELLOW + "Jangan bergerak!", 0, 25, 0);
                     p.sendMessage(getPrefix() + ChatColor.GREEN + countdown + "...");
                     countdown--;
                 } else {
                     p.teleport(warp.location);
-                    p.playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 1.0f);
+                    p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
                     
                     OfflinePlayer owner = Bukkit.getOfflinePlayer(warp.owner);
                     String ownerName = owner.getName() != null ? owner.getName() : "Unknown";

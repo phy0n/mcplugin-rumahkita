@@ -3,3 +3,8 @@ cost:
   create: 50000
 messages:
   prefix: "&8[&ePWarp&8] "
+
+# RumahKitaRTP Configuration
+rtp:
+  radius: 3000
+  cost: 1000

@@ -9,3 +9,7 @@ commands:
     description: "Player Warp Commands"
     aliases: [pw, warps, playerwarp]
     usage: "/pwarp <set/delete/list>"
+  rtp:
+    description: "Random teleport ke lokasi acak"
+    aliases: [tpr]
+    usage: "/rtp"

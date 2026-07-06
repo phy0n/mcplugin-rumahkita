@@ -6,6 +6,7 @@ public class RumahKitaWarpsPlugin extends JavaPlugin {
     
     private static RumahKitaWarpsPlugin instance;
     private WarpManager warpManager;
+    private RtpManager rtpManager;
 
     @Override
     public void onEnable() {
@@ -22,6 +23,10 @@ public class RumahKitaWarpsPlugin extends JavaPlugin {
         WarpCommand warpCmd = new WarpCommand(this);
         getCommand("pwarp").setExecutor(warpCmd);
         getCommand("pwarp").setTabCompleter(warpCmd);
+        
+        rtpManager = new RtpManager(this);
+        RtpCommand rtpCmd = new RtpCommand(rtpManager);
+        getCommand("rtp").setExecutor(rtpCmd);
         
         getLogger().info("RumahKitaWarps successfully enabled!");
     }
