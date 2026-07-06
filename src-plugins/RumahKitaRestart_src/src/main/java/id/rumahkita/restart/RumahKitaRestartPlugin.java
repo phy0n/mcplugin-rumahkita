@@ -35,7 +35,7 @@ public class RumahKitaRestartPlugin extends JavaPlugin implements CommandExecuto
                 tick();
             }
         };
-        task.runTaskTimer(this, 20L, 20L); // run every second
+        task.runTaskTimer(this, 20L, 20L);
 
         getLogger().info("RumahKitaRestart enabled.");
     }
@@ -79,20 +79,18 @@ public class RumahKitaRestartPlugin extends JavaPlugin implements CommandExecuto
         if (!restartPending) {
             LocalTime now = LocalTime.now(java.time.ZoneId.of("Asia/Jakarta"));
             LocalTime nowTruncated = now.withSecond(0).withNano(0);
-            
-            // Check if we hit exactly one of the restart times and second is 0
+
             for (LocalTime rt : restartTimes) {
                 if (nowTruncated.equals(rt) && now.getSecond() == 0) {
                     startRestartCountdown(0);
                     break;
                 }
             }
-            
-            // Check warnings based on difference
+
             for (LocalTime rt : restartTimes) {
                 int diffSec = (rt.toSecondOfDay() - now.toSecondOfDay());
                 if (diffSec < 0) {
-                    diffSec += 24 * 3600; // next day
+                    diffSec += 24 * 3600;
                 }
                 
                 if (warningSeconds.contains(diffSec)) {

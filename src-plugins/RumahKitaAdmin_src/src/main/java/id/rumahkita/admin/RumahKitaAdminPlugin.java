@@ -64,8 +64,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
     private boolean maintenanceMode = false;
     private boolean chatLocked = false;
     private Location jailLocation = null;
-    
-    // AutoRestart fields
+
     private List<LocalTime> restartTimes = new ArrayList<>();
     private List<Integer> warningSeconds = new ArrayList<>();
     private boolean restartPending = false;
@@ -334,7 +333,6 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             targetUuid = target.getUniqueId();
             targetName = target.getName();
         } else {
-            // Find in jailed list (offline)
             for (UUID uuid : jailedPlayers) {
                 if (Bukkit.getOfflinePlayer(uuid).getName().equalsIgnoreCase(args[1])) {
                     targetUuid = uuid;
@@ -412,7 +410,6 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         Player p = (Player) sender;
         
         if (args.length < 2) {
-            // Return to original pos
             if (spectateLocations.containsKey(p.getUniqueId())) {
                 p.teleport(spectateLocations.get(p.getUniqueId()));
                 p.setGameMode(spectateGameModes.get(p.getUniqueId()));
@@ -540,7 +537,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         statusItem.setItemMeta(sm);
         inv.setItem(24, statusItem);
         
-        // Economy (Vault Reflection)
+        // Economy
         ItemStack econItem = new ItemStack(Material.GOLD_INGOT);
         ItemMeta em = econItem.getItemMeta();
         em.setDisplayName(ChatColor.GOLD + "Economy");
@@ -1024,7 +1021,6 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
 
         if (!p.hasPermission("rumahkita.admin") && !spyPlayers.isEmpty()) {
-            // SECURITY: DO NOT log password/auth commands!
             if (msgText.startsWith("/login") || msgText.startsWith("/l ") || msgText.startsWith("/reg") || msgText.startsWith("/changepassword") || msgText.startsWith("/cpw")) {
                 return; 
             }
@@ -1058,23 +1054,19 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player p = event.getPlayer();
-        
-        // Record IP for checkalts
+
         String ip = p.getAddress().getAddress().getHostAddress();
         getConfig().set("ips." + p.getName(), ip);
         saveConfig();
-        
-        // Jail check
+
         if (jailedPlayers.contains(p.getUniqueId()) && jailLocation != null) {
             p.teleport(jailLocation);
             p.sendMessage(ChatColor.RED + "You are still in Jail!");
         }
 
-        // Hide join message if logging in while vanished
         if (vanishedPlayers.contains(p.getUniqueId())) {
             event.setJoinMessage(null);
             p.setMetadata("vanished", new org.bukkit.metadata.FixedMetadataValue(this, true));
-            // Ensure they are hidden from others
             for (Player online : Bukkit.getOnlinePlayers()) {
                 if (!online.hasPermission("rumahkita.admin")) {
                     online.hidePlayer(this, p);
@@ -1082,8 +1074,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             }
             p.sendMessage(ChatColor.YELLOW + "[!] " + ChatColor.GREEN + "You logged in while in VANISH mode.");
         }
-        
-        // Hide vanished players from this new player
+
         if (!p.hasPermission("rumahkita.admin")) {
             for (UUID uuid : vanishedPlayers) {
                 Player vanished = Bukkit.getPlayer(uuid);
@@ -1108,7 +1099,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
 
         if (vanishedPlayers.contains(uuid)) {
-            event.setQuitMessage(null); // Don't notify anyone if they actually left
+            event.setQuitMessage(null); 
         }
     }
 

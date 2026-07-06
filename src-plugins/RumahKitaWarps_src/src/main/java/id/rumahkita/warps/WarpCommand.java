@@ -80,8 +80,6 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
             manager.deleteWarp(p, args[1]);
             return true;
         }
-
-        // If it's not a known sub-command, assume it's a warp name
         manager.teleportToWarp(p, sub);
         return true;
     }
@@ -97,8 +95,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
             options.add("delete");
             options.add("list");
             options.add("help");
-            
-            // Add all warp names
+
             WarpManager manager = plugin.getWarpManager();
             options.addAll(manager.getWarpNames());
             

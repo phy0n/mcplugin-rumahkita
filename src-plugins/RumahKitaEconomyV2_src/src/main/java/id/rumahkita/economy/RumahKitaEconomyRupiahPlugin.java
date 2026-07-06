@@ -1432,11 +1432,6 @@ TabExecutor {
         return true;
     }
 
-    /*
-     * Enabled aggressive block sorting
-     * Enabled unnecessary exception pruning
-     * Enabled aggressive exception aggregation
-     */
     private ItemStack decodeItem(String base64) {
         try (BukkitObjectInputStream in = new BukkitObjectInputStream((InputStream)new ByteArrayInputStream(Base64.getDecoder().decode(base64)));){
             Object obj = in.readObject();
@@ -1835,6 +1830,3 @@ TabExecutor {
         }
     }
 }
-
-
-

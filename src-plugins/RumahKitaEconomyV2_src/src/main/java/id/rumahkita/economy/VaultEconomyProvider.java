@@ -32,7 +32,7 @@ public class VaultEconomyProvider implements Economy {
 
     @Override
     public int fractionalDigits() {
-        return 0; // Rupiah doesn't use fractional digits in this plugin
+        return 0; 
     }
 
     @Override
@@ -52,7 +52,7 @@ public class VaultEconomyProvider implements Economy {
 
     @Override
     public boolean hasAccount(String playerName) {
-        return true; // We auto-create accounts
+        return true; 
     }
 
     @Override

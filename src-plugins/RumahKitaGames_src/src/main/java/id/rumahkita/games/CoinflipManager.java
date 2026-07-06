@@ -43,7 +43,6 @@ public class CoinflipManager implements Listener {
             return;
         }
 
-        // Take money
         economy.takeBalance(p.getUniqueId(), amount);
 
         CoinflipGame game = new CoinflipGame(p.getUniqueId(), p.getName(), amount, side, null);
@@ -133,10 +132,8 @@ public class CoinflipManager implements Listener {
             return;
         }
 
-        // Take money
         economy.takeBalance(p.getUniqueId(), game.amount);
-        
-        // Remove game from active list
+
         activeGames.remove(target.getUniqueId());
 
         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
@@ -147,13 +144,12 @@ public class CoinflipManager implements Listener {
         Player loser = game.side.equalsIgnoreCase(winningSide) ? p : target;
         
         long totalPot = game.amount * 2;
-        long tax = (long) (totalPot * 0.05); // 5% tax to sink money
+        long tax = (long) (totalPot * 0.05); 
         long winAmount = totalPot - tax;
 
-        // Animation Runnable
         new BukkitRunnable() {
             int ticks = 0;
-            int maxTicks = 20; // 20 iterations * 2 ticks = 40 ticks = 2 seconds
+            int maxTicks = 20;
             
             @Override
             public void run() {
@@ -174,7 +170,6 @@ public class CoinflipManager implements Listener {
                     }
                     ticks++;
                 } else {
-                    // Give money to winner
                     economy.addBalance(winner.getUniqueId(), winAmount);
 
                     Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 

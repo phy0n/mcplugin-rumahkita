@@ -104,7 +104,6 @@ public class WarpManager implements Listener {
             return false;
         }
 
-        // Limit 1 warp per player for now
         for (PlayerWarp w : warps.values()) {
             if (w.owner.equals(p.getUniqueId())) {
                 p.sendMessage(getPrefix() + ChatColor.RED + "Kamu sudah memiliki warp! Hapus dulu dengan /pwarp delete " + w.name);
@@ -219,7 +218,6 @@ public class WarpManager implements Listener {
                     return;
                 }
 
-                // Check if player moved (simple distance check)
                 if (startLoc.distanceSquared(p.getLocation()) > 1.0) {
                     p.sendMessage(getPrefix() + ChatColor.RED + "Teleportasi dibatalkan karena kamu bergerak.");
                     this.cancel();
