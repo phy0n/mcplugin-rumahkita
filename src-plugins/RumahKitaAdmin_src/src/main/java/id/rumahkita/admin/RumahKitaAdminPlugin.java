@@ -197,6 +197,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             case "allowalt": return handleAllowAlt(sender, args);
             case "blockalt": return handleBlockAlt(sender, args);
             case "unblockalt": return handleUnblockAlt(sender, args);
+            case "setmainaccount": return handleSetMain(sender, args);
             case "blockip": return handleBlockIp(sender, args);
             case "unblockip": return handleUnblockIp(sender, args);
             case "vpn": return handleVpn(sender, args);
@@ -243,7 +244,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 List<String> subs = Arrays.asList(
                     "checkip", "checkalts", "clearchat", "freeze", "invsee", "ec", "kick", "broadcast", 
                     "vanish", "smite", "troll", "heal", "fly", "speed", "mute", "spy", "god", "maintenance",
-                    "chatlock", "setjail", "jail", "unjail", "warn", "inspect", "sudo", "spectate", "restart", "reload", "allowalt", "blockalt", "unblockalt", "blockip", "unblockip", "vpn"
+                    "chatlock", "setjail", "jail", "unjail", "warn", "inspect", "sudo", "spectate", "restart", "reload", "allowalt", "blockalt", "unblockalt", "setmainaccount", "blockip", "unblockip", "vpn"
                 );
                 return subs.stream().filter(s -> s.startsWith(args[0].toLowerCase())).collect(Collectors.toList());
             } else if (args.length == 2) {
@@ -253,7 +254,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 } else if (sub.equals("vpn")) {
                     return Arrays.asList("check", "allow", "remove", "on", "off").stream().filter(s -> s.startsWith(args[1].toLowerCase())).collect(Collectors.toList());
                 }
-                List<String> targetCommands = Arrays.asList("checkip", "checkalts", "allowalt", "blockalt", "unblockalt", "freeze", "invsee", "ec", "kick", "smite", "troll", "heal", "fly", "mute", "jail", "unjail", "warn", "inspect", "sudo", "spectate");
+                List<String> targetCommands = Arrays.asList("checkip", "checkalts", "allowalt", "blockalt", "unblockalt", "setmainaccount", "freeze", "invsee", "ec", "kick", "smite", "troll", "heal", "fly", "mute", "jail", "unjail", "warn", "inspect", "sudo", "spectate");
                 if (targetCommands.contains(sub)) {
                     return Bukkit.getOnlinePlayers().stream().map(Player::getName).filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase())).collect(Collectors.toList());
                 } else if (sub.equals("speed")) {
@@ -287,6 +288,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         sender.sendMessage(ChatColor.GREEN + " /rka inspect <p> " + ChatColor.GRAY + "- Inspect player stats.");
         sender.sendMessage(ChatColor.GREEN + " /rka checkip <p> " + ChatColor.GRAY + "- Check real IP.");
         sender.sendMessage(ChatColor.GREEN + " /rka checkalts <p> " + ChatColor.GRAY + "- Find alt accounts.");
+        sender.sendMessage(ChatColor.GREEN + " /rka setmainaccount <p> " + ChatColor.GRAY + "- Set player as Main Account.");
         sender.sendMessage(ChatColor.GREEN + " /rka allowalt <p> <alt> " + ChatColor.GRAY + "- Bypass alt limit (Whitelist IP).");
         sender.sendMessage(ChatColor.GREEN + " /rka blockalt <p> <alt> " + ChatColor.GRAY + "- Block alt forever.");
         sender.sendMessage(ChatColor.GREEN + " /rka unblockalt <alt> " + ChatColor.GRAY + "- Unblock an alt account.");
@@ -960,7 +962,14 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
 
         sender.sendMessage(ChatColor.DARK_GRAY + "--------------------------------------------------");
-        sender.sendMessage(ChatColor.AQUA + "Alt Accounts for " + ChatColor.YELLOW + targetName + ChatColor.AQUA + " (IP: " + targetIp + ")");
+        String mainAcc = dataConfig.getString("main_accounts." + ipKey);
+        if (mainAcc != null && mainAcc.equalsIgnoreCase(targetName)) {
+            sender.sendMessage(ChatColor.AQUA + "Alt Accounts for " + ChatColor.YELLOW + ChatColor.BOLD + targetName + ChatColor.AQUA + " (IP: " + targetIp + ") " + ChatColor.GOLD + "[MAIN]");
+        } else if (mainAcc != null) {
+            sender.sendMessage(ChatColor.AQUA + "Alt Accounts for " + ChatColor.YELLOW + targetName + ChatColor.AQUA + " (IP: " + targetIp + ") | " + ChatColor.GOLD + "Main Account: " + mainAcc);
+        } else {
+            sender.sendMessage(ChatColor.AQUA + "Alt Accounts for " + ChatColor.YELLOW + targetName + ChatColor.AQUA + " (IP: " + targetIp + ")");
+        }
         if (alts.isEmpty()) {
             sender.sendMessage(ChatColor.GRAY + "No alt accounts found on this IP.");
         } else {
@@ -1044,6 +1053,27 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             sender.sendMessage(ChatColor.RED + "Akun " + altAcc + " was not found in the blocklist.");
         }
         
+        return true;
+    }
+
+    private boolean handleSetMain(CommandSender sender, String[] args) {
+        if (args.length < 2) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka setmainaccount <account>");
+            return true;
+        }
+        String targetName = args[1];
+        String ip = dataConfig.getString("player_ips." + targetName);
+        if (ip == null) {
+            sender.sendMessage(ChatColor.RED + "IP Data not found for account: " + targetName);
+            return true;
+        }
+        
+        String ipKey = ip.replace(".", "_");
+        dataConfig.set("main_accounts." + ipKey, targetName);
+        saveDataConfig();
+        
+        sender.sendMessage(ChatColor.GREEN + "Successfully set " + ChatColor.YELLOW + targetName + ChatColor.GREEN + " as the Main Account for IP " + ip);
+        logModeration("SETMAIN: " + sender.getName() + " set " + targetName + " as main account for " + ip);
         return true;
     }
 
@@ -1399,7 +1429,9 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         int accountCount = accounts.size();
 
         if (!isExisting && accountCount >= 2) {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cConnection Refused!\n\n&fYou have reached the maximum limit of &e2 Accounts &fper IP.\n&7Please use your previous main account."));
+            String mainAcc = dataConfig.getString("main_accounts." + ipKey);
+            String extraMsg = mainAcc != null ? "\n&7(Suspected as alt of &e" + mainAcc + "&7)" : "";
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cConnection Refused!\n\n&fYou have reached the maximum limit of &e2 Accounts &fper IP.\n&7Please use your previous main account." + extraMsg));
         }
     }
 
