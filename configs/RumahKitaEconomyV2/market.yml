@@ -1,4 +1,4 @@
-version: 24
+﻿version: 24
 gui:
   main:
     title: '&8&lServer Market'
@@ -18103,6 +18103,34 @@ items:
       max-buy-price: 94
       min-sell-price: 4
       max-sell-price: 16
+      max-change-percent-per-update: 2.0
+      max-change-percent-per-day: 10.0
+      admin-locked-price: false
+    stock:
+      enabled: false
+      current: -1
+      max: -1
+      restock-amount: 0
+      restock-interval-minutes: 0
+  cactus:
+    material: CACTUS
+    display-name: '&fCactus'
+    trade-amount: 1
+    category: farming
+    buy:
+      enabled: true
+      price: 40
+    sell:
+      enabled: true
+      price: 10
+      daily-limit-per-player: 15000
+    pricing:
+      mode: DEMAND
+      demand-enabled: true
+      min-buy-price: 20
+      max-buy-price: 80
+      min-sell-price: 5
+      max-sell-price: 20
       max-change-percent-per-update: 2.0
       max-change-percent-per-day: 10.0
       admin-locked-price: false

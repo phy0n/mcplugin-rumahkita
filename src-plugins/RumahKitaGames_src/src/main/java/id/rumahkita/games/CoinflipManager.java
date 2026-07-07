@@ -25,6 +25,7 @@ public class CoinflipManager implements Listener {
 
     private RumahKitaGamesPlugin plugin;
     private Map<UUID, CoinflipGame> activeGames = new HashMap<>();
+    private Map<UUID, Integer> winStreaks = new HashMap<>();
     private Random random = new Random();
 
     public CoinflipManager(RumahKitaGamesPlugin plugin) {
@@ -171,9 +172,25 @@ public class CoinflipManager implements Listener {
                     ticks++;
                 } else {
                     economy.addBalance(winner.getUniqueId(), winAmount);
+                    
+                    int currentStreak = winStreaks.getOrDefault(winner.getUniqueId(), 0) + 1;
+                    int loserStreak = winStreaks.getOrDefault(loser.getUniqueId(), 0);
+                    
+                    winStreaks.put(winner.getUniqueId(), currentStreak);
+                    winStreaks.put(loser.getUniqueId(), 0);
 
                     Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
                         "&e[Coinflip] &aKoin menunjukkan &b" + winningSide + "&a! &f" + winner.getName() + " &amenang dan mendapatkan &eRp" + winAmount + " &a(Dipotong pajak " + taxPercentage + "%)"));
+                    
+                    if (currentStreak >= 3) {
+                        Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
+                            "&e[Coinflip] &c&l🔥 WOW! &f" + winner.getName() + " &esedang memegang rekor Win Streak &c&l" + currentStreak + "x&e! 🔥"));
+                    }
+                    
+                    if (loserStreak >= 3) {
+                        Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
+                            "&e[Coinflip] &4&l☠ RIP! &fRekor Win Streak &c&l" + loserStreak + "x &fmilik " + loser.getName() + " &ftelah dihentikan oleh &e" + winner.getName() + "&f! ☠"));
+                    }
                     
                     if (winner.isOnline()) {
                         winner.sendTitle(
@@ -183,6 +200,14 @@ public class CoinflipManager implements Listener {
                         );
                         winner.playSound(winner.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 1.0f, 1.0f);
                         winner.sendMessage(ChatColor.GREEN + "Selamat! Kamu memenangkan Coinflip!");
+                        
+                        try {
+                            org.bukkit.entity.Firework fw = winner.getWorld().spawn(winner.getLocation(), org.bukkit.entity.Firework.class);
+                            org.bukkit.inventory.meta.FireworkMeta fwm = fw.getFireworkMeta();
+                            fwm.addEffect(org.bukkit.FireworkEffect.builder().withColor(org.bukkit.Color.YELLOW).withColor(org.bukkit.Color.GREEN).with(org.bukkit.FireworkEffect.Type.STAR).withTrail().build());
+                            fwm.setPower(1);
+                            fw.setFireworkMeta(fwm);
+                        } catch (Exception ignored) {}
                     }
                     if (loser.isOnline()) {
                         loser.sendTitle(

@@ -185,7 +185,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
 
         if (args.length == 0) {
-            sendHelpMenu(sender);
+            sender.sendMessage(ChatColor.RED + "Ketik /rka help untuk bantuan.");
             return true;
         }
 
@@ -227,8 +227,11 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             case "spectate": return handleSpectate(sender, args);
             case "restart": return handleRestart(sender, args);
             case "reload": return handleReload(sender);
-            default:
+            case "help":
                 sendHelpMenu(sender);
+                return true;
+            default:
+                sender.sendMessage(ChatColor.RED + "Ketik /rka help untuk bantuan.");
                 return true;
         }
     }
@@ -351,7 +354,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
 
     private boolean handleJail(CommandSender sender, String[] args) {
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "Usage: /rka jail <player>");
+            sender.sendMessage(ChatColor.RED + "Usage: /rka jail <player> [reason]");
             return true;
         }
         if (jailLocation == null) {
@@ -363,12 +366,17 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             sender.sendMessage(ChatColor.RED + "Player is not online.");
             return true;
         }
+        
+        String reason = args.length > 2 ? String.join(" ", Arrays.copyOfRange(args, 2, args.length)) : "Melanggar peraturan";
+        
         jailedPlayers.add(target.getUniqueId());
         saveJailData();
         target.teleport(jailLocation);
         target.sendMessage(getMsg("messages.jail.jailed", "&cYou have been jailed by an Admin!"));
-        sender.sendMessage(ChatColor.GREEN + target.getName() + " has been jailed.");
-        logModeration("JAIL: " + sender.getName() + " jailed " + target.getName());
+        target.sendTitle(ChatColor.DARK_RED + "DI PENJARA!", ChatColor.YELLOW + "Alasan: " + reason, 10, 100, 20);
+        Bukkit.broadcastMessage(ChatColor.RED + "[RUMAHKITA] " + ChatColor.YELLOW + target.getName() + ChatColor.WHITE + " telah dipenjara karena: " + ChatColor.RED + reason);
+        sender.sendMessage(ChatColor.GREEN + target.getName() + " has been jailed. Reason: " + reason);
+        logModeration("JAIL: " + sender.getName() + " jailed " + target.getName() + " for: " + reason);
         return true;
     }
 
@@ -401,7 +409,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         jailedPlayers.remove(targetUuid);
         saveJailData();
         if (target != null) {
-            target.teleport(target.getWorld().getSpawnLocation());
+            target.performCommand("spawn");
             target.sendMessage(getMsg("messages.jail.unjailed", "&aYou have been unjailed. Don't break the rules again!"));
         }
         sender.sendMessage(ChatColor.GREEN + targetName + " has been unjailed.");
@@ -505,15 +513,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             return true;
         }
         
-        Inventory inv = Bukkit.createInventory(null, 36, "Inspect: " + target.getName());
-        
-        // Armor & Hands
-        inv.setItem(10, target.getInventory().getHelmet());
-        inv.setItem(11, target.getInventory().getChestplate());
-        inv.setItem(12, target.getInventory().getLeggings());
-        inv.setItem(13, target.getInventory().getBoots());
-        inv.setItem(14, target.getInventory().getItemInMainHand());
-        inv.setItem(15, target.getInventory().getItemInOffHand());
+        Inventory inv = Bukkit.createInventory(null, 27, "Inspect: " + target.getName());
         
         // Health & Food
         ItemStack healthItem = new ItemStack(Material.APPLE);
@@ -525,7 +525,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             ChatColor.GRAY + "Gamemode: " + ChatColor.WHITE + target.getGameMode().name()
         ));
         healthItem.setItemMeta(hm);
-        inv.setItem(19, healthItem);
+        inv.setItem(10, healthItem);
         
         // Location
         ItemStack locItem = new ItemStack(Material.COMPASS);
@@ -539,7 +539,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             ChatColor.GRAY + "Z: " + ChatColor.WHITE + loc.getBlockZ()
         ));
         locItem.setItemMeta(lm);
-        inv.setItem(20, locItem);
+        inv.setItem(11, locItem);
         
         // Playtime
         ItemStack timeItem = new ItemStack(Material.CLOCK);
@@ -550,7 +550,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         int minutes = (ticks / (20 * 60)) % 60;
         tm.setLore(Arrays.asList(ChatColor.GRAY + "Time Played: " + ChatColor.WHITE + hours + "h " + minutes + "m"));
         timeItem.setItemMeta(tm);
-        inv.setItem(21, timeItem);
+        inv.setItem(12, timeItem);
         
         // Network & IP
         ItemStack infoItem = new ItemStack(Material.PAPER);
@@ -561,7 +561,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             ChatColor.GRAY + "Ping: " + ChatColor.WHITE + target.getPing() + "ms"
         ));
         infoItem.setItemMeta(im);
-        inv.setItem(22, infoItem);
+        inv.setItem(13, infoItem);
         
         // Moderation Info
         ItemStack modItem = new ItemStack(Material.IRON_BARS);
@@ -575,7 +575,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             ChatColor.GRAY + "Jailed: " + ChatColor.WHITE + (jailedPlayers.contains(target.getUniqueId()) ? "Yes" : "No")
         ));
         modItem.setItemMeta(modm);
-        inv.setItem(23, modItem);
+        inv.setItem(14, modItem);
         
         // Player Status
         ItemStack statusItem = new ItemStack(Material.FEATHER);
@@ -588,7 +588,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             ChatColor.GRAY + "Op: " + ChatColor.WHITE + (target.isOp() ? "Yes" : "No")
         ));
         statusItem.setItemMeta(sm);
-        inv.setItem(24, statusItem);
+        inv.setItem(15, statusItem);
         
         // Economy
         ItemStack econItem = new ItemStack(Material.GOLD_INGOT);
@@ -607,7 +607,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         java.text.NumberFormat formatter = java.text.NumberFormat.getCurrencyInstance(new java.util.Locale("id", "ID"));
         em.setLore(Arrays.asList(ChatColor.GRAY + "Balance: " + ChatColor.GREEN + formatter.format(balance)));
         econItem.setItemMeta(em);
-        inv.setItem(25, econItem);
+        inv.setItem(16, econItem);
         
         p.openInventory(inv);
         return true;
@@ -1317,11 +1317,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             return;
         }
 
-        if (jailedPlayers.contains(p.getUniqueId())) {
-            event.setCancelled(true);
-            p.sendMessage(ChatColor.RED + "You cannot chat while in Jail!");
-            return;
-        }
+
 
         if (staffChatToggled.contains(p.getUniqueId())) {
             event.setCancelled(true);

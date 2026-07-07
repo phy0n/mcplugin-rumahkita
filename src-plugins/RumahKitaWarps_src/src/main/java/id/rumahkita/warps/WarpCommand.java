@@ -30,10 +30,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         String prefix = manager.getPrefix();
 
         if (args.length == 0) {
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e=== &6Bantuan Player Warp &e==="));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/pwarp create <nama_warp> &7- Buat pwarp baru"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/pwarp delete <nama_warp> &7- Hapus warp milikmu"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/pwarp list &7- Buka menu list warp"));
+            p.sendMessage(ChatColor.RED + "Ketik /pwarp help untuk bantuan.");
             return true;
         }
 
@@ -45,10 +42,10 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         }
 
         if (sub.equals("help")) {
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e=== &6Bantuan Player Warp &e==="));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/pwarp create <nama_warp> &7- Buat pwarp baru"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/pwarp delete <nama_warp> &7- Hapus warp milikmu"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/pwarp list &7- Buka menu list warp"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8==== &b&lPlayer Warp &8===="));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp create <nama_warp> &7- Buat pwarp baru"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp delete <nama_warp> &7- Hapus warp milikmu"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp list &7- Buka menu list warp"));
             return true;
         }
 

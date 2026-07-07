@@ -17,3 +17,18 @@ commands:
     description: "RumahKitaWarps Admin Command"
     usage: "/rkw"
     permission: rumahkitawarps.admin
+  warp:
+    description: "Buka menu warp"
+    usage: "/warp [nama]"
+  setwarp:
+    description: "Buat warp server"
+    usage: "/setwarp <nama>"
+    permission: rumahkitawarps.admin
+  delwarp:
+    description: "Hapus warp server"
+    usage: "/delwarp <nama>"
+    permission: rumahkitawarps.admin
+  editwarp:
+    description: "Edit warp (icon, slot, lore)"
+    usage: "/editwarp <nama> <icon/slot/lore> <value>"
+    permission: rumahkitawarps.admin
