@@ -28,7 +28,9 @@ public class RumahKitaWarpsPlugin extends JavaPlugin {
         RtpCommand rtpCmd = new RtpCommand(rtpManager);
         getCommand("rtp").setExecutor(rtpCmd);
         
-        getCommand("rkw").setExecutor(new RkwCommand(this));
+        RkwCommand rkwCmd = new RkwCommand(this);
+        getCommand("rkw").setExecutor(rkwCmd);
+        getCommand("rkw").setTabCompleter(rkwCmd);
         
         getLogger().info("RumahKitaWarps successfully enabled!");
     }

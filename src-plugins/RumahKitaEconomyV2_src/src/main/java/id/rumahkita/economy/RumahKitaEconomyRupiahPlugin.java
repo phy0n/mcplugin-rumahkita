@@ -1756,6 +1756,15 @@ TabExecutor {
             }
             return this.filter(options, args[0]);
         }
+        if (name.equals("bal") || name.equals("pay")) {
+            if (args.length == 1) {
+                List<String> players = new ArrayList<>();
+                for (org.bukkit.entity.Player p : org.bukkit.Bukkit.getOnlinePlayers()) {
+                    players.add(p.getName());
+                }
+                return this.filter(players, args[0]);
+            }
+        }
         if (name.equals("rke")) {
             if (!sender.hasPermission("rumahkita.economy.admin")) {
                 return Collections.emptyList();
@@ -1763,8 +1772,23 @@ TabExecutor {
             if (args.length == 1) {
                 return this.filter(Arrays.asList("give", "take", "set", "balance", "voucher", "reload", "save", "placeholders", "demandupdate", "migratebalances"), args[0]);
             }
-            if (args.length == 2 && args[0].equalsIgnoreCase("voucher")) {
-                return this.filter(Arrays.asList("give", "giveall"), args[1]);
+            if (args.length == 2) {
+                if (args[0].equalsIgnoreCase("voucher")) {
+                    return this.filter(Arrays.asList("give", "giveall"), args[1]);
+                } else if (Arrays.asList("give", "take", "set", "balance").contains(args[0].toLowerCase())) {
+                    List<String> players = new ArrayList<>();
+                    for (org.bukkit.entity.Player p : org.bukkit.Bukkit.getOnlinePlayers()) {
+                        players.add(p.getName());
+                    }
+                    return this.filter(players, args[1]);
+                }
+            }
+            if (args.length == 3 && args[0].equalsIgnoreCase("voucher") && args[1].equalsIgnoreCase("give")) {
+                List<String> players = new ArrayList<>();
+                for (org.bukkit.entity.Player p : org.bukkit.Bukkit.getOnlinePlayers()) {
+                    players.add(p.getName());
+                }
+                return this.filter(players, args[2]);
             }
         }
         return Collections.emptyList();

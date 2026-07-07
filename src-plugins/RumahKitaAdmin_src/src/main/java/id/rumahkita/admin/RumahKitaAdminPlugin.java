@@ -35,6 +35,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import org.bukkit.Statistic;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import java.io.File;
+import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,6 +68,9 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
     private boolean maintenanceMode = false;
     private boolean chatLocked = false;
     private Location jailLocation = null;
+    
+    private File dataFile;
+    private FileConfiguration dataConfig;
 
     private List<LocalTime> restartTimes = new ArrayList<>();
     private List<Integer> warningSeconds = new ArrayList<>();
@@ -81,9 +88,12 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             getCommand("sc").setExecutor(this);
         }
         getServer().getPluginManager().registerEvents(this, this);
+        createDataConfig();
         loadJailData();
         
         saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
+        saveConfig();
         loadRestartConfig();
         restartTask = new org.bukkit.scheduler.BukkitRunnable() {
             @Override
@@ -112,19 +122,40 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         return ChatColor.translateAlternateColorCodes('&', getConfig().getString(path, def));
     }
 
+    private void createDataConfig() {
+        dataFile = new File(getDataFolder(), "data.yml");
+        if (!dataFile.exists()) {
+            dataFile.getParentFile().mkdirs();
+            try {
+                dataFile.createNewFile();
+            } catch (IOException e) {
+                getLogger().severe("Could not create data.yml!");
+            }
+        }
+        dataConfig = YamlConfiguration.loadConfiguration(dataFile);
+    }
+
+    private void saveDataConfig() {
+        try {
+            dataConfig.save(dataFile);
+        } catch (IOException e) {
+            getLogger().severe("Could not save data.yml!");
+        }
+    }
+
     private void loadJailData() {
-        if (getConfig().contains("jail.world")) {
+        if (dataConfig.contains("jail.world")) {
             jailLocation = new Location(
-                Bukkit.getWorld(getConfig().getString("jail.world")),
-                getConfig().getDouble("jail.x"),
-                getConfig().getDouble("jail.y"),
-                getConfig().getDouble("jail.z"),
-                (float) getConfig().getDouble("jail.yaw"),
-                (float) getConfig().getDouble("jail.pitch")
+                Bukkit.getWorld(dataConfig.getString("jail.world")),
+                dataConfig.getDouble("jail.x"),
+                dataConfig.getDouble("jail.y"),
+                dataConfig.getDouble("jail.z"),
+                (float) dataConfig.getDouble("jail.yaw"),
+                (float) dataConfig.getDouble("jail.pitch")
             );
         }
-        if (getConfig().contains("jailed_players")) {
-            for (String uuidStr : getConfig().getStringList("jailed_players")) {
+        if (dataConfig.contains("jailed_players")) {
+            for (String uuidStr : dataConfig.getStringList("jailed_players")) {
                 jailedPlayers.add(UUID.fromString(uuidStr));
             }
         }
@@ -135,8 +166,8 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         for (UUID uuid : jailedPlayers) {
             jailedList.add(uuid.toString());
         }
-        getConfig().set("jailed_players", jailedList);
-        saveConfig();
+        dataConfig.set("jailed_players", jailedList);
+        saveDataConfig();
     }
 
     @Override
@@ -289,13 +320,13 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         if (!(sender instanceof Player)) return true;
         Player p = (Player) sender;
         jailLocation = p.getLocation();
-        getConfig().set("jail.world", jailLocation.getWorld().getName());
-        getConfig().set("jail.x", jailLocation.getX());
-        getConfig().set("jail.y", jailLocation.getY());
-        getConfig().set("jail.z", jailLocation.getZ());
-        getConfig().set("jail.yaw", jailLocation.getYaw());
-        getConfig().set("jail.pitch", jailLocation.getPitch());
-        saveConfig();
+        dataConfig.set("jail.world", jailLocation.getWorld().getName());
+        dataConfig.set("jail.x", jailLocation.getX());
+        dataConfig.set("jail.y", jailLocation.getY());
+        dataConfig.set("jail.z", jailLocation.getZ());
+        dataConfig.set("jail.yaw", jailLocation.getYaw());
+        dataConfig.set("jail.pitch", jailLocation.getPitch());
+        saveDataConfig();
         p.sendMessage(ChatColor.GREEN + "Jail location has been set to your current position.");
         return true;
     }
@@ -794,7 +825,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         if (args.length < 2) return false;
         Player target = Bukkit.getPlayerExact(args[1]);
         if (target == null) {
-            String offlineIp = getConfig().getString("ips." + args[1]);
+            String offlineIp = dataConfig.getString("player_ips." + args[1]);
             if (offlineIp != null) {
                 sender.sendMessage(ChatColor.GREEN + "IP " + args[1] + " (Offline): " + ChatColor.YELLOW + offlineIp);
                 return true;
@@ -812,7 +843,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
         
         String targetName = args[1];
-        String targetIp = getConfig().getString("ips." + targetName);
+        String targetIp = dataConfig.getString("player_ips." + targetName);
         
         Player targetPlayer = Bukkit.getPlayerExact(targetName);
         if (targetPlayer != null) {
@@ -826,18 +857,16 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
 
         List<String> alts = new ArrayList<>();
-        if (getConfig().getConfigurationSection("ips") != null) {
-            for (String name : getConfig().getConfigurationSection("ips").getKeys(false)) {
-                if (name.equalsIgnoreCase(targetName)) continue;
-                String ip = getConfig().getString("ips." + name);
-                if (targetIp.equals(ip)) {
-                    Player p = Bukkit.getPlayerExact(name);
-                    if (p != null) {
-                        alts.add(ChatColor.GREEN + name + ChatColor.GRAY + " (Online)");
-                    } else {
-                        alts.add(ChatColor.GRAY + name + " (Offline)");
-                    }
-                }
+        String ipKey = targetIp.replace(".", "_");
+        List<String> accounts = dataConfig.getStringList("ip_players." + ipKey);
+        
+        for (String name : accounts) {
+            if (name.equalsIgnoreCase(targetName)) continue;
+            Player p = Bukkit.getPlayerExact(name);
+            if (p != null) {
+                alts.add(ChatColor.GREEN + name + ChatColor.GRAY + " (Online)");
+            } else {
+                alts.add(ChatColor.GRAY + name + " (Offline)");
             }
         }
 
@@ -861,10 +890,16 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         String mainAcc = args[1];
         String newAlt = args[2];
         
-        String ip = getConfig().getString("ips." + mainAcc);
+        String ip = dataConfig.getString("player_ips." + mainAcc);
         if (ip != null) {
-            getConfig().set("ips." + newAlt, ip);
-            saveConfig();
+            dataConfig.set("player_ips." + newAlt, ip);
+            String ipKey = ip.replace(".", "_");
+            List<String> accounts = dataConfig.getStringList("ip_players." + ipKey);
+            if (!accounts.contains(newAlt)) {
+                accounts.add(newAlt);
+                dataConfig.set("ip_players." + ipKey, accounts);
+            }
+            saveDataConfig();
             sender.sendMessage(ChatColor.GREEN + "Berhasil memberikan akses bypass alt!");
             sender.sendMessage(ChatColor.GRAY + "Akun " + ChatColor.YELLOW + newAlt + ChatColor.GRAY + " sekarang didaftarkan pada IP milik " + ChatColor.YELLOW + mainAcc + ChatColor.GRAY + ".");
         } else {
@@ -1068,21 +1103,11 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         String ip = event.getAddress().getHostAddress();
         String playerName = event.getPlayer().getName();
         
-        int accountCount = 0;
-        boolean isExisting = false;
+        String ipKey = ip.replace(".", "_");
+        List<String> accounts = dataConfig.getStringList("ip_players." + ipKey);
         
-        if (getConfig().getConfigurationSection("ips") != null) {
-            for (String name : getConfig().getConfigurationSection("ips").getKeys(false)) {
-                if (name.equalsIgnoreCase(playerName)) {
-                    isExisting = true;
-                } else {
-                    String storedIp = getConfig().getString("ips." + name);
-                    if (ip.equals(storedIp)) {
-                        accountCount++;
-                    }
-                }
-            }
-        }
+        boolean isExisting = accounts.contains(playerName);
+        int accountCount = accounts.size();
 
         if (!isExisting && accountCount >= 2) {
             event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cGagal Masuk!\n\n&fAnda sudah mencapai batas maksimal &e2 Akun &fper IP.\n&7Silakan gunakan akun utama anda sebelumnya."));
@@ -1104,8 +1129,15 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         Player p = event.getPlayer();
 
         String ip = p.getAddress().getAddress().getHostAddress();
-        getConfig().set("ips." + p.getName(), ip);
-        saveConfig();
+        dataConfig.set("player_ips." + p.getName(), ip);
+        
+        String ipKey = ip.replace(".", "_");
+        List<String> accounts = dataConfig.getStringList("ip_players." + ipKey);
+        if (!accounts.contains(p.getName())) {
+            accounts.add(p.getName());
+            dataConfig.set("ip_players." + ipKey, accounts);
+        }
+        saveDataConfig();
 
         if (jailedPlayers.contains(p.getUniqueId()) && jailLocation != null) {
             p.teleport(jailLocation);
