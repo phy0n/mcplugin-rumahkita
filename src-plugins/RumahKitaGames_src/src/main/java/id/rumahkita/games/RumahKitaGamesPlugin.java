@@ -16,11 +16,15 @@ public class RumahKitaGamesPlugin extends JavaPlugin {
         
         coinflipManager = new CoinflipManager(this);
         getServer().getPluginManager().registerEvents(coinflipManager, this);
-        getCommand("coinflip").setExecutor(new CoinflipCommand(this));
+        CoinflipCommand cfCmd = new CoinflipCommand(this);
+        getCommand("coinflip").setExecutor(cfCmd);
+        getCommand("coinflip").setTabCompleter(cfCmd);
         
         rpsManager = new RpsManager(this);
         getServer().getPluginManager().registerEvents(rpsManager, this);
-        getCommand("rps").setExecutor(new RpsCommand(this));
+        RpsCommand rpsCmd = new RpsCommand(this);
+        getCommand("rps").setExecutor(rpsCmd);
+        getCommand("rps").setTabCompleter(rpsCmd);
         
         getLogger().info("RumahKitaGames successfully hooked to RumahKitaEconomyV2!");
     }

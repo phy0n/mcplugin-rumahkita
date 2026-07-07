@@ -2,7 +2,7 @@ version: 21
 currency:
   prefix: "Rp"
   thousands-separator: "."
-  starting-balance: 0
+  starting-balance: 10000
 settings:
   min-playtime-hours-to-sell: 5
   transaction-cooldown-ms: 700

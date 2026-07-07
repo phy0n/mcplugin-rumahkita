@@ -160,13 +160,14 @@ public class CoinflipManager implements Listener {
                     String title = ChatColor.translateAlternateColorCodes('&', "&e&lMengacak Koin...");
                     String subtitle = ChatColor.translateAlternateColorCodes('&', color + "&l" + currentSide);
                     
+                    float pitch = (ticks % 2 == 0) ? 1.5f : 2.0f;
                     if (p.isOnline()) {
                         p.sendTitle(title, subtitle, 0, 10, 0);
-                        p.playSound(p.getLocation(), Sound.UI_BUTTON_CLICK, 1.0f, 2.0f);
+                        p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, pitch);
                     }
                     if (target.isOnline()) {
                         target.sendTitle(title, subtitle, 0, 10, 0);
-                        target.playSound(target.getLocation(), Sound.UI_BUTTON_CLICK, 1.0f, 2.0f);
+                        target.playSound(target.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, pitch);
                     }
                     ticks++;
                 } else {
@@ -181,7 +182,7 @@ public class CoinflipManager implements Listener {
                             ChatColor.translateAlternateColorCodes('&', "&e+" + winAmount + " Rupiah"),
                             10, 60, 10
                         );
-                        winner.playSound(winner.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+                        winner.playSound(winner.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 1.0f, 1.0f);
                         winner.sendMessage(ChatColor.GREEN + "Selamat! Kamu memenangkan Coinflip!");
                     }
                     if (loser.isOnline()) {
@@ -190,7 +191,7 @@ public class CoinflipManager implements Listener {
                             ChatColor.translateAlternateColorCodes('&', "&eKoin menunjukkan &b" + winningSide),
                             10, 60, 10
                         );
-                        loser.playSound(loser.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.0f, 1.0f);
+                        loser.playSound(loser.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 0.5f);
                         loser.sendMessage(ChatColor.RED + "Sayang sekali, kamu kalah Coinflip.");
                     }
                     this.cancel();

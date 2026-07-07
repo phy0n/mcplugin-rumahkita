@@ -13,3 +13,7 @@ commands:
     description: "Random teleport ke lokasi acak"
     aliases: [tpr]
     usage: "/rtp"
+  rkw:
+    description: "RumahKitaWarps Admin Command"
+    usage: "/rkw"
+    permission: rumahkitawarps.admin

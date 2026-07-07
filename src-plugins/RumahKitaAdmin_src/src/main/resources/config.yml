@@ -5,8 +5,8 @@
 # Server Auto-Restart Times (HH:mm format)
 # The timezone relies on the server's local machine timezone.
 restart-times:
-  - "07:00"
-  - "19:00"
+  - "06:59"
+  - "18:59"
 
 # How long before restart should warnings appear?
 # Use 'm' for minutes, 's' for seconds

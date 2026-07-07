@@ -660,10 +660,16 @@ TabExecutor {
             return this.noPerm(sender);
         }
         if (args.length == 0) {
+            this.msg(sender, "&a--- Admin Commands ---");
             this.msg(sender, "&a/rke give|take|set|balance <player> <amount>");
             this.msg(sender, "&a/rke voucher give <player> <percent> <amount>");
             this.msg(sender, "&a/rke voucher giveall <percent> <amount>");
             this.msg(sender, "&a/rke reload | save | placeholders | demandupdate | migratebalances");
+            this.msg(sender, "&a--- Player Commands ---");
+            this.msg(sender, "&a/market atau /shop - Buka Menu Ekonomi/Toko");
+            this.msg(sender, "&a/bal atau /money atau /saldo - Cek Saldo");
+            this.msg(sender, "&a/baltop - Peringkat Orang Terkaya");
+            this.msg(sender, "&a/pay <player> <jumlah> - Transfer Uang");
             return true;
         }
         String sub = args[0].toLowerCase(Locale.ROOT);

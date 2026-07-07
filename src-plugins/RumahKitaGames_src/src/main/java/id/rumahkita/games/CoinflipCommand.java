@@ -7,7 +7,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CoinflipCommand implements CommandExecutor {
+import org.bukkit.command.TabCompleter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CoinflipCommand implements CommandExecutor, TabCompleter {
 
     private RumahKitaGamesPlugin plugin;
 
@@ -162,5 +168,45 @@ public class CoinflipCommand implements CommandExecutor {
 
         p.sendMessage(ChatColor.RED + "Sub command tidak diketahui. Ketik /cf untuk bantuan.");
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length == 1) {
+            return Arrays.asList("create", "join", "invite", "accept", "deny", "list", "cancel", "help").stream()
+                    .filter(s -> s.startsWith(args[0].toLowerCase()))
+                    .collect(Collectors.toList());
+        } else if (args.length == 2) {
+            String sub = args[0].toLowerCase();
+            if (sub.equals("join") || sub.equals("invite") || sub.equals("accept") || sub.equals("deny")) {
+                return Bukkit.getOnlinePlayers().stream()
+                        .map(Player::getName)
+                        .filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase()))
+                        .collect(Collectors.toList());
+            } else if (sub.equals("create")) {
+                return Arrays.asList("1000", "5000", "10000").stream()
+                        .filter(s -> s.startsWith(args[1]))
+                        .collect(Collectors.toList());
+            }
+        } else if (args.length == 3) {
+            String sub = args[0].toLowerCase();
+            if (sub.equals("create")) {
+                return Arrays.asList("heads", "tails").stream()
+                        .filter(s -> s.startsWith(args[2].toLowerCase()))
+                        .collect(Collectors.toList());
+            } else if (sub.equals("invite")) {
+                return Arrays.asList("1000", "5000", "10000").stream()
+                        .filter(s -> s.startsWith(args[2]))
+                        .collect(Collectors.toList());
+            }
+        } else if (args.length == 4) {
+            String sub = args[0].toLowerCase();
+            if (sub.equals("invite")) {
+                return Arrays.asList("heads", "tails").stream()
+                        .filter(s -> s.startsWith(args[3].toLowerCase()))
+                        .collect(Collectors.toList());
+            }
+        }
+        return new ArrayList<>();
     }
 }
