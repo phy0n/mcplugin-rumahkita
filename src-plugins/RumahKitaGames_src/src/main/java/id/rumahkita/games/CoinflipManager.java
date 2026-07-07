@@ -143,10 +143,9 @@ public class CoinflipManager implements Listener {
         Player winner = game.side.equalsIgnoreCase(winningSide) ? target : p;
         Player loser = game.side.equalsIgnoreCase(winningSide) ? p : target;
         
-        long totalPot = game.amount * 2;
-        long tax = (long) (totalPot * 0.05); 
-        long winAmount = totalPot - tax;
-
+        double taxPercentage = plugin.getConfig().getDouble("coinflip.tax_percentage", 5.0);
+        long winAmount = (long) (game.amount * 2 * (1.0 - (taxPercentage / 100.0)));
+        
         new BukkitRunnable() {
             int ticks = 0;
             int maxTicks = 20;
@@ -174,7 +173,7 @@ public class CoinflipManager implements Listener {
                     economy.addBalance(winner.getUniqueId(), winAmount);
 
                     Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-                        "&e[Coinflip] &aKoin menunjukkan &b" + winningSide + "&a! &f" + winner.getName() + " &amenang dan mendapatkan &eRp" + winAmount + " &a(Dipotong pajak 5%)"));
+                        "&e[Coinflip] &aKoin menunjukkan &b" + winningSide + "&a! &f" + winner.getName() + " &amenang dan mendapatkan &eRp" + winAmount + " &a(Dipotong pajak " + taxPercentage + "%)"));
                     
                     if (winner.isOnline()) {
                         winner.sendTitle(

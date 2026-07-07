@@ -62,6 +62,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
     private final Set<UUID> spyPlayers = new HashSet<>();
     private final Set<UUID> godPlayers = new HashSet<>();
     private final Set<UUID> jailedPlayers = new HashSet<>();
+    private final Map<UUID, org.bukkit.permissions.PermissionAttachment> vanishPerms = new HashMap<>();
     private final Map<UUID, Location> spectateLocations = new HashMap<>();
     private final Map<UUID, GameMode> spectateGameModes = new HashMap<>();
     
@@ -72,7 +73,9 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
     private File dataFile;
     private FileConfiguration dataConfig;
 
-    private List<LocalTime> restartTimes = new ArrayList<>();
+    private List<java.time.LocalTime> restartTimes = new java.util.ArrayList<>();
+    private java.util.Map<java.util.UUID, Long> lastChatTimes = new java.util.HashMap<>();
+    private java.util.Map<java.util.UUID, String> lastMessages = new java.util.HashMap<>();
     private List<Integer> warningSeconds = new ArrayList<>();
     private boolean restartPending = false;
     private int secondsUntilRestart = -1;
@@ -192,6 +195,11 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             case "checkip": return handleCheckIp(sender, args);
             case "checkalts": return handleCheckAlts(sender, args);
             case "allowalt": return handleAllowAlt(sender, args);
+            case "blockalt": return handleBlockAlt(sender, args);
+            case "unblockalt": return handleUnblockAlt(sender, args);
+            case "blockip": return handleBlockIp(sender, args);
+            case "unblockip": return handleUnblockIp(sender, args);
+            case "vpn": return handleVpn(sender, args);
             case "clearchat": return handleClearChat(sender);
             case "freeze": return handleFreeze(sender, args);
             case "invsee": return handleInvsee(sender, args);
@@ -235,15 +243,17 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 List<String> subs = Arrays.asList(
                     "checkip", "checkalts", "clearchat", "freeze", "invsee", "ec", "kick", "broadcast", 
                     "vanish", "smite", "troll", "heal", "fly", "speed", "mute", "spy", "god", "maintenance",
-                    "chatlock", "setjail", "jail", "unjail", "warn", "inspect", "sudo", "spectate", "restart", "reload", "allowalt"
+                    "chatlock", "setjail", "jail", "unjail", "warn", "inspect", "sudo", "spectate", "restart", "reload", "allowalt", "blockalt", "unblockalt", "blockip", "unblockip", "vpn"
                 );
                 return subs.stream().filter(s -> s.startsWith(args[0].toLowerCase())).collect(Collectors.toList());
             } else if (args.length == 2) {
                 String sub = args[0].toLowerCase();
                 if (sub.equals("restart")) {
                     return Arrays.asList("now", "time", "cancel", "reload").stream().filter(s -> s.startsWith(args[1].toLowerCase())).collect(Collectors.toList());
+                } else if (sub.equals("vpn")) {
+                    return Arrays.asList("check", "allow", "remove", "on", "off").stream().filter(s -> s.startsWith(args[1].toLowerCase())).collect(Collectors.toList());
                 }
-                List<String> targetCommands = Arrays.asList("checkip", "checkalts", "allowalt", "freeze", "invsee", "ec", "kick", "smite", "troll", "heal", "fly", "mute", "jail", "unjail", "warn", "inspect", "sudo", "spectate");
+                List<String> targetCommands = Arrays.asList("checkip", "checkalts", "allowalt", "blockalt", "unblockalt", "freeze", "invsee", "ec", "kick", "smite", "troll", "heal", "fly", "mute", "jail", "unjail", "warn", "inspect", "sudo", "spectate");
                 if (targetCommands.contains(sub)) {
                     return Bukkit.getOnlinePlayers().stream().map(Player::getName).filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase())).collect(Collectors.toList());
                 } else if (sub.equals("speed")) {
@@ -277,7 +287,13 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         sender.sendMessage(ChatColor.GREEN + " /rka inspect <p> " + ChatColor.GRAY + "- Inspect player stats.");
         sender.sendMessage(ChatColor.GREEN + " /rka checkip <p> " + ChatColor.GRAY + "- Check real IP.");
         sender.sendMessage(ChatColor.GREEN + " /rka checkalts <p> " + ChatColor.GRAY + "- Find alt accounts.");
-        sender.sendMessage(ChatColor.GREEN + " /rka allowalt <p> " + ChatColor.GRAY + "- Bypass alt limit (Delete IP data).");
+        sender.sendMessage(ChatColor.GREEN + " /rka allowalt <p> <alt> " + ChatColor.GRAY + "- Bypass alt limit (Whitelist IP).");
+        sender.sendMessage(ChatColor.GREEN + " /rka blockalt <p> <alt> " + ChatColor.GRAY + "- Block alt forever.");
+        sender.sendMessage(ChatColor.GREEN + " /rka unblockalt <alt> " + ChatColor.GRAY + "- Unblock an alt account.");
+        sender.sendMessage(ChatColor.GREEN + " /rka blockip <ip> " + ChatColor.GRAY + "- Permanently block IP.");
+        sender.sendMessage(ChatColor.GREEN + " /rka unblockip <ip> " + ChatColor.GRAY + "- Unblock an IP.");
+        sender.sendMessage(ChatColor.GREEN + " /rka vpn <on/off/allow/remove> " + ChatColor.GRAY + "- Anti-VPN system.");
+        sender.sendMessage(ChatColor.DARK_GRAY + "--------------------------------------------------");
         sender.sendMessage(ChatColor.GREEN + " /rka invsee/ec <p> " + ChatColor.GRAY + "- View inv/enderchest.");
 
         sender.sendMessage(ChatColor.YELLOW + "\nAdmin Utility");
@@ -350,6 +366,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         target.teleport(jailLocation);
         target.sendMessage(getMsg("messages.jail.jailed", "&cYou have been jailed by an Admin!"));
         sender.sendMessage(ChatColor.GREEN + target.getName() + " has been jailed.");
+        logModeration("JAIL: " + sender.getName() + " jailed " + target.getName());
         return true;
     }
 
@@ -386,6 +403,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             target.sendMessage(getMsg("messages.jail.unjailed", "&aYou have been unjailed. Don't break the rules again!"));
         }
         sender.sendMessage(ChatColor.GREEN + targetName + " has been unjailed.");
+        logModeration("UNJAIL: " + sender.getName() + " unjailed " + targetName);
         return true;
     }
 
@@ -409,8 +427,8 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         target.sendTitle(title, ChatColor.YELLOW + reason, 10, 70, 20);
         target.sendMessage(ChatColor.RED + "You have received a warning: " + ChatColor.YELLOW + reason);
         target.sendMessage(ChatColor.RED + "Total Warnings: " + warnings + "/" + max);
-        
         sender.sendMessage(ChatColor.GREEN + "Warned " + target.getName() + ". Total warnings: " + warnings);
+        logModeration("WARN: " + sender.getName() + " warned " + target.getName() + " for: " + reason + " (Total: " + warnings + ")");
 
         if (warnings >= max) {
             String kickMsg = getMsg("messages.warn.kick-message", "&cYou have been kicked for reaching maximum warnings.\n&fReason: &e%reason%").replace("%reason%", reason);
@@ -593,6 +611,75 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         return true;
     }
     
+    @EventHandler(priority = EventPriority.HIGH)
+    public void onAsyncPreLogin(org.bukkit.event.player.AsyncPlayerPreLoginEvent event) {
+        String ip = event.getAddress().getHostAddress();
+        
+        List<String> blockedIps = dataConfig.getStringList("blocked_ips");
+        if (blockedIps.contains(ip)) {
+            event.disallow(org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result.KICK_BANNED, 
+                ChatColor.translateAlternateColorCodes('&', "&cConnection Refused!\n\n&fYour IP Address has been permanently blocked from this server."));
+            return;
+        }
+
+        if (!getConfig().getBoolean("settings.anti-vpn.enabled", true)) return;
+        if (ip.equals("127.0.0.1") || ip.startsWith("192.168.") || ip.startsWith("10.")) return;
+        
+        List<String> cleanIps = dataConfig.getStringList("vpn_cache.clean_ips");
+        if (cleanIps.contains(ip)) return;
+        
+        List<String> proxyIps = dataConfig.getStringList("vpn_cache.proxy_ips");
+        String kickMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("settings.anti-vpn.kick-message", "&cConnection Refused!\n\n&fSystem detected VPN / Proxy usage."));
+        
+        if (proxyIps.contains(ip)) {
+            event.disallow(org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result.KICK_BANNED, kickMsg);
+            return;
+        }
+
+        try {
+            java.net.URL url = new java.net.URL("http://ip-api.com/json/" + ip + "?fields=proxy,hosting");
+            java.net.HttpURLConnection con = (java.net.HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            con.setConnectTimeout(3000);
+            con.setReadTimeout(3000);
+            
+            java.io.BufferedReader in = new java.io.BufferedReader(new java.io.InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            con.disconnect();
+            
+            String json = content.toString();
+            if (json.contains("\"proxy\":true") || json.contains("\"hosting\":true")) {
+                event.disallow(org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result.KICK_BANNED, kickMsg);
+                getLogger().warning("Anti-VPN memblokir login dari: " + event.getName() + " (" + ip + ")");
+                Bukkit.getScheduler().runTask(this, () -> {
+                    logModeration("ANTI-VPN: Blocked " + event.getName() + " (" + ip + ")");
+                    List<String> bads = dataConfig.getStringList("vpn_cache.proxy_ips");
+                    if (!bads.contains(ip)) {
+                        bads.add(ip);
+                        dataConfig.set("vpn_cache.proxy_ips", bads);
+                        saveDataConfig();
+                    }
+                });
+            } else {
+                Bukkit.getScheduler().runTask(this, () -> {
+                    List<String> ips = dataConfig.getStringList("vpn_cache.clean_ips");
+                    if (!ips.contains(ip)) {
+                        ips.add(ip);
+                        dataConfig.set("vpn_cache.clean_ips", ips);
+                        saveDataConfig();
+                    }
+                });
+            }
+        } catch (Exception e) {
+            getLogger().warning("Anti-VPN API Timeout untuk IP: " + ip);
+        }
+    }
+
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         if (event.getView().getTitle().startsWith("Inspect: ")) {
@@ -617,10 +704,12 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             mutedPlayers.remove(uuid);
             sender.sendMessage(ChatColor.GREEN + target.getName() + " has been unmuted.");
             target.sendMessage(getMsg("messages.mute.unmuted", "&aYou have been unmuted. You can chat again."));
+            logModeration("UNMUTE: " + sender.getName() + " unmuted " + target.getName());
         } else {
             mutedPlayers.add(uuid);
             sender.sendMessage(ChatColor.GREEN + target.getName() + " has been muted.");
             target.sendMessage(getMsg("messages.mute.muted", "&cYou have been muted by an Admin! You cannot send messages."));
+            logModeration("MUTE: " + sender.getName() + " muted " + target.getName());
         }
         return true;
     }
@@ -884,7 +973,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
 
     private boolean handleAllowAlt(CommandSender sender, String[] args) {
         if (args.length < 3) {
-            sender.sendMessage(ChatColor.RED + "Penggunaan: /rka allowalt <akun lama> <akun baru>");
+            sender.sendMessage(ChatColor.RED + "Usage: /rka allowalt <main account> <alt account>");
             return true;
         }
         String mainAcc = args[1];
@@ -900,10 +989,153 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 dataConfig.set("ip_players." + ipKey, accounts);
             }
             saveDataConfig();
-            sender.sendMessage(ChatColor.GREEN + "Berhasil memberikan akses bypass alt!");
-            sender.sendMessage(ChatColor.GRAY + "Akun " + ChatColor.YELLOW + newAlt + ChatColor.GRAY + " sekarang didaftarkan pada IP milik " + ChatColor.YELLOW + mainAcc + ChatColor.GRAY + ".");
+            sender.sendMessage(ChatColor.GREEN + "Successfully granted alt bypass access!");
+            sender.sendMessage(ChatColor.GRAY + "Akun " + ChatColor.YELLOW + newAlt + ChatColor.GRAY + " is now registered to the IP of " + ChatColor.YELLOW + mainAcc + ChatColor.GRAY + ".");
         } else {
-            sender.sendMessage(ChatColor.RED + "Data IP tidak ditemukan untuk akun: " + mainAcc);
+            sender.sendMessage(ChatColor.RED + "IP Data not found for account: " + mainAcc);
+        }
+        return true;
+    }
+
+    private boolean handleBlockAlt(CommandSender sender, String[] args) {
+        if (args.length < 3) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka blockalt <main account> <alt account>");
+            return true;
+        }
+        String mainAcc = args[1];
+        String altAcc = args[2];
+        
+        List<String> blocked = dataConfig.getStringList("blocked_alts");
+        if (!blocked.contains(altAcc.toLowerCase())) {
+            blocked.add(altAcc.toLowerCase());
+            dataConfig.set("blocked_alts", blocked);
+            saveDataConfig();
+        }
+        
+        sender.sendMessage(ChatColor.GREEN + "Successfully blocked alt!");
+        sender.sendMessage(ChatColor.GRAY + "Akun " + ChatColor.RED + altAcc + ChatColor.GRAY + " will now be permanently blocked (Suspected as 3rd alt of " + ChatColor.YELLOW + mainAcc + ChatColor.GRAY + ").");
+        
+        logModeration("BLOCKALT: " + sender.getName() + " blocked alt " + altAcc + " (Main: " + mainAcc + ")");
+        
+        Player p = Bukkit.getPlayerExact(altAcc);
+        if (p != null) {
+            p.kickPlayer(ChatColor.translateAlternateColorCodes('&', "&cGagal Masuk!\n\n&fAkun ini terdeteksi sebagai akun ke-3 atau lebih.\n&7Batas maksimal adalah 2 Akun."));
+        }
+        
+        return true;
+    }
+
+    private boolean handleUnblockAlt(CommandSender sender, String[] args) {
+        if (args.length < 2) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka unblockalt <alt account>");
+            return true;
+        }
+        String altAcc = args[1].toLowerCase();
+        
+        List<String> blocked = dataConfig.getStringList("blocked_alts");
+        if (blocked.contains(altAcc)) {
+            blocked.remove(altAcc);
+            dataConfig.set("blocked_alts", blocked);
+            saveDataConfig();
+            sender.sendMessage(ChatColor.GREEN + "Successfully unblocked alt!");
+            sender.sendMessage(ChatColor.GRAY + "Akun " + ChatColor.YELLOW + altAcc + ChatColor.GRAY + " has been removed from the blocklist and can now join.");
+            logModeration("UNBLOCKALT: " + sender.getName() + " unblocked alt " + altAcc);
+        } else {
+            sender.sendMessage(ChatColor.RED + "Akun " + altAcc + " was not found in the blocklist.");
+        }
+        
+        return true;
+    }
+
+    private boolean handleBlockIp(CommandSender sender, String[] args) {
+        if (args.length < 2) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka blockip <ip>");
+            return true;
+        }
+        String ip = args[1];
+        List<String> blockedIps = dataConfig.getStringList("blocked_ips");
+        if (!blockedIps.contains(ip)) {
+            blockedIps.add(ip);
+            dataConfig.set("blocked_ips", blockedIps);
+            saveDataConfig();
+            sender.sendMessage(ChatColor.GREEN + "IP " + ip + " successfully blocked.");
+            logModeration("BLOCKIP: " + sender.getName() + " blocked IP " + ip);
+        } else {
+            sender.sendMessage(ChatColor.RED + "The IP is already in the blocklist.");
+        }
+        return true;
+    }
+
+    private boolean handleUnblockIp(CommandSender sender, String[] args) {
+        if (args.length < 2) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka unblockip <ip>");
+            return true;
+        }
+        String ip = args[1];
+        List<String> blockedIps = dataConfig.getStringList("blocked_ips");
+        if (blockedIps.contains(ip)) {
+            blockedIps.remove(ip);
+            dataConfig.set("blocked_ips", blockedIps);
+            saveDataConfig();
+            sender.sendMessage(ChatColor.GREEN + "IP " + ip + " successfully unblocked.");
+            logModeration("UNBLOCKIP: " + sender.getName() + " unblocked IP " + ip);
+        } else {
+            sender.sendMessage(ChatColor.RED + "The IP is not in the blocklist.");
+        }
+        return true;
+    }
+
+    private boolean handleVpn(CommandSender sender, String[] args) {
+        if (args.length < 2) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka vpn <on/off/allow/remove> [ip]");
+            return true;
+        }
+        String action = args[1].toLowerCase();
+        
+        if (action.equals("on")) {
+            getConfig().set("settings.anti-vpn.enabled", true);
+            saveConfig();
+            sender.sendMessage(ChatColor.GREEN + "Anti-VPN system has been ENABLED!");
+            logModeration("VPN TOGGLE: " + sender.getName() + " enabled Anti-VPN");
+            return true;
+        } else if (action.equals("off")) {
+            getConfig().set("settings.anti-vpn.enabled", false);
+            saveConfig();
+            sender.sendMessage(ChatColor.RED + "Anti-VPN system has been DISABLED!");
+            logModeration("VPN TOGGLE: " + sender.getName() + " disabled Anti-VPN");
+            return true;
+        }
+
+        if (args.length < 3) {
+            sender.sendMessage(ChatColor.RED + "Usage: /rka vpn <allow/remove> <ip>");
+            return true;
+        }
+        
+        String ip = args[2];
+        List<String> cleanIps = dataConfig.getStringList("vpn_cache.clean_ips");
+        
+        if (action.equals("allow")) {
+            if (!cleanIps.contains(ip)) {
+                cleanIps.add(ip);
+                dataConfig.set("vpn_cache.clean_ips", cleanIps);
+                saveDataConfig();
+                sender.sendMessage(ChatColor.GREEN + "IP " + ip + " added to VPN whitelist.");
+                logModeration("VPN ALLOW: " + sender.getName() + " whitelisted IP " + ip);
+            } else {
+                sender.sendMessage(ChatColor.RED + "The IP is already in the VPN whitelist.");
+            }
+        } else if (action.equals("remove")) {
+            if (cleanIps.contains(ip)) {
+                cleanIps.remove(ip);
+                dataConfig.set("vpn_cache.clean_ips", cleanIps);
+                saveDataConfig();
+                sender.sendMessage(ChatColor.GREEN + "IP " + ip + " removed from VPN whitelist.");
+                logModeration("VPN REMOVE: " + sender.getName() + " removed IP " + ip + " from VPN whitelist");
+            } else {
+                sender.sendMessage(ChatColor.RED + "The IP is not in the VPN whitelist.");
+            }
+        } else {
+            sender.sendMessage(ChatColor.RED + "Unknown action. Use: on, off, allow, or remove.");
         }
         return true;
     }
@@ -969,6 +1201,10 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
             vanishedPlayers.remove(uuid);
             for (Player p : Bukkit.getOnlinePlayers()) p.showPlayer(this, target);
             if (target.hasMetadata("vanished")) target.removeMetadata("vanished", this);
+            if (vanishPerms.containsKey(uuid)) {
+                target.removeAttachment(vanishPerms.get(uuid));
+                vanishPerms.remove(uuid);
+            }
             Bukkit.broadcastMessage(ChatColor.YELLOW + target.getName() + " joined the game");
             sender.sendMessage(ChatColor.GREEN + "You are now visible (Unvanished).");
         } else {
@@ -977,6 +1213,9 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 if (!p.hasPermission("rumahkita.admin")) p.hidePlayer(this, target);
             }
             target.setMetadata("vanished", new org.bukkit.metadata.FixedMetadataValue(this, true));
+            org.bukkit.permissions.PermissionAttachment attachment = target.addAttachment(this);
+            attachment.setPermission("essentials.afk.auto", false);
+            vanishPerms.put(uuid, attachment);
             Bukkit.broadcastMessage(ChatColor.YELLOW + target.getName() + " left the game");
             sender.sendMessage(ChatColor.GREEN + "You are now hidden from normal players (Vanished).");
         }
@@ -1063,6 +1302,49 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         if (mutedPlayers.contains(p.getUniqueId())) {
             event.setCancelled(true);
             p.sendMessage(getMsg("messages.mute.cannot-chat", "&cYou cannot send messages because you are muted by an Admin."));
+            return;
+        }
+        
+        if (!p.hasPermission("rumahkita.admin")) {
+            long now = System.currentTimeMillis();
+            long lastTime = lastChatTimes.getOrDefault(p.getUniqueId(), 0L);
+            if (now - lastTime < 3000) {
+                event.setCancelled(true);
+                p.sendMessage(ChatColor.RED + "Please do not spam! Wait 3 seconds.");
+                return;
+            }
+            
+            String msg = event.getMessage();
+            if (msg.equalsIgnoreCase(lastMessages.get(p.getUniqueId()))) {
+                event.setCancelled(true);
+                p.sendMessage(ChatColor.RED + "Tolong jangan mengirim pesan yang sama berulang kali!");
+                return;
+            }
+            
+            if (msg.length() >= 5) {
+                int caps = 0;
+                for (char c : msg.toCharArray()) {
+                    if (Character.isUpperCase(c)) caps++;
+                }
+                if ((double) caps / msg.length() > 0.6) {
+                    event.setMessage(msg.toLowerCase());
+                    p.sendMessage(ChatColor.YELLOW + "Pesanmu diubah menjadi huruf kecil otomatis (Anti-Capslock).");
+                }
+            }
+            
+            String lowerMsg = event.getMessage().toLowerCase();
+            List<String> badwords = Arrays.asList("anjing", "babi", "kontol", "memek", "bangsat", "ngentot", "tolol", "goblok");
+            for (String bw : badwords) {
+                if (lowerMsg.contains(bw)) {
+                    StringBuilder censored = new StringBuilder();
+                    for (int i = 0; i < bw.length(); i++) censored.append("*");
+                    event.setMessage(event.getMessage().replaceAll("(?i)" + bw, censored.toString()));
+                    p.sendMessage(ChatColor.RED + "Tolong jaga ucapanmu di server!");
+                }
+            }
+            
+            lastChatTimes.put(p.getUniqueId(), now);
+            lastMessages.put(p.getUniqueId(), msg);
         }
     }
 
@@ -1100,8 +1382,15 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
 
         if (event.getPlayer().hasPermission("rumahkita.admin")) return;
 
-        String ip = event.getAddress().getHostAddress();
         String playerName = event.getPlayer().getName();
+        
+        List<String> blockedAlts = dataConfig.getStringList("blocked_alts");
+        if (blockedAlts.contains(playerName.toLowerCase())) {
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cConnection Refused!\n\n&fThis account is detected as a 3rd alt or more.\n&7Maximum limit is 2 accounts per player."));
+            return;
+        }
+
+        String ip = event.getAddress().getHostAddress();
         
         String ipKey = ip.replace(".", "_");
         List<String> accounts = dataConfig.getStringList("ip_players." + ipKey);
@@ -1110,7 +1399,7 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         int accountCount = accounts.size();
 
         if (!isExisting && accountCount >= 2) {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cGagal Masuk!\n\n&fAnda sudah mencapai batas maksimal &e2 Akun &fper IP.\n&7Silakan gunakan akun utama anda sebelumnya."));
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', "&cConnection Refused!\n\n&fYou have reached the maximum limit of &e2 Accounts &fper IP.\n&7Please use your previous main account."));
         }
     }
 
@@ -1139,6 +1428,21 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
         }
         saveDataConfig();
 
+        if (accounts.size() > 1) {
+            java.util.List<String> alts = new java.util.ArrayList<>(accounts);
+            alts.remove(p.getName());
+            if (!alts.isEmpty()) {
+                String alertMsg = ChatColor.GRAY + "[" + ChatColor.RED + "Keamanan" + ChatColor.GRAY + "] " 
+                                + ChatColor.YELLOW + p.getName() + ChatColor.WHITE + " masuk. "
+                                + ChatColor.GRAY + "Terkait alt: " + ChatColor.RED + String.join(", ", alts);
+                for (Player admin : Bukkit.getOnlinePlayers()) {
+                    if (admin.hasPermission("rumahkita.admin")) {
+                        admin.sendMessage(alertMsg);
+                    }
+                }
+            }
+        }
+
         if (jailedPlayers.contains(p.getUniqueId()) && jailLocation != null) {
             p.teleport(jailLocation);
             p.sendMessage(ChatColor.RED + "You are still in Jail!");
@@ -1152,6 +1456,9 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                     online.hidePlayer(this, p);
                 }
             }
+            org.bukkit.permissions.PermissionAttachment attachment = p.addAttachment(this);
+            attachment.setPermission("essentials.afk.auto", false);
+            vanishPerms.put(p.getUniqueId(), attachment);
             p.sendMessage(ChatColor.YELLOW + "[!] " + ChatColor.GREEN + "You logged in while in VANISH mode.");
         }
 
@@ -1180,6 +1487,10 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
 
         if (vanishedPlayers.contains(uuid)) {
             event.setQuitMessage(null); 
+            if (vanishPerms.containsKey(uuid)) {
+                p.removeAttachment(vanishPerms.get(uuid));
+                vanishPerms.remove(uuid);
+            }
         }
     }
 
@@ -1277,6 +1588,27 @@ public class RumahKitaAdminPlugin extends JavaPlugin implements CommandExecutor,
                 }
                 if (sec > 0 && !warningSeconds.contains(sec)) warningSeconds.add(sec);
             } catch (Exception e) {}
+        }
+    }
+
+    public void logModeration(String action) {
+        try {
+            java.io.File dataFolder = getDataFolder();
+            if (!dataFolder.exists()) dataFolder.mkdirs();
+            java.io.File logFile = new java.io.File(dataFolder, "moderation.log");
+            if (!logFile.exists()) logFile.createNewFile();
+            
+            java.io.FileWriter fw = new java.io.FileWriter(logFile, true);
+            java.io.PrintWriter pw = new java.io.PrintWriter(fw);
+            
+            String timeStamp = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date());
+            pw.println("[" + timeStamp + "] " + action);
+            
+            pw.flush();
+            pw.close();
+            fw.close();
+        } catch (java.io.IOException e) {
+            getLogger().warning("Failed to write to moderation.log: " + e.getMessage());
         }
     }
 

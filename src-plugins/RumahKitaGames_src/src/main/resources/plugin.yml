@@ -13,3 +13,7 @@ commands:
     description: "Main batu gunting kertas taruhan uang"
     aliases: [suwit, rps]
     usage: "/rps <create/join/cancel> [amount/player] [batu/gunting/kertas]"
+  rkg:
+    description: "Command admin RumahKitaGames"
+    permission: rumahkita.admin
+    usage: "/rkg reload"

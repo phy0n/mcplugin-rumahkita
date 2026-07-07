@@ -73,8 +73,9 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
                 return true;
             }
 
-            if (amount < 1000) {
-                p.sendMessage(ChatColor.RED + "Minimal taruhan adalah Rp1000.");
+            long minBet = plugin.getConfig().getLong("coinflip.min_bet", 1000L);
+            if (amount < minBet) {
+                p.sendMessage(ChatColor.RED + "Minimal taruhan adalah Rp" + minBet + ".");
                 return true;
             }
 
@@ -125,8 +126,9 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
                 p.sendMessage(ChatColor.RED + "Jumlah uang harus berupa angka yang valid.");
                 return true;
             }
-            if (amount < 1000) {
-                p.sendMessage(ChatColor.RED + "Minimal taruhan adalah Rp1000.");
+            long minBet = plugin.getConfig().getLong("coinflip.min_bet", 1000L);
+            if (amount < minBet) {
+                p.sendMessage(ChatColor.RED + "Minimal taruhan adalah Rp" + minBet + ".");
                 return true;
             }
             String side = args[3].toLowerCase();

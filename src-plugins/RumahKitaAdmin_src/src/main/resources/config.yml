@@ -23,6 +23,9 @@ warnings:
   - "1s"
 
 settings:
+  anti-vpn:
+    enabled: true
+    kick-message: "&c&lConnection Refused!\n\n&fOur Security System detected the use of a &e&lVPN / Proxy / Hosting&f.\n\n&7Please disable your VPN to join the server.\n&7If this is a mistake, contact an Admin."
   warn:
     max-warnings: 3
   jail:

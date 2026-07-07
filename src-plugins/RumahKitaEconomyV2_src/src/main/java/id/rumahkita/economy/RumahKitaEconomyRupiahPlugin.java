@@ -635,9 +635,9 @@ TabExecutor {
             this.msg((CommandSender)p, "&cGunakan /pay <player> <amount>");
             return true;
         }
-        Player target = Bukkit.getPlayerExact((String)args[0]);
-        if (target == null) {
-            this.msg((CommandSender)p, "&cPlayer tidak online.");
+        org.bukkit.OfflinePlayer target = Bukkit.getOfflinePlayer(args[0]);
+        if (!target.hasPlayedBefore() && !target.isOnline()) {
+            this.msg((CommandSender)p, "&cPlayer tidak pernah bermain di server ini.");
             return true;
         }
         long amount = this.parseLong(args[1], -1L);
@@ -651,7 +651,9 @@ TabExecutor {
         }
         this.addBalance(target.getUniqueId(), amount);
         this.msg((CommandSender)p, "&aBerhasil transfer &e" + this.formatRp(amount) + " &ake &f" + target.getName());
-        this.msg((CommandSender)target, "&aKamu menerima &e" + this.formatRp(amount) + " &adari &f" + p.getName());
+        if (target.isOnline()) {
+            this.msg((CommandSender)target.getPlayer(), "&aKamu menerima &e" + this.formatRp(amount) + " &adari &f" + p.getName());
+        }
         return true;
     }
 
