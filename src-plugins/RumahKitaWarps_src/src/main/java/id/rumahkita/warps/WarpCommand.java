@@ -30,14 +30,14 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         String prefix = manager.getPrefix();
 
         if (args.length == 0) {
-            p.sendMessage(ChatColor.RED + "Ketik /pwarp help untuk bantuan.");
+            manager.openWarpMenu(p, 1);
             return true;
         }
 
         String sub = args[0].toLowerCase();
 
         if (sub.equals("list")) {
-            manager.openWarpMenu(p);
+            manager.openWarpMenu(p, 1);
             return true;
         }
 

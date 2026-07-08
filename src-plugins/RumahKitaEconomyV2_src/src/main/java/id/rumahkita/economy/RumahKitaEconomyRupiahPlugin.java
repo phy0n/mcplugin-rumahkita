@@ -609,7 +609,12 @@ TabExecutor {
         boolean current = this.balancesCfg.getBoolean(path, false);
         this.balancesCfg.set(path, !current);
         this.trySave(this.balancesCfg, this.balancesFile);
-        this.msg(sender, !current ? "&aBerhasil menyembunyikan saldomu dari /baltop." : "&eSaldomu sekarang kembali terlihat di /baltop.");
+        if (!current) {
+            this.msg(sender, "&aBerhasil menyembunyikan saldomu dari /baltop.");
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ajleaderboards removeplayer " + p.getName() + " rke_balance_raw");
+        } else {
+            this.msg(sender, "&eSaldomu sekarang kembali terlihat di /baltop.");
+        }
         return true;
     }
 
@@ -1539,6 +1544,12 @@ TabExecutor {
     }
 
     public String getBalanceRaw(OfflinePlayer p) {
+        if (p != null) {
+            String path = "players." + p.getUniqueId().toString() + ".hidden";
+            if (this.balancesCfg != null && this.balancesCfg.getBoolean(path, false)) {
+                return "";
+            }
+        }
         return String.valueOf(this.getBalance(p.getUniqueId()));
     }
 

@@ -1,4 +1,4 @@
-﻿version: 24
+version: 24
 gui:
   main:
     title: '&8&lServer Market'
@@ -343,6 +343,62 @@ items:
       demand-enabled: true
       min-buy-price: 1
       max-buy-price: 6
+      min-sell-price: 0
+      max-sell-price: 0
+      max-change-percent-per-update: 2.0
+      max-change-percent-per-day: 10.0
+      admin-locked-price: false
+    stock:
+      enabled: false
+      current: -1
+      max: -1
+      restock-amount: 0
+      restock-interval-minutes: 0
+  soul_sand:
+    material: SOUL_SAND
+    display-name: '&fSoul Sand'
+    trade-amount: 1
+    category: blocks
+    buy:
+      enabled: true
+      price: 10
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    pricing:
+      mode: DEMAND
+      demand-enabled: true
+      min-buy-price: 5
+      max-buy-price: 20
+      min-sell-price: 0
+      max-sell-price: 0
+      max-change-percent-per-update: 2.0
+      max-change-percent-per-day: 10.0
+      admin-locked-price: false
+    stock:
+      enabled: false
+      current: -1
+      max: -1
+      restock-amount: 0
+      restock-interval-minutes: 0
+  soul_soil:
+    material: SOUL_SOIL
+    display-name: '&fSoul Soil'
+    trade-amount: 1
+    category: blocks
+    buy:
+      enabled: true
+      price: 10
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    pricing:
+      mode: DEMAND
+      demand-enabled: true
+      min-buy-price: 5
+      max-buy-price: 20
       min-sell-price: 0
       max-sell-price: 0
       max-change-percent-per-update: 2.0
@@ -746,34 +802,6 @@ items:
       max: -1
       restock-amount: 0
       restock-interval-minutes: 0
-  hay_block:
-    material: HAY_BLOCK
-    display-name: '&fHay Block'
-    trade-amount: 1
-    category: blocks
-    buy:
-      enabled: true
-      price: 6
-    sell:
-      enabled: false
-      price: 0
-      daily-limit-per-player: 0
-    pricing:
-      mode: DEMAND
-      demand-enabled: true
-      min-buy-price: 3
-      max-buy-price: 12
-      min-sell-price: 0
-      max-sell-price: 0
-      max-change-percent-per-update: 2.0
-      max-change-percent-per-day: 10.0
-      admin-locked-price: false
-    stock:
-      enabled: false
-      current: -1
-      max: -1
-      restock-amount: 0
-      restock-interval-minutes: 0
   magma_block:
     material: MAGMA_BLOCK
     display-name: '&fMagma Block'
@@ -791,34 +819,6 @@ items:
       demand-enabled: true
       min-buy-price: 3
       max-buy-price: 12
-      min-sell-price: 0
-      max-sell-price: 0
-      max-change-percent-per-update: 2.0
-      max-change-percent-per-day: 10.0
-      admin-locked-price: false
-    stock:
-      enabled: false
-      current: -1
-      max: -1
-      restock-amount: 0
-      restock-interval-minutes: 0
-  bone_block:
-    material: BONE_BLOCK
-    display-name: '&fBone Block'
-    trade-amount: 1
-    category: blocks
-    buy:
-      enabled: true
-      price: 9
-    sell:
-      enabled: false
-      price: 0
-      daily-limit-per-player: 0
-    pricing:
-      mode: DEMAND
-      demand-enabled: true
-      min-buy-price: 4
-      max-buy-price: 18
       min-sell-price: 0
       max-sell-price: 0
       max-change-percent-per-update: 2.0
@@ -931,6 +931,34 @@ items:
       demand-enabled: true
       min-buy-price: 4
       max-buy-price: 18
+      min-sell-price: 0
+      max-sell-price: 0
+      max-change-percent-per-update: 2.0
+      max-change-percent-per-day: 10.0
+      admin-locked-price: false
+    stock:
+      enabled: false
+      current: -1
+      max: -1
+      restock-amount: 0
+      restock-interval-minutes: 0
+  honey_block:
+    material: HONEY_BLOCK
+    display-name: '&fHoney Block'
+    trade-amount: 1
+    category: blocks
+    buy:
+      enabled: true
+      price: 15
+    sell:
+      enabled: false
+      price: 0
+      daily-limit-per-player: 0
+    pricing:
+      mode: DEMAND
+      demand-enabled: true
+      min-buy-price: 7
+      max-buy-price: 30
       min-sell-price: 0
       max-sell-price: 0
       max-change-percent-per-update: 2.0
@@ -18028,62 +18056,7 @@ items:
       max: -1
       restock-amount: 0
       restock-interval-minutes: 0
-  honeycomb:
-    material: HONEYCOMB
-    display-name: '&fHoneycomb'
-    trade-amount: 1
-    category: farming
-    buy:
-      enabled: true
-      price: 375
-    sell:
-      enabled: true
-      price: 31
-      daily-limit-per-player: 15000
-    pricing:
-      mode: DEMAND
-      demand-enabled: true
-      min-buy-price: 187
-      max-buy-price: 750
-      min-sell-price: 15
-      max-sell-price: 62
-      max-change-percent-per-update: 2.0
-      max-change-percent-per-day: 10.0
-      admin-locked-price: false
-    stock:
-      enabled: false
-      current: -1
-      max: -1
-      restock-amount: 0
-      restock-interval-minutes: 0
-  honey_block:
-    material: HONEY_BLOCK
-    display-name: '&fHoney Block'
-    trade-amount: 1
-    category: farming
-    buy:
-      enabled: true
-      price: 1000
-    sell:
-      enabled: true
-      price: 38
-      daily-limit-per-player: 15000
-    pricing:
-      mode: DEMAND
-      demand-enabled: true
-      min-buy-price: 500
-      max-buy-price: 2000
-      min-sell-price: 19
-      max-sell-price: 76
-      max-change-percent-per-update: 2.0
-      max-change-percent-per-day: 10.0
-      admin-locked-price: false
-    stock:
-      enabled: false
-      current: -1
-      max: -1
-      restock-amount: 0
-      restock-interval-minutes: 0
+
   kelp:
     material: KELP
     display-name: '&fKelp'
