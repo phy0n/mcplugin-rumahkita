@@ -96,7 +96,7 @@ scoreboard:
         - ""
         - " &7Nama: &f%player%%essentials_afk%"
         - " &7Rank:&f%luckperms_prefix%"
-        - " &7Guild: &b%rumahkitaguilds_tag%"
+        - " &7Guild: &b%rumahkitaguilds_name%"
         - " &7Uang: &a%rke_balance%"
         - " &7Online: &a%online%&8/&a35"
         - " &7Ping: %player_colored_ping%ms"
