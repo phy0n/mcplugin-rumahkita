@@ -7,9 +7,6 @@ header-footer:
         - "&d&lRUMAH KITA S2"
         - "&fSurvival &8• &fEconomy &8• &fGuild"
         - ""
-        - "&7&o\"Ciptakan ceritamu, bangun duniamu,"
-        - "&7&o dan bersenang-senanglah bersama!\""
-        - ""
       footer:
         - ""
         - "&7Online: &a%online% &8| &7Ping: &a%ping%ms &8| &7TPS: %server_tps_1_colored%"
@@ -34,7 +31,7 @@ scoreboard-teams:
 playerlist-objective:
   enabled: true
   value: "%ping%"
-  fancy-value: "%player_colored_ping%"
+  fancy-value: "&a%ping%"
   title: "RumahKita S2"
   render-type: INTEGER
   disable-condition: '%world%=disabledworld'
@@ -99,7 +96,7 @@ scoreboard:
         - " &7Guild: &b%rumahkitaguilds_name%"
         - " &7Uang: &a%rke_balance%"
         - " &7Online: &a%online%&8/&a35"
-        - " &7Ping: %player_colored_ping%ms"
+        - " &7Ping: &a%ping%ms"
         - ""
         - " &7%date%"
         - " &d&lrumahkita.homes"
