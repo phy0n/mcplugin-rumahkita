@@ -34,13 +34,13 @@ public class CoinflipManager implements Listener {
 
     public void createGame(Player p, long amount, String side) {
         if (activeGames.containsKey(p.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Kamu sudah memiliki game coinflip yang aktif. Batal dulu dengan /cf cancel");
+            p.sendMessage(ChatColor.RED + "You already have an active coinflip game. Cancel first with /cf cancel");
             return;
         }
         
         RumahKitaEconomyRupiahPlugin economy = RumahKitaEconomyRupiahPlugin.getInstance();
         if (economy.getBalance(p.getUniqueId()) < amount) {
-            p.sendMessage(ChatColor.RED + "Uangmu tidak cukup untuk bertaruh sebesar itu!");
+            p.sendMessage(ChatColor.RED + "You don't have enough money to bet that much!");
             return;
         }
 
@@ -50,7 +50,7 @@ public class CoinflipManager implements Listener {
         activeGames.put(p.getUniqueId(), game);
 
         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-            "&e[Coinflip] &f" + p.getName() + " &amembuat taruhan &eRp" + amount + " &auntuk sisi &b" + side.toUpperCase() + "&a! Ketik &e/cf join " + p.getName() + " &aatau &e/cf list &auntuk melawannya!"));
+            "&e[Coinflip] &f" + p.getName() + " &acreated a bet of &eRp" + amount + " &auntuk sisi &b" + side.toUpperCase() + "&a! Ketik &e/cf join " + p.getName() + " &aatau &e/cf list &auntuk melawannya!"));
     }
 
     public void openGameList(Player p) {
@@ -90,7 +90,7 @@ public class CoinflipManager implements Listener {
                         p.closeInventory();
                         joinGame(p, target);
                     } else {
-                        p.sendMessage(ChatColor.RED + "Player tersebut sudah tidak online.");
+                        p.sendMessage(ChatColor.RED + "That player is no longer online.");
                         p.closeInventory();
                     }
                 }
@@ -100,36 +100,36 @@ public class CoinflipManager implements Listener {
 
     public void cancelGame(Player p) {
         if (!activeGames.containsKey(p.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Kamu tidak memiliki game yang aktif.");
+            p.sendMessage(ChatColor.RED + "You don't have an active game.");
             return;
         }
 
         CoinflipGame game = activeGames.remove(p.getUniqueId());
         RumahKitaEconomyRupiahPlugin.getInstance().addBalance(p.getUniqueId(), game.amount);
-        p.sendMessage(ChatColor.GREEN + "Game coinflip dibatalkan. Uangmu sebesar Rp" + game.amount + " telah dikembalikan.");
+        p.sendMessage(ChatColor.GREEN + "Coinflip game cancelled. Your money Rp" + game.amount + " telah dikembalikan.");
     }
 
     public void joinGame(Player p, Player target) {
         if (!activeGames.containsKey(target.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Player tersebut tidak memiliki game coinflip yang aktif.");
+            p.sendMessage(ChatColor.RED + "That player has no active coinflip game.");
             return;
         }
 
         if (p.getUniqueId().equals(target.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Kamu tidak bisa melawan dirimu sendiri.");
+            p.sendMessage(ChatColor.RED + "You cannot play against yourself.");
             return;
         }
 
         CoinflipGame game = activeGames.get(target.getUniqueId());
         if (game.targetPlayer != null && !game.targetPlayer.equals(p.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Game ini adalah invite private. Kamu tidak bisa join.");
+            p.sendMessage(ChatColor.RED + "This game is a private invite. You cannot join.");
             return;
         }
 
         RumahKitaEconomyRupiahPlugin economy = RumahKitaEconomyRupiahPlugin.getInstance();
         
         if (economy.getBalance(p.getUniqueId()) < game.amount) {
-            p.sendMessage(ChatColor.RED + "Uangmu tidak cukup! Butuh Rp" + game.amount);
+            p.sendMessage(ChatColor.RED + "Not enough money! You need Rp" + game.amount);
             return;
         }
 
@@ -199,7 +199,7 @@ public class CoinflipManager implements Listener {
                             10, 60, 10
                         );
                         winner.playSound(winner.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 1.0f, 1.0f);
-                        winner.sendMessage(ChatColor.GREEN + "Selamat! Kamu memenangkan Coinflip!");
+                        winner.sendMessage(ChatColor.GREEN + "Congratulations! You won the Coinflip!");
                         
                         try {
                             org.bukkit.entity.Firework fw = winner.getWorld().spawn(winner.getLocation(), org.bukkit.entity.Firework.class);
@@ -216,7 +216,7 @@ public class CoinflipManager implements Listener {
                             10, 60, 10
                         );
                         loser.playSound(loser.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 0.5f);
-                        loser.sendMessage(ChatColor.RED + "Sayang sekali, kamu kalah Coinflip.");
+                        loser.sendMessage(ChatColor.RED + "Too bad, you lost the Coinflip.");
                     }
                     this.cancel();
                 }
@@ -226,18 +226,18 @@ public class CoinflipManager implements Listener {
 
     public void inviteGame(Player p, Player target, long amount, String side) {
         if (activeGames.containsKey(p.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Kamu sudah memiliki game/invite yang aktif. Batal dulu dengan /cf cancel");
+            p.sendMessage(ChatColor.RED + "You already have an active game/invite. Cancel first with /cf cancel");
             return;
         }
         
         if (p.getUniqueId().equals(target.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Kamu tidak bisa menginvite dirimu sendiri.");
+            p.sendMessage(ChatColor.RED + "You cannot invite yourself.");
             return;
         }
 
         RumahKitaEconomyRupiahPlugin economy = RumahKitaEconomyRupiahPlugin.getInstance();
         if (economy.getBalance(p.getUniqueId()) < amount) {
-            p.sendMessage(ChatColor.RED + "Uangmu tidak cukup untuk bertaruh sebesar itu!");
+            p.sendMessage(ChatColor.RED + "You don't have enough money to bet that much!");
             return;
         }
 
@@ -245,9 +245,9 @@ public class CoinflipManager implements Listener {
         CoinflipGame game = new CoinflipGame(p.getUniqueId(), p.getName(), amount, side, target.getUniqueId());
         activeGames.put(p.getUniqueId(), game);
 
-        p.sendMessage(ChatColor.GREEN + "Berhasil mengirim invite Coinflip sebesar Rp" + amount + " ke " + target.getName() + ".");
+        p.sendMessage(ChatColor.GREEN + "Successfully sent Coinflip invite for Rp" + amount + " ke " + target.getName() + ".");
         target.sendMessage(ChatColor.translateAlternateColorCodes('&', 
-            "&e[Coinflip] &f" + p.getName() + " &amenantangmu Coinflip sebesar &eRp" + amount + "&a! Dia memilih &b" + side.toUpperCase()));
+            "&e[Coinflip] &f" + p.getName() + " &achallenged you to Coinflip for &eRp" + amount + "&a! Dia memilih &b" + side.toUpperCase()));
         target.sendMessage(ChatColor.translateAlternateColorCodes('&', 
             "&aKetik &e/cf accept " + p.getName() + " &auntuk menerima atau &c/cf deny " + p.getName() + " &auntuk menolak."));
     }
@@ -255,16 +255,16 @@ public class CoinflipManager implements Listener {
     public void denyGame(Player p, Player target) {
         CoinflipGame game = activeGames.get(target.getUniqueId());
         if (game == null || game.targetPlayer == null || !game.targetPlayer.equals(p.getUniqueId())) {
-            p.sendMessage(ChatColor.RED + "Player tersebut tidak menginvitemu.");
+            p.sendMessage(ChatColor.RED + "That player did not invite you.");
             return;
         }
 
         activeGames.remove(target.getUniqueId());
         RumahKitaEconomyRupiahPlugin.getInstance().addBalance(target.getUniqueId(), game.amount);
         
-        p.sendMessage(ChatColor.GREEN + "Kamu menolak invite Coinflip dari " + target.getName() + ".");
+        p.sendMessage(ChatColor.GREEN + "You denied Coinflip invite from " + target.getName() + ".");
         if (target.isOnline()) {
-            target.sendMessage(ChatColor.RED + p.getName() + " menolak invite Coinflip-mu. Uang telah dikembalikan.");
+            target.sendMessage(ChatColor.RED + p.getName() + " denied your Coinflip invite. Money refunded.");
         }
     }
 

@@ -2,33 +2,41 @@ name: RumahKitaWarps
 version: 1.0.0
 main: id.rumahkita.warps.RumahKitaWarpsPlugin
 api-version: 1.13
-depend: [RumahKitaEconomyV2]
-
+depend:
+- RumahKitaEconomyV2
 commands:
   pwarp:
-    description: "Player Warp Commands"
-    aliases: [pw, warps, playerwarp]
-    usage: "/pwarp <set/delete/list>"
+    description: Player Warp Commands
+    aliases:
+    - pw
+    - playerwarp
+    usage: /pwarp <set/delete/list>
   rtp:
-    description: "Random teleport ke lokasi acak"
-    aliases: [tpr]
-    usage: "/rtp"
+    description: Random teleport to a random location
+    aliases:
+    - tpr
+    usage: /rtp
+  back:
+    description: Return to previous location or death point
+    usage: /back
   rkw:
-    description: "RumahKitaWarps Admin Command"
-    usage: "/rkw"
+    description: RumahKitaWarps Admin Command
+    usage: /rkw
     permission: rumahkitawarps.admin
   warp:
-    description: "Buka menu warp"
-    usage: "/warp [nama]"
+    description: Open warp menu
+    aliases:
+    - warps
+    usage: /warp [nama]
   setwarp:
-    description: "Buat warp server"
-    usage: "/setwarp <nama>"
+    description: Create server warp
+    usage: /setwarp <nama>
     permission: rumahkitawarps.admin
   delwarp:
-    description: "Hapus warp server"
-    usage: "/delwarp <nama>"
+    description: Delete server warp
+    usage: /delwarp <nama>
     permission: rumahkitawarps.admin
   editwarp:
-    description: "Edit warp (icon, slot, lore)"
-    usage: "/editwarp <nama> <icon/slot/lore> <value>"
+    description: Edit warp (icon, slot, lore)
+    usage: /editwarp <nama> <icon/slot/lore> <value>
     permission: rumahkitawarps.admin

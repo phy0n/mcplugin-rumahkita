@@ -106,6 +106,7 @@ TabExecutor {
     private final Map<Material, MarketItem> sellByMaterial = new HashMap();
     private final Map<UUID, String> selectedVoucher = new HashMap();
     private final Map<UUID, Long> cooldowns = new HashMap();
+    private final Map<UUID, Long> payAllCooldowns = new HashMap();
     private final Set<String> allowedSellCategories = new HashSet();
     private File marketFile;
     private File messagesFile;
@@ -149,7 +150,7 @@ TabExecutor {
         this.keyRefundId = new NamespacedKey((Plugin)this, "refund_id");
         this.reloadAll();
         Bukkit.getPluginManager().registerEvents((Listener)this, (Plugin)this);
-        for (String cmd : Arrays.asList("market", "sellhand", "sellall", "bal", "pay", "rke", "baltop", "hidebal")) {
+        for (String cmd : Arrays.asList("market", "sellhand", "sellall", "bal", "pay", "payall", "rke", "baltop", "hidebal")) {
             if (this.getCommand(cmd) != null) {
                 this.getCommand(cmd).setExecutor((CommandExecutor)this);
             }
@@ -237,6 +238,32 @@ TabExecutor {
         if (migrated > 0) {
             this.getLogger().info("Migrated " + migrated + " legacy balance entries to balances.<uuid> format.");
         }
+        this.cleanUpHiddenBalances();
+    }
+
+    private void cleanUpHiddenBalances() {
+        if (this.balancesCfg.contains("players")) {
+            int unhidden = 0;
+            for (String uuidStr : this.balancesCfg.getConfigurationSection("players").getKeys(false)) {
+                String path = "players." + uuidStr;
+                boolean hidden = this.balancesCfg.getBoolean(path + ".hidden", false);
+                UUID uuid;
+                try {
+                    uuid = UUID.fromString(uuidStr);
+                } catch (IllegalArgumentException e) {
+                    continue;
+                }
+                long balance = this.getBalance(uuid);
+                if (hidden && balance < 20000000L) {
+                    this.balancesCfg.set(path + ".hidden", false);
+                    unhidden++;
+                }
+            }
+            if (unhidden > 0) {
+                this.trySave(this.balancesCfg, this.balancesFile);
+                this.getLogger().info("Force unhid " + unhidden + " players with balance < 20M.");
+            }
+        }
     }
 
     public void reloadAll() {
@@ -274,7 +301,7 @@ TabExecutor {
             }
         }
         catch (Exception e) {
-            this.getLogger().warning("Gagal membuat backup balances lama: " + e.getMessage());
+            this.getLogger().warning("Failed to create old balances backup: " + e.getMessage());
         }
         ConfigurationSection players = this.balancesCfg.getConfigurationSection("players");
         if (players != null) {
@@ -440,6 +467,9 @@ TabExecutor {
         if (name.equals("pay")) {
             return this.handlePay(sender, args);
         }
+        if (name.equals("payall")) {
+            return this.handlePayAll(sender, args);
+        }
         if (name.equals("rke")) {
             return this.handleRke(sender, args);
         }
@@ -562,16 +592,16 @@ TabExecutor {
             ++soldTypes;
         }
         if (total <= 0L) {
-            this.msg((CommandSender)p, "&cTidak ada item Mob Drops/Farming yang bisa dijual atau limit harian sudah habis.");
+            this.msg((CommandSender)p, "&cNo Mob Drops/Farming items that can be sold, or daily limit has been reached.");
         } else {
-            this.msg((CommandSender)p, "&aSellAll selesai. &7Jenis item: &f" + soldTypes + " &7Total: &e" + this.formatRp(total));
+            this.msg((CommandSender)p, "&aSellAll finished. &7Item types: &f" + soldTypes + " &7Total: &e" + this.formatRp(total));
         }
         return true;
     }
     private boolean handleBaltop(CommandSender sender) {
         ConfigurationSection sec = this.balancesCfg.getConfigurationSection("balances");
         if (sec == null) {
-            this.msg(sender, "&cBelum ada data saldo.");
+            this.msg(sender, "&cNo balance data yet.");
             return true;
         }
         
@@ -605,26 +635,37 @@ TabExecutor {
     private boolean handleHidebal(CommandSender sender) {
         if (!(sender instanceof Player)) return this.playerOnly(sender);
         Player p = (Player)sender;
+        long balance = this.getBalance(p.getUniqueId());
+        if (balance < 20000000L) {
+            this.msg(sender, "&cThis command requires a minimum balance of Rp 20,000,000.");
+            return true;
+        }
         String path = "players." + p.getUniqueId().toString() + ".hidden";
         boolean current = this.balancesCfg.getBoolean(path, false);
         this.balancesCfg.set(path, !current);
         this.trySave(this.balancesCfg, this.balancesFile);
         if (!current) {
-            this.msg(sender, "&aBerhasil menyembunyikan saldomu dari /baltop.");
+            this.msg(sender, "&aSuccessfully hid your balance from /baltop.");
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ajleaderboards removeplayer " + p.getName() + " rke_balance_raw");
         } else {
-            this.msg(sender, "&eSaldomu sekarang kembali terlihat di /baltop.");
+            this.msg(sender, "&eYour balance is now visible on /baltop.");
         }
         return true;
     }
 
     private boolean handleBal(CommandSender sender, String[] args) {
         if (!(sender instanceof Player) && args.length == 0) {
-            this.msg(sender, "&cGunakan /bal <player>");
+            this.msg(sender, "&cUsage: /bal <player>");
             return true;
         }
+        if (args.length > 0 && !this.hasAdmin(sender, "market.admin")) {
+            if (sender instanceof Player && !args[0].equalsIgnoreCase(sender.getName())) {
+                this.msg(sender, "&cYou do not have permission to view other players' balances.");
+                return true;
+            }
+        }
         OfflinePlayer target = args.length > 0 ? Bukkit.getOfflinePlayer((String)args[0]) : (OfflinePlayer)sender;
-        this.msg(sender, "&7Saldo &f" + target.getName() + "&7: &a" + this.formatRp(this.getBalance(target.getUniqueId())));
+        this.msg(sender, "&7Balance of &f" + target.getName() + "&7: &a" + this.formatRp(this.getBalance(target.getUniqueId())));
         return true;
     }
 
@@ -642,7 +683,7 @@ TabExecutor {
         }
         org.bukkit.OfflinePlayer target = Bukkit.getOfflinePlayer(args[0]);
         if (!target.hasPlayedBefore() && !target.isOnline()) {
-            this.msg((CommandSender)p, "&cPlayer tidak pernah bermain di server ini.");
+            this.msg((CommandSender)p, "&cPlayer has never played on this server.");
             return true;
         }
         long amount = this.parseLong(args[1], -1L);
@@ -655,10 +696,81 @@ TabExecutor {
             return true;
         }
         this.addBalance(target.getUniqueId(), amount);
-        this.msg((CommandSender)p, "&aBerhasil transfer &e" + this.formatRp(amount) + " &ake &f" + target.getName());
+        this.msg((CommandSender)p, "&aSuccessfully transferred &e" + this.formatRp(amount) + " &ake &f" + target.getName());
         if (target.isOnline()) {
             this.msg((CommandSender)target.getPlayer(), "&aKamu menerima &e" + this.formatRp(amount) + " &adari &f" + p.getName());
         }
+        return true;
+    }
+
+    private boolean handlePayAll(CommandSender sender, String[] args) {
+        if (!(sender instanceof Player)) {
+            return this.playerOnly(sender);
+        }
+        Player p = (Player)sender;
+        if (!this.hasUse((CommandSender)p, "market.use")) {
+            return this.noPerm(sender);
+        }
+        if (args.length < 1) {
+            this.msg((CommandSender)p, "&cGunakan /payall <total_uang> [alasan...]");
+            return true;
+        }
+        long now = System.currentTimeMillis();
+        long last = this.payAllCooldowns.getOrDefault(p.getUniqueId(), 0L);
+        if (now - last < 300000L) {
+            long wait = (300000L - (now - last)) / 1000L;
+            this.msg((CommandSender)p, "&cTunggu &e" + wait + " seconds &cbefore using /payall again.");
+            return true;
+        }
+        long totalAmount = this.parseLong(args[0], -1L);
+        if (totalAmount < 100000L) {
+            this.msg((CommandSender)p, "&cMinimal /payall adalah &eRp 100.000");
+            return true;
+        }
+        String reason = "";
+        if (args.length > 1) {
+            StringBuilder reasonBuilder = new StringBuilder();
+            for (int i = 1; i < args.length; i++) {
+                reasonBuilder.append(args[i]).append(" ");
+            }
+            reason = reasonBuilder.toString().trim();
+        }
+        List<Player> targets = new ArrayList<>();
+        for (Player online : Bukkit.getOnlinePlayers()) {
+            if (online.getUniqueId().equals(p.getUniqueId())) continue;
+            targets.add(online);
+        }
+        if (targets.isEmpty()) {
+            this.msg((CommandSender)p, "&cNo other players online to share money.");
+            return true;
+        }
+        long splitAmount = totalAmount / targets.size();
+        if (splitAmount <= 0) {
+            this.msg((CommandSender)p, "&cAmount is too small to be split among " + targets.size() + " players.");
+            return true;
+        }
+        long actualTotalCost = splitAmount * targets.size();
+        if (!this.takeBalance(p.getUniqueId(), actualTotalCost)) {
+            this.msg((CommandSender)p, "&cNot enough balance! (You need " + this.formatRp(actualTotalCost) + ")");
+            return true;
+        }
+        for (Player target : targets) {
+            this.addBalance(target.getUniqueId(), splitAmount);
+            String titleText = "&a+" + this.formatRp(splitAmount);
+            String subtitleText = "&fFrom: &e" + p.getName();
+            if (!reason.isEmpty()) {
+                subtitleText += " &7| &f" + reason;
+            }
+            target.sendTitle(this.color(titleText), this.color(subtitleText), 10, 70, 20);
+            
+            String chatMsg = "&aYou received a splash of &e" + this.formatRp(splitAmount) + " &afrom &f" + p.getName();
+            if (!reason.isEmpty()) {
+                chatMsg += " &7(" + reason + ")";
+            }
+            target.sendMessage(this.color(chatMsg));
+        }
+        this.payAllCooldowns.put(p.getUniqueId(), now);
+        p.sendMessage(this.color("&aSuccessfully distributed a total of &e" + this.formatRp(actualTotalCost) + " &ato &f" + targets.size() + " &aplayers! (Each received " + this.formatRp(splitAmount) + ")"));
         return true;
     }
 
@@ -667,7 +779,7 @@ TabExecutor {
             return this.noPerm(sender);
         }
         if (args.length == 0) {
-            this.msg(sender, "&cKetik /rke help untuk bantuan.");
+            this.msg(sender, "&cType /rke help for help.");
             return true;
         }
         if (args[0].equalsIgnoreCase("help")) {
@@ -680,9 +792,9 @@ TabExecutor {
             this.msg(sender, "&a /rke migratebalances");
             this.msg(sender, "&e--- Player Commands ---");
             this.msg(sender, "&a /market atau /shop &7- Buka Menu Toko");
-            this.msg(sender, "&a /bal atau /money &7- Cek Saldo");
+            this.msg(sender, "&a /bal or /money &7- Check Balance");
             this.msg(sender, "&a /baltop &7- Peringkat Orang Terkaya");
-            this.msg(sender, "&a /pay <player> <jumlah> &7- Transfer Uang");
+            this.msg(sender, "&a /pay <player> <amount> &7- Transfer Money");
             return true;
         }
         String sub = args[0].toLowerCase(Locale.ROOT);
@@ -702,12 +814,12 @@ TabExecutor {
         }
         if (sub.equals("demandupdate")) {
             this.updateDemandPrices(true);
-            this.msg(sender, "&aDemand pricing diperbarui.");
+            this.msg(sender, "&aDemand pricing updated.");
             return true;
         }
         if (sub.equals("migratebalances")) {
             int migrated = this.migrateLegacyBalancesIfNeeded(true);
-            this.msg(sender, "&aMigrasi saldo selesai. Entry diproses: &e" + migrated + "&a. Cek saldo dengan /bal <player>.");
+            this.msg(sender, "&aBalance migration complete. Entries processed: &e" + migrated + "&a. Check balance with /bal <player>.");
             return true;
         }
         if (sub.equals("voucher")) {
@@ -740,7 +852,7 @@ TabExecutor {
             this.msg(sender, "&aSaldo &f" + op.getName() + " &asekarang &e" + this.formatRp(this.getBalance(op.getUniqueId())));
             return true;
         }
-        this.msg(sender, "&cCommand RKE tidak dikenal.");
+        this.msg(sender, "&cUnknown RKE command.");
         return true;
     }
 
@@ -752,13 +864,13 @@ TabExecutor {
         if (args[0].equalsIgnoreCase("give") && args.length >= 4) {
             Player target = Bukkit.getPlayerExact((String)args[1]);
             if (target == null) {
-                this.msg(sender, "&cPlayer tidak online.");
+                this.msg(sender, "&cPlayer not online.");
                 return true;
             }
             int percent = (int)this.parseLong(args[2], -1L);
             int amount = (int)this.parseLong(args[3], -1L);
             if (percent <= 0 || percent > 90 || amount <= 0) {
-                this.msg(sender, "&cPercent 1-90, jumlah minimal 1.");
+                this.msg(sender, "&cPercent 1-90, minimum amount 1.");
                 return true;
             }
             ItemStack voucher = this.createVoucher(percent, amount);
@@ -773,7 +885,7 @@ TabExecutor {
             int percent = (int)this.parseLong(args[1], -1L);
             int amount = (int)this.parseLong(args[2], -1L);
             if (percent <= 0 || percent > 90 || amount <= 0) {
-                this.msg(sender, "&cPercent 1-90, jumlah minimal 1.");
+                this.msg(sender, "&cPercent 1-90, minimum amount 1.");
                 return true;
             }
             for (Player p : Bukkit.getOnlinePlayers()) {
@@ -809,15 +921,15 @@ TabExecutor {
                 }
             }
         }
-        inv.setItem(this.marketCfg.getInt("gui.main.slots.voucher", 48), this.icon(Material.PAPER, "&dVoucher Diskon", Arrays.asList("&7Pilih voucher yang mau dipakai.", "&7Voucher tidak otomatis terpakai.", "&fKlik untuk pilih voucher.")));
-        inv.setItem(this.marketCfg.getInt("gui.main.slots.info", 49), this.icon(Material.BOOK, "&bInfo Ekonomi", Arrays.asList("&7Untuk menjaga ekonomi server tetap stabil,", "&7hanya item farm dan mob drop yang bisa dijual.")));
+        inv.setItem(this.marketCfg.getInt("gui.main.slots.voucher", 48), this.icon(Material.PAPER, "&dVoucher Diskon", Arrays.asList("&7Pilih voucher yang mau dipakai.", "&7Voucher is not automatically used.", "&fKlik untuk pilih voucher.")));
+        inv.setItem(this.marketCfg.getInt("gui.main.slots.info", 49), this.icon(Material.BOOK, "&bInfo Ekonomi", Arrays.asList("&7Untuk menjaga ekonomi server tetap stabil,", "&7only farm items and mob drops can be sold.")));
         if (this.hasAdmin((CommandSender)p, "market.admin")) {
             inv.setItem(this.marketCfg.getInt("gui.main.slots.admin", 53), this.icon(Material.COMMAND_BLOCK, "&cAdmin Market", Arrays.asList("&7Kelola item, stock, harga, demand,", "&7statistik, refund, dan reload config.")));
         }
         int balSlot = this.marketCfg.getInt("gui.main.slots.balance", 50);
         if (balSlot >= 0 && balSlot < size) {
             String balStr = this.formatRp(this.getBalance(p.getUniqueId()));
-            inv.setItem(balSlot, this.icon(Material.EMERALD, "&eUang Kamu", Arrays.asList("&7Sisa uangmu saat ini:", "&a" + balStr)));
+            inv.setItem(balSlot, this.icon(Material.EMERALD, "&eYour Money", Arrays.asList("&7Sisa uangmu saat ini:", "&a" + balStr)));
         }
         p.openInventory(inv);
     }
@@ -847,7 +959,7 @@ TabExecutor {
         if (page > 0) {
             inv.setItem(45, this.icon(Material.ARROW, "&aSebelumnya", Collections.singletonList("&7Klik untuk ke halaman sebelumnya.")));
         } else {
-            inv.setItem(45, this.icon(Material.CHEST, "&eKe Menu Utama", Collections.singletonList("&7Klik untuk kembali ke kategori.")));
+            inv.setItem(45, this.icon(Material.CHEST, "&eKe Menu Utama", Collections.singletonList("&7Click to return to category.")));
         }
         
         inv.setItem(49, this.icon(Material.BARRIER, "&cTutup", Collections.singletonList("&7Klik untuk menutup menu.")));
@@ -863,7 +975,7 @@ TabExecutor {
     private void openQuantity(Player p, String itemKey) {
         MarketItem mi = this.items.get(itemKey);
         if (mi == null) return;
-        Inventory inv = Bukkit.createInventory((InventoryHolder)new MarketHolder("quantity", itemKey), (int)36, (String)this.color("&8Pilih Jumlah (Beli/Jual)"));
+        Inventory inv = Bukkit.createInventory((InventoryHolder)new MarketHolder("quantity", itemKey), (int)36, (String)this.color("&8Select Amount (Buy/Sell)"));
         
         inv.setItem(13, this.marketIcon(mi));
         
@@ -881,7 +993,7 @@ TabExecutor {
             inv.setItem(17, this.icon(Material.RED_STAINED_GLASS_PANE, "&cJual 64", java.util.Collections.singletonList("&7Harga: &a" + this.formatRp(unitS * 64))));
         }
         
-        inv.setItem(31, this.icon(Material.ARROW, "&cKembali", java.util.Collections.singletonList("&7Klik untuk kembali.")));
+        inv.setItem(31, this.icon(Material.ARROW, "&cKembali", java.util.Collections.singletonList("&7Click to return.")));
         
         p.openInventory(inv);
     }
@@ -894,8 +1006,8 @@ TabExecutor {
             if (slot >= 45) break;
             inv.setItem(slot++, it.clone());
         }
-        inv.setItem(47, this.icon(Material.REDSTONE, "&cHapus Voucher Aktif", Collections.singletonList("&7Klik untuk batal pakai voucher.")));
-        inv.setItem(49, this.icon(Material.BARRIER, "&cKembali", Collections.singletonList("&7Klik untuk kembali.")));
+        inv.setItem(47, this.icon(Material.REDSTONE, "&cRemove Active Voucher", Collections.singletonList("&7Click to cancel voucher.")));
+        inv.setItem(49, this.icon(Material.BARRIER, "&cKembali", Collections.singletonList("&7Click to return.")));
         p.openInventory(inv);
     }
 
@@ -903,7 +1015,7 @@ TabExecutor {
         Inventory inv = Bukkit.createInventory((InventoryHolder)new MarketHolder("admin", null), (int)27, (String)this.color("&8Market Admin"));
         inv.setItem(10, this.icon(Material.CHEST, "&eKelola Item", Arrays.asList("&7Lihat item aktif/nonaktif.", "&7Edit detail lewat market.yml.")));
         inv.setItem(11, this.icon(Material.HOPPER, "&eKelola Stock", Arrays.asList("&7Stock otomatis tersimpan.", "&7Gunakan market.yml + /market reload.")));
-        inv.setItem(12, this.icon(Material.GOLD_INGOT, "&eKelola Harga", Arrays.asList("&7Harga current ada di data/prices.yml.", "&7Base price ada di market.yml.")));
+        inv.setItem(12, this.icon(Material.GOLD_INGOT, "&eManage Prices", Arrays.asList("&7Current price is in data/prices.yml.", "&7Base price is in market.yml.")));
         inv.setItem(13, this.icon(Material.COMPARATOR, "&eDemand Pricing", Arrays.asList("&7HYBRID/AUTO_DEMAND aman dibatasi.", "&7Klik untuk update demand sekarang.")));
         inv.setItem(14, this.icon(Material.PAPER, "&eLihat Statistik", Arrays.asList("&7Klik untuk menjalankan /market stats.")));
         inv.setItem(15, this.icon(Material.ENDER_CHEST, "&eRefund Pending", Arrays.asList("&7Klik untuk migrasi/refund Player Shop lama.")));
@@ -923,7 +1035,7 @@ TabExecutor {
                 if (!p.getUniqueId().toString().equals(this.refundsCfg.getString(base + "player_uuid")) || (status = this.refundsCfg.getString(base + "status", "PENDING")).equals("CLAIMED")) continue;
                 ItemStack item = this.decodeItem(this.refundsCfg.getString(base + "item_stack_serialized", ""));
                 if (item == null) {
-                    item = this.icon(Material.BARRIER, "&cItem gagal dibaca", Arrays.asList("&7Refund ID: &f" + id));
+                    item = this.icon(Material.BARRIER, "&cFailed to read item", Arrays.asList("&7Refund ID: &f" + id));
                 }
                 if ((meta = item.getItemMeta()) != null) {
                     ArrayList<String> lore = meta.hasLore() ? new ArrayList<String>(meta.getLore()) : new ArrayList();
@@ -937,7 +1049,7 @@ TabExecutor {
                 inv.setItem(slot++, item);
             }
         }
-        inv.setItem(49, this.icon(Material.BARRIER, "&cKembali", Collections.singletonList("&7Klik untuk kembali.")));
+        inv.setItem(49, this.icon(Material.BARRIER, "&cKembali", Collections.singletonList("&7Click to return.")));
         p.openInventory(inv);
     }
 
@@ -1072,7 +1184,7 @@ TabExecutor {
             }
             if (e.getSlot() == 13) {
                 this.updateDemandPrices(true);
-                this.msg((CommandSender)p, "&aDemand pricing diperbarui.");
+                this.msg((CommandSender)p, "&aDemand pricing updated.");
             }
             if (e.getSlot() == 14) {
                 p.closeInventory();
@@ -1111,7 +1223,7 @@ TabExecutor {
                 }
                 lore.add(this.color("&7Harga Beli: &a" + this.formatRp(mi.currentBuyPrice) + " " + indicator));
             } else {
-                lore.add(this.color("&7Harga Beli: &cTidak dijual"));
+                lore.add(this.color("&7Buy Price: &cNot for sale"));
             }
             if (this.isSellAllowed(mi)) {
                 long diff = mi.currentSellPrice - mi.baseSellPrice;
@@ -1122,12 +1234,12 @@ TabExecutor {
                 }
                 lore.add(this.color("&7Harga Jual: &a" + this.formatRp(mi.currentSellPrice) + " " + indicator));
             } else {
-                lore.add(this.color("&7Harga Jual: &cTidak bisa dijual"));
+                lore.add(this.color("&7Sell Price: &cCannot be sold"));
             }
             lore.add(this.color("&7Stock: &f" + (String)(mi.stockEnabled ? mi.stockCurrent + "/" + mi.stockMax : "Unlimited")));
 
             lore.add("");
-            lore.add(this.color("&eKlik &7untuk Beli / Jual / Pilih Jumlah"));
+            lore.add(this.color("&eClick &7to Buy / Sell / Select Amount"));
             meta.setLore(lore);
             meta.getPersistentDataContainer().set(this.keyGuiItem, PersistentDataType.STRING, mi.key);
             it.setItemMeta(meta);
@@ -1187,7 +1299,7 @@ TabExecutor {
 
     private void buyItem(Player p, MarketItem mi, int amount) {
         if (!mi.enabled || !mi.buyEnabled) {
-            this.msg((CommandSender)p, "&cItem ini tidak bisa dibeli.");
+            this.msg((CommandSender)p, "&cThis item cannot be bought.");
             return;
         }
         int buyAmount = amount;
@@ -1497,7 +1609,7 @@ TabExecutor {
             long rp = this.stat(mi.key, "buy_rp");
             sender.sendMessage(this.color("&f" + (i+1) + ". &e" + mi.displayName + " &7- Terbeli: &a" + count + "x &7(" + this.formatRp(rp) + ")"));
         }
-        if (topBought.isEmpty()) sender.sendMessage(this.color("&7- Belum ada data pembelian."));
+        if (topBought.isEmpty()) sender.sendMessage(this.color("&7- No purchase data yet."));
         
         sender.sendMessage("");
         sender.sendMessage(this.color("&c&lTop 10 Barang Paling Banyak Dijual:"));
@@ -1507,15 +1619,15 @@ TabExecutor {
             long rp = this.stat(mi.key, "sell_rp");
             sender.sendMessage(this.color("&f" + (i+1) + ". &e" + mi.displayName + " &7- Terjual: &c" + count + "x &7(" + this.formatRp(rp) + ")"));
         }
-        if (topSold.isEmpty()) sender.sendMessage(this.color("&7- Belum ada data penjualan."));
+        if (topSold.isEmpty()) sender.sendMessage(this.color("&7- No sales data yet."));
     }
 
     private void sendPlaceholders(CommandSender sender) {
         this.msg(sender, "&aPlaceholderAPI:");
-        this.msg(sender, "&f%rke_balance% &7= saldo format Rp");
-        this.msg(sender, "&f%rke_balance_raw% &7= saldo angka");
-        this.msg(sender, "&f%rke_balance_short% &7= saldo pendek");
-        this.msg(sender, "&f%rke_voucher% &7= voucher aktif");
+        this.msg(sender, "&f%rke_balance% &7= balance in Rp format");
+        this.msg(sender, "&f%rke_balance_raw% &7= raw balance number");
+        this.msg(sender, "&f%rke_balance_short% &7= short balance");
+        this.msg(sender, "&f%rke_voucher% &7= active voucher");
     }
 
     public long getBalance(UUID uuid) {
@@ -1535,7 +1647,21 @@ TabExecutor {
         if (bal < amount) {
             return false;
         }
-        this.setBalance(uuid, bal - amount);
+        long newBal = bal - amount;
+        this.setBalance(uuid, newBal);
+        
+        if (newBal < 20000000L) {
+            String path = "players." + uuid.toString() + ".hidden";
+            if (this.balancesCfg != null && this.balancesCfg.getBoolean(path, false)) {
+                this.balancesCfg.set(path, false);
+                this.trySave(this.balancesCfg, this.balancesFile);
+                Player p = Bukkit.getPlayer(uuid);
+                if (p != null) {
+                    this.msg((CommandSender)p, "&cYour balance dropped below Rp 20,000,000, your hidebal status is disabled.");
+                }
+            }
+        }
+        
         return true;
     }
 
@@ -1783,6 +1909,14 @@ TabExecutor {
                 }
                 return this.filter(players, args[0]);
             }
+        }
+        if (name.equals("payall")) {
+            if (args.length == 1) {
+                return Collections.singletonList("<total_uang>");
+            } else if (args.length >= 2) {
+                return Collections.singletonList("<alasan...>");
+            }
+            return Collections.emptyList();
         }
         if (name.equals("rke")) {
             if (!sender.hasPermission("rumahkita.economy.admin")) {

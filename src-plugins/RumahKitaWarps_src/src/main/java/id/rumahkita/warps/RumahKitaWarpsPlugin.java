@@ -44,6 +44,12 @@ public class RumahKitaWarpsPlugin extends JavaPlugin {
         getCommand("rkw").setExecutor(rkwCmd);
         getCommand("rkw").setTabCompleter(rkwCmd);
         
+        BackManager backManager = new BackManager(this);
+        getServer().getPluginManager().registerEvents(backManager, this);
+        if (getCommand("back") != null) {
+            getCommand("back").setExecutor(new BackCommand(backManager));
+        }
+        
         getLogger().info("RumahKitaWarps successfully enabled!");
     }
 

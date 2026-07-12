@@ -24,7 +24,7 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "Hanya player yang bisa main coinflip.");
+            sender.sendMessage(ChatColor.RED + "Only players can play coinflip.");
             return true;
         }
 
@@ -36,8 +36,8 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf create <amount> <heads/tails> &7- Buat room coinflip"));
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf join <nama_player> &7- Lawan player yang open cf"));
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf invite <player> <amount> <heads/tails> &7- Ajak player tertentu adu cf"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf accept/deny <player> &7- Terima/Tolak ajakan cf"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf list &7- Buka menu list coinflip aktif"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf accept/deny <player> &7- Accept/Deny cf invite"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf list &7- Open active coinflip list"));
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf cancel &7- Batalkan room coinflip milikmu"));
             return true;
         }
@@ -54,8 +54,8 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf create <amount> <heads/tails> &7- Buat room coinflip"));
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf join <nama_player> &7- Lawan player yang open cf"));
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf invite <player> <amount> <heads/tails> &7- Ajak player tertentu adu cf"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf accept/deny <player> &7- Terima/Tolak ajakan cf"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf list &7- Buka menu list coinflip aktif"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf accept/deny <player> &7- Accept/Deny cf invite"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf list &7- Open active coinflip list"));
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/cf cancel &7- Batalkan room coinflip milikmu"));
             return true;
         }
@@ -69,19 +69,19 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             try {
                 amount = Long.parseLong(args[1]);
             } catch (NumberFormatException e) {
-                p.sendMessage(ChatColor.RED + "Jumlah uang harus berupa angka yang valid.");
+                p.sendMessage(ChatColor.RED + "The amount must be a valid number.");
                 return true;
             }
 
             long minBet = plugin.getConfig().getLong("coinflip.min_bet", 1000L);
             if (amount < minBet) {
-                p.sendMessage(ChatColor.RED + "Minimal taruhan adalah Rp" + minBet + ".");
+                p.sendMessage(ChatColor.RED + "Minimum bet is Rp" + minBet + ".");
                 return true;
             }
 
             String side = args[2].toLowerCase();
             if (!side.equals("heads") && !side.equals("tails")) {
-                p.sendMessage(ChatColor.RED + "Sisi koin harus 'heads' (kepala) atau 'tails' (ekor).");
+                p.sendMessage(ChatColor.RED + "Coin side must be 'heads' or 'tails'.");
                 return true;
             }
 
@@ -96,7 +96,7 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             }
             Player target = Bukkit.getPlayerExact(args[1]);
             if (target == null) {
-                p.sendMessage(ChatColor.RED + "Player tersebut tidak online.");
+                p.sendMessage(ChatColor.RED + "That player is not online.");
                 return true;
             }
 
@@ -116,24 +116,24 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             }
             Player target = Bukkit.getPlayerExact(args[1]);
             if (target == null) {
-                p.sendMessage(ChatColor.RED + "Player tersebut tidak online.");
+                p.sendMessage(ChatColor.RED + "That player is not online.");
                 return true;
             }
             long amount;
             try {
                 amount = Long.parseLong(args[2]);
             } catch (NumberFormatException e) {
-                p.sendMessage(ChatColor.RED + "Jumlah uang harus berupa angka yang valid.");
+                p.sendMessage(ChatColor.RED + "The amount must be a valid number.");
                 return true;
             }
             long minBet = plugin.getConfig().getLong("coinflip.min_bet", 1000L);
             if (amount < minBet) {
-                p.sendMessage(ChatColor.RED + "Minimal taruhan adalah Rp" + minBet + ".");
+                p.sendMessage(ChatColor.RED + "Minimum bet is Rp" + minBet + ".");
                 return true;
             }
             String side = args[3].toLowerCase();
             if (!side.equals("heads") && !side.equals("tails")) {
-                p.sendMessage(ChatColor.RED + "Sisi koin harus 'heads' (kepala) atau 'tails' (ekor).");
+                p.sendMessage(ChatColor.RED + "Coin side must be 'heads' or 'tails'.");
                 return true;
             }
             manager.inviteGame(p, target, amount, side);
@@ -147,7 +147,7 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             }
             Player target = Bukkit.getPlayerExact(args[1]);
             if (target == null) {
-                p.sendMessage(ChatColor.RED + "Player tersebut tidak online.");
+                p.sendMessage(ChatColor.RED + "That player is not online.");
                 return true;
             }
             manager.joinGame(p, target);
@@ -161,14 +161,14 @@ public class CoinflipCommand implements CommandExecutor, TabCompleter {
             }
             Player target = Bukkit.getPlayerExact(args[1]);
             if (target == null) {
-                p.sendMessage(ChatColor.RED + "Player tersebut tidak online.");
+                p.sendMessage(ChatColor.RED + "That player is not online.");
                 return true;
             }
             manager.denyGame(p, target);
             return true;
         }
 
-        p.sendMessage(ChatColor.RED + "Sub command tidak diketahui. Ketik /cf untuk bantuan.");
+        p.sendMessage(ChatColor.RED + "Unknown sub-command. Type /cf for help.");
         return true;
     }
 

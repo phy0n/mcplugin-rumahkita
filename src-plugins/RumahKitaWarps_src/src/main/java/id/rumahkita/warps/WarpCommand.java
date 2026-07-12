@@ -21,7 +21,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Hanya player yang bisa menggunakan command ini.");
+            sender.sendMessage("Only players can use this command.");
             return true;
         }
 
@@ -43,25 +43,25 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
         if (sub.equals("help")) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8==== &b&lPlayer Warp &8===="));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp create <nama_warp> &7- Buat pwarp baru"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp delete <nama_warp> &7- Hapus warp milikmu"));
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp list &7- Buka menu list warp"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp create <warp_name> &7- Create new pwarp"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp delete <warp_name> &7- Delete your warp"));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a /pwarp list &7- Open warp list menu"));
             return true;
         }
 
         if (sub.equals("create")) {
             if (args.length < 2) {
-                p.sendMessage(prefix + ChatColor.RED + "Penggunaan: /pwarp create <nama_warp>");
+                p.sendMessage(prefix + ChatColor.RED + "Usage: /pwarp create <warp_name>");
                 return true;
             }
             
             String warpName = args[1];
             if (!warpName.matches("^[a-zA-Z0-9_]+$")) {
-                p.sendMessage(prefix + ChatColor.RED + "Nama warp hanya boleh huruf, angka, dan underscore.");
+                p.sendMessage(prefix + ChatColor.RED + "Warp name can only contain letters, numbers, and underscores.");
                 return true;
             }
             if (warpName.length() > 16) {
-                p.sendMessage(prefix + ChatColor.RED + "Nama warp maksimal 16 karakter.");
+                p.sendMessage(prefix + ChatColor.RED + "Warp name max 16 characters.");
                 return true;
             }
             
@@ -71,7 +71,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
         if (sub.equals("delete")) {
             if (args.length < 2) {
-                p.sendMessage(prefix + ChatColor.RED + "Penggunaan: /pwarp delete <nama_warp>");
+                p.sendMessage(prefix + ChatColor.RED + "Usage: /pwarp delete <warp_name>");
                 return true;
             }
             manager.deleteWarp(p, args[1]);

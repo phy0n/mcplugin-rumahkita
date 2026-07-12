@@ -100,13 +100,13 @@ public class WarpManager implements Listener {
     public boolean createWarp(Player p, String name) {
         String key = name.toLowerCase();
         if (warps.containsKey(key)) {
-            p.sendMessage(getPrefix() + ChatColor.RED + "Nama warp '" + name + "' sudah dipakai! Silakan pilih nama lain.");
+            p.sendMessage(getPrefix() + ChatColor.RED + "Warp name '" + name + "' is already taken! Please choose another name.");
             return false;
         }
 
         for (PlayerWarp w : warps.values()) {
             if (w.owner.equals(p.getUniqueId())) {
-                p.sendMessage(getPrefix() + ChatColor.RED + "Kamu sudah memiliki warp! Hapus dulu dengan /pwarp delete " + w.name);
+                p.sendMessage(getPrefix() + ChatColor.RED + "You already have a warp! Delete it first using /pwarp delete " + w.name);
                 return false;
             }
         }
@@ -115,7 +115,7 @@ public class WarpManager implements Listener {
         RumahKitaEconomyRupiahPlugin economy = RumahKitaEconomyRupiahPlugin.getInstance();
         
         if (economy.getBalance(p.getUniqueId()) < cost) {
-            p.sendMessage(getPrefix() + ChatColor.RED + "Uangmu tidak cukup! Biaya membuat pwarp adalah " + economy.formatRp(cost));
+            p.sendMessage(getPrefix() + ChatColor.RED + "Not enough money! Cost to create pwarp is " + economy.formatRp(cost));
             return false;
         }
 
@@ -123,7 +123,7 @@ public class WarpManager implements Listener {
         warps.put(key, new PlayerWarp(name, p.getUniqueId(), p.getLocation()));
         saveWarps();
 
-        p.sendMessage(getPrefix() + ChatColor.GREEN + "Berhasil membuat warp " + ChatColor.YELLOW + name + ChatColor.GREEN + " dengan biaya " + economy.formatRp(cost) + "!");
+        p.sendMessage(getPrefix() + ChatColor.GREEN + "Successfully created warp " + ChatColor.YELLOW + name + ChatColor.GREEN + " for a cost of " + economy.formatRp(cost) + "!");
         return true;
     }
 
@@ -132,18 +132,18 @@ public class WarpManager implements Listener {
         PlayerWarp warp = warps.get(key);
         
         if (warp == null) {
-            p.sendMessage(getPrefix() + ChatColor.RED + "Warp tidak ditemukan.");
+            p.sendMessage(getPrefix() + ChatColor.RED + "Warp not found.");
             return false;
         }
 
         if (!warp.owner.equals(p.getUniqueId()) && !p.hasPermission("pwarp.admin")) {
-            p.sendMessage(getPrefix() + ChatColor.RED + "Ini bukan warp milikmu.");
+            p.sendMessage(getPrefix() + ChatColor.RED + "This is not your warp.");
             return false;
         }
 
         warps.remove(key);
         saveWarps();
-        p.sendMessage(getPrefix() + ChatColor.GREEN + "Warp " + ChatColor.YELLOW + warp.name + ChatColor.GREEN + " telah dihapus.");
+        p.sendMessage(getPrefix() + ChatColor.GREEN + "Warp " + ChatColor.YELLOW + warp.name + ChatColor.GREEN + " has been deleted.");
         return true;
     }
 
@@ -174,9 +174,9 @@ public class WarpManager implements Listener {
                 meta.setDisplayName(ChatColor.YELLOW + warp.name);
                 
                 List<String> lore = new ArrayList<>();
-                lore.add(ChatColor.GRAY + "Pemilik: " + ChatColor.WHITE + (owner.getName() != null ? owner.getName() : "Unknown"));
+                lore.add(ChatColor.GRAY + "Owner: " + ChatColor.WHITE + (owner.getName() != null ? owner.getName() : "Unknown"));
                 lore.add("");
-                lore.add(ChatColor.GREEN + "Klik untuk teleport!");
+                lore.add(ChatColor.GREEN + "Click to teleport!");
                 
                 meta.setLore(lore);
                 head.setItemMeta(meta);
@@ -190,7 +190,7 @@ public class WarpManager implements Listener {
             ItemStack prev = new ItemStack(Material.ARROW);
             org.bukkit.inventory.meta.ItemMeta prevMeta = prev.getItemMeta();
             if (prevMeta != null) {
-                prevMeta.setDisplayName(ChatColor.GREEN + "Halaman Sebelumnya");
+                prevMeta.setDisplayName(ChatColor.GREEN + "Previous Page");
                 prev.setItemMeta(prevMeta);
             }
             inv.setItem(45, prev);
@@ -200,7 +200,7 @@ public class WarpManager implements Listener {
             ItemStack next = new ItemStack(Material.ARROW);
             org.bukkit.inventory.meta.ItemMeta nextMeta = next.getItemMeta();
             if (nextMeta != null) {
-                nextMeta.setDisplayName(ChatColor.GREEN + "Halaman Selanjutnya");
+                nextMeta.setDisplayName(ChatColor.GREEN + "Next Page");
                 next.setItemMeta(nextMeta);
             }
             inv.setItem(53, next);
@@ -209,10 +209,10 @@ public class WarpManager implements Listener {
         ItemStack infoCreate = new ItemStack(Material.PAPER);
         org.bukkit.inventory.meta.ItemMeta metaCreate = infoCreate.getItemMeta();
         if (metaCreate != null) {
-            metaCreate.setDisplayName(ChatColor.AQUA + "Buat Warp");
+            metaCreate.setDisplayName(ChatColor.AQUA + "Create Warp");
             List<String> lore = new ArrayList<>();
-            lore.add(ChatColor.GRAY + "Ketik: " + ChatColor.YELLOW + "/pwarp create <nama>");
-            lore.add(ChatColor.GRAY + "Biaya: " + ChatColor.YELLOW + "Rp 50.000");
+            lore.add(ChatColor.GRAY + "Type: " + ChatColor.YELLOW + "/pwarp create <name>");
+            lore.add(ChatColor.GRAY + "Cost: " + ChatColor.YELLOW + "Rp 50.000");
             metaCreate.setLore(lore);
             infoCreate.setItemMeta(metaCreate);
         }
@@ -221,10 +221,10 @@ public class WarpManager implements Listener {
         ItemStack infoInfo = new ItemStack(Material.BOOK);
         org.bukkit.inventory.meta.ItemMeta metaInfo = infoInfo.getItemMeta();
         if (metaInfo != null) {
-            metaInfo.setDisplayName(ChatColor.GOLD + "Informasi Pwarp");
+            metaInfo.setDisplayName(ChatColor.GOLD + "Pwarp Info");
             List<String> lore = new ArrayList<>();
-            lore.add(ChatColor.GRAY + "Sistem Player Warp.");
-            lore.add(ChatColor.GRAY + "Ketik " + ChatColor.YELLOW + "/pwarp help" + ChatColor.GRAY + " untuk daftar command.");
+            lore.add(ChatColor.GRAY + "Player Warp System.");
+            lore.add(ChatColor.GRAY + "Type " + ChatColor.YELLOW + "/pwarp help" + ChatColor.GRAY + " for command list.");
             metaInfo.setLore(lore);
             infoInfo.setItemMeta(metaInfo);
         }
@@ -233,9 +233,9 @@ public class WarpManager implements Listener {
         ItemStack infoDelete = new ItemStack(Material.BARRIER);
         org.bukkit.inventory.meta.ItemMeta metaDelete = infoDelete.getItemMeta();
         if (metaDelete != null) {
-            metaDelete.setDisplayName(ChatColor.RED + "Hapus Warp");
+            metaDelete.setDisplayName(ChatColor.RED + "Delete Warp");
             List<String> lore = new ArrayList<>();
-            lore.add(ChatColor.GRAY + "Ketik: " + ChatColor.YELLOW + "/pwarp delete <nama>");
+            lore.add(ChatColor.GRAY + "Type: " + ChatColor.YELLOW + "/pwarp delete <name>");
             metaDelete.setLore(lore);
             infoDelete.setItemMeta(metaDelete);
         }
@@ -262,7 +262,7 @@ public class WarpManager implements Listener {
                         p.closeInventory();
                         teleportToWarp(p, warpName);
                     } else {
-                        p.sendMessage(getPrefix() + ChatColor.RED + "Warp tidak ditemukan.");
+                        p.sendMessage(getPrefix() + ChatColor.RED + "Warp not found.");
                         p.closeInventory();
                     }
                 }
@@ -271,9 +271,9 @@ public class WarpManager implements Listener {
                 String name = e.getCurrentItem().getItemMeta().getDisplayName();
                 try {
                     int currentPage = Integer.parseInt(title.split("Page ")[1]);
-                    if (name.contains("Selanjutnya")) {
+                    if (name.contains("Next Page")) {
                         openWarpMenu(p, currentPage + 1);
-                    } else if (name.contains("Sebelumnya")) {
+                    } else if (name.contains("Previous Page")) {
                         openWarpMenu(p, currentPage - 1);
                     }
                 } catch (Exception ex) {
@@ -288,11 +288,11 @@ public class WarpManager implements Listener {
         PlayerWarp warp = warps.get(key);
         
         if (warp == null) {
-            p.sendMessage(getPrefix() + ChatColor.RED + "Warp " + name + " tidak ditemukan.");
+            p.sendMessage(getPrefix() + ChatColor.RED + "Warp " + name + " not found.");
             return;
         }
 
-        p.sendMessage(getPrefix() + ChatColor.YELLOW + "Teleportasi dalam 5 detik. Jangan bergerak!");
+        p.sendMessage(getPrefix() + ChatColor.YELLOW + "Teleporting in 5 seconds. Do not move!");
         
         Location startLoc = p.getLocation();
 
@@ -307,15 +307,14 @@ public class WarpManager implements Listener {
                 }
 
                 if (startLoc.distanceSquared(p.getLocation()) > 1.0) {
-                    p.sendMessage(getPrefix() + ChatColor.RED + "Teleportasi dibatalkan karena kamu bergerak.");
+                    p.sendMessage(getPrefix() + ChatColor.RED + "Teleportation cancelled because you moved.");
                     this.cancel();
                     return;
                 }
 
                 if (countdown > 0) {
                     p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
-                    p.sendTitle(ChatColor.translateAlternateColorCodes('&', "&a&l" + countdown), ChatColor.YELLOW + "Jangan bergerak!", 0, 25, 0);
-                    p.sendMessage(getPrefix() + ChatColor.GREEN + countdown + "...");
+                    p.sendTitle(ChatColor.translateAlternateColorCodes('&', "&a&l" + countdown), ChatColor.YELLOW + "Do not move!", 0, 25, 0);
                     countdown--;
                 } else {
                     p.teleport(warp.location);
@@ -326,7 +325,7 @@ public class WarpManager implements Listener {
                     
                     p.sendTitle(
                         ChatColor.translateAlternateColorCodes('&', "&e&lWelcome to &a&l" + warp.name),
-                        ChatColor.translateAlternateColorCodes('&', "&fMilik &b" + ownerName),
+                        ChatColor.translateAlternateColorCodes('&', "&fOwner &b" + ownerName),
                         10, 60, 10
                     );
                     
@@ -337,7 +336,7 @@ public class WarpManager implements Listener {
     }
 
     public String getPrefix() {
-        return ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("messages.prefix", "&8[&ePWarp&8] "));
+        return ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("messages.prefix", "&8[&b&lPWarp&8] "));
     }
 
     public List<String> getWarpNames() {

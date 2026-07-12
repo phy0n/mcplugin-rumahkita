@@ -29,6 +29,9 @@ commands:
   pay:
     description: Transfer saldo Rupiah
     usage: /pay <player> <amount>
+  payall:
+    description: Bagi-bagi uang ke semua player online
+    usage: /payall <amount> <alasan>
   rke:
     description: Admin Economy RumahKita
     usage: /rke

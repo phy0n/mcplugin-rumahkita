@@ -2,7 +2,7 @@
 cost:
   create: 50000
 messages:
-  prefix: "&8[&ePWarp&8] "
+  prefix: "&8[&b&lPWarp&8] "
 
 # RumahKitaRTP Configuration
 rtp:

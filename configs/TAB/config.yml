@@ -9,8 +9,8 @@ header-footer:
         - ""
       footer:
         - ""
-        - "&7Online: &a%online% &8| &7Ping: &a%ping%ms &8| &7TPS: %server_tps_1_colored%"
-        - "&drumahkita.homes"
+        - "&7Online: &a%online% &8| &7Ping: %condition:ping_color%ms &8| &7TPS: %server_tps_1_colored%"
+        - "&d&lrumahkita.homes"
         - ""
 
 tablist-name-formatting:
@@ -31,7 +31,7 @@ scoreboard-teams:
 playerlist-objective:
   enabled: true
   value: "%ping%"
-  fancy-value: "&a%ping%"
+  fancy-value: "%condition:ping_color%"
   title: "RumahKita S2"
   render-type: INTEGER
   disable-condition: '%world%=disabledworld'
@@ -96,7 +96,7 @@ scoreboard:
         - " &7Guild: &b%rumahkitaguilds_name%"
         - " &7Uang: &a%rke_balance%"
         - " &7Online: &a%online%&8/&a35"
-        - " &7Ping: &a%ping%ms"
+        - " &7Ping: %condition:ping_color%ms"
         - ""
         - " &7%date%"
         - " &d&lrumahkita.homes"
@@ -171,6 +171,16 @@ placeholder-output-replacements:
     "no": ""
 
 conditions:
+  ping_color:
+    conditions:
+      - "%ping%<80"
+    true: "&a%ping%"
+    false: "%condition:ping_color_medium%"
+  ping_color_medium:
+    conditions:
+      - "%ping%<150"
+    true: "&e%ping%"
+    false: "&c%ping%"
   nick:
     conditions:
       - "%player%=%essentials_nickname%"
