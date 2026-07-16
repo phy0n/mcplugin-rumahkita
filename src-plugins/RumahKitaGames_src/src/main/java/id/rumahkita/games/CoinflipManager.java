@@ -50,7 +50,7 @@ public class CoinflipManager implements Listener {
         activeGames.put(p.getUniqueId(), game);
 
         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-            "&e[Coinflip] &f" + p.getName() + " &acreated a bet of &eRp" + amount + " &auntuk sisi &b" + side.toUpperCase() + "&a! Ketik &e/cf join " + p.getName() + " &aatau &e/cf list &auntuk melawannya!"));
+            "&e[Coinflip] &f" + p.getName() + " &acreated a bet of &eRp" + amount + " &afor &b" + side.toUpperCase() + "&a! Type &e/cf join " + p.getName() + " &aor &e/cf list &ato play!"));
     }
 
     public void openGameList(Player p) {
@@ -64,10 +64,10 @@ public class CoinflipManager implements Listener {
                 meta.setOwningPlayer(Bukkit.getOfflinePlayer(game.creator));
                 meta.setDisplayName(ChatColor.YELLOW + game.playerName + "'s Coinflip");
                 List<String> lore = new ArrayList<>();
-                lore.add(ChatColor.GRAY + "Taruhan: " + ChatColor.GREEN + "Rp" + game.amount);
-                lore.add(ChatColor.GRAY + "Sisi: " + ChatColor.AQUA + game.side.toUpperCase());
+                lore.add(ChatColor.GRAY + "Bet: " + ChatColor.GREEN + "Rp" + game.amount);
+                lore.add(ChatColor.GRAY + "Side: " + ChatColor.AQUA + game.side.toUpperCase());
                 lore.add("");
-                lore.add(ChatColor.YELLOW + "Klik untuk melawan!");
+                lore.add(ChatColor.YELLOW + "Click to play!");
                 meta.setLore(lore);
                 head.setItemMeta(meta);
             }
@@ -106,7 +106,7 @@ public class CoinflipManager implements Listener {
 
         CoinflipGame game = activeGames.remove(p.getUniqueId());
         RumahKitaEconomyRupiahPlugin.getInstance().addBalance(p.getUniqueId(), game.amount);
-        p.sendMessage(ChatColor.GREEN + "Coinflip game cancelled. Your money Rp" + game.amount + " telah dikembalikan.");
+        p.sendMessage(ChatColor.GREEN + "Coinflip game cancelled. Your Rp" + game.amount + " has been refunded.");
     }
 
     public void joinGame(Player p, Player target) {
@@ -138,7 +138,7 @@ public class CoinflipManager implements Listener {
         activeGames.remove(target.getUniqueId());
 
         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-            "&e[Coinflip] &f" + p.getName() + " &amenerima tantangan &f" + target.getName() + " &a(Taruhan: &eRp" + game.amount + "&a). Koin sedang dilempar..."));
+            "&e[Coinflip] &f" + p.getName() + " &aaccepted &f" + target.getName() + "'s challenge &a(Bet: &eRp" + game.amount + "&a). Flipping coin..."));
 
         String winningSide = random.nextBoolean() ? "HEADS" : "TAILS";
         Player winner = game.side.equalsIgnoreCase(winningSide) ? target : p;
@@ -157,7 +157,7 @@ public class CoinflipManager implements Listener {
                     String currentSide = (ticks % 2 == 0) ? "HEADS" : "TAILS";
                     ChatColor color = (ticks % 2 == 0) ? ChatColor.AQUA : ChatColor.YELLOW;
                     
-                    String title = ChatColor.translateAlternateColorCodes('&', "&e&lMengacak Koin...");
+                    String title = ChatColor.translateAlternateColorCodes('&', "&e&lFlipping Coin...");
                     String subtitle = ChatColor.translateAlternateColorCodes('&', color + "&l" + currentSide);
                     
                     float pitch = (ticks % 2 == 0) ? 1.5f : 2.0f;
@@ -180,21 +180,21 @@ public class CoinflipManager implements Listener {
                     winStreaks.put(loser.getUniqueId(), 0);
 
                     Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-                        "&e[Coinflip] &aKoin menunjukkan &b" + winningSide + "&a! &f" + winner.getName() + " &amenang dan mendapatkan &eRp" + winAmount + " &a(Dipotong pajak " + taxPercentage + "%)"));
+                        "&e[Coinflip] &aThe coin landed on &b" + winningSide + "&a! &f" + winner.getName() + " &awon &eRp" + winAmount + " &a(-" + taxPercentage + "% tax)"));
                     
                     if (currentStreak >= 3) {
                         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-                            "&e[Coinflip] &c&l🔥 WOW! &f" + winner.getName() + " &esedang memegang rekor Win Streak &c&l" + currentStreak + "x&e! 🔥"));
+                            "&e[Coinflip] &c&l🔥 WOW! &f" + winner.getName() + " &eis on a &c&l" + currentStreak + "x &eWin Streak! 🔥"));
                     }
                     
                     if (loserStreak >= 3) {
                         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', 
-                            "&e[Coinflip] &4&l☠ RIP! &fRekor Win Streak &c&l" + loserStreak + "x &fmilik " + loser.getName() + " &ftelah dihentikan oleh &e" + winner.getName() + "&f! ☠"));
+                            "&e[Coinflip] &4&l☠ RIP! &f" + loser.getName() + "'s &c&l" + loserStreak + "x &fWin Streak was ended by &e" + winner.getName() + "&f! ☠"));
                     }
                     
                     if (winner.isOnline()) {
                         winner.sendTitle(
-                            ChatColor.translateAlternateColorCodes('&', "&a&lMENANG!"),
+                            ChatColor.translateAlternateColorCodes('&', "&a&lYOU WON!"),
                             ChatColor.translateAlternateColorCodes('&', "&e+" + winAmount + " Rupiah"),
                             10, 60, 10
                         );
@@ -211,8 +211,8 @@ public class CoinflipManager implements Listener {
                     }
                     if (loser.isOnline()) {
                         loser.sendTitle(
-                            ChatColor.translateAlternateColorCodes('&', "&c&lKALAH!"),
-                            ChatColor.translateAlternateColorCodes('&', "&eKoin menunjukkan &b" + winningSide),
+                            ChatColor.translateAlternateColorCodes('&', "&c&lYOU LOST!"),
+                            ChatColor.translateAlternateColorCodes('&', "&eThe coin landed on &b" + winningSide),
                             10, 60, 10
                         );
                         loser.playSound(loser.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 0.5f);
@@ -245,11 +245,11 @@ public class CoinflipManager implements Listener {
         CoinflipGame game = new CoinflipGame(p.getUniqueId(), p.getName(), amount, side, target.getUniqueId());
         activeGames.put(p.getUniqueId(), game);
 
-        p.sendMessage(ChatColor.GREEN + "Successfully sent Coinflip invite for Rp" + amount + " ke " + target.getName() + ".");
+        p.sendMessage(ChatColor.GREEN + "Successfully sent Coinflip invite for Rp" + amount + " to " + target.getName() + ".");
         target.sendMessage(ChatColor.translateAlternateColorCodes('&', 
-            "&e[Coinflip] &f" + p.getName() + " &achallenged you to Coinflip for &eRp" + amount + "&a! Dia memilih &b" + side.toUpperCase()));
+            "&e[Coinflip] &f" + p.getName() + " &achallenged you to Coinflip for &eRp" + amount + "&a! They chose &b" + side.toUpperCase()));
         target.sendMessage(ChatColor.translateAlternateColorCodes('&', 
-            "&aKetik &e/cf accept " + p.getName() + " &auntuk menerima atau &c/cf deny " + p.getName() + " &auntuk menolak."));
+            "&aType &e/cf accept " + p.getName() + " &ato accept or &c/cf deny " + p.getName() + " &ato deny."));
     }
 
     public void denyGame(Player p, Player target) {
