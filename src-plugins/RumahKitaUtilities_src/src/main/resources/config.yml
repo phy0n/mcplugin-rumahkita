@@ -1,0 +1,249 @@
+# RumahKitaUtilities v1.1.0
+# Fitur:
+# 1) Sleep skip tanpa harus semua player tidur
+# 2) Carry player/entity seperti mod carrying versi plugin server-side
+# 3) Bansos tiap Jumat + info Discord webhook
+
+sleep:
+  enabled: true
+
+  # SINGLE_PLAYER = cukup 1 player tidur langsung skip malam.
+  # PERCENTAGE = butuh persentase player tidur.
+  mode: SINGLE_PLAYER
+  required-percentage: 25
+  min-sleeping-players: 1
+
+  worlds:
+    - world
+
+  count-survival: true
+  count-adventure: true
+  ignore-creative: true
+  ignore-spectator: true
+
+  skip-night: true
+  clear-thunder: true
+  clear-rain: true
+
+  delay-after-bed-enter-ticks: 20
+  set-time: 0
+
+  title-enabled: true
+  title: "&b&lSelamat Pagi!"
+  subtitle: "&7Malam dilewati karena &f%sleeper% &7tidur."
+  broadcast: "&8[&bSleep&8] &f%sleeper% &7tidur. Malam dilewati."
+
+carry:
+  enabled: true
+
+  max-distance: 4.0
+  allow-carry-player: true
+  allow-carry-entity: true
+
+  # Sneak + klik kanan entity untuk carry mob/player.
+  sneak-right-click-entity: true
+
+  # Player yang menggendong bisa shift untuk melepas.
+  drop-when-carrier-sneak: true
+
+  # Player yang digendong bisa shift untuk turun.
+  drop-when-passenger-sneak: true
+
+  cancel-damage-while-carrying: false
+
+  # Mode aman:
+  # Kalau true, hanya entity di allowed-entity-types yang bisa digendong.
+  # Zombie, golem, villager, warden, skeleton, creeper, monster, boss, dll otomatis tidak bisa.
+  allowed-entity-whitelist-enabled: true
+
+  # Hewan kecil / masuk akal untuk digendong.
+  # Kalau mau nambah, tulis nama EntityType Minecraft/Paper.
+  allowed-entity-types:
+    - CHICKEN
+    - RABBIT
+    - CAT
+    - OCELOT
+    - PARROT
+    - FOX
+    - AXOLOTL
+    - FROG
+    - TURTLE
+    - PIG
+    - SHEEP
+    - COW
+    - MOOSHROOM
+    - GOAT
+    - WOLF
+    - ARMADILLO
+
+  # Entity berat / tidak masuk akal tetap diblok walaupun whitelist dimatikan.
+  blocked-entity-types:
+    - PLAYER # tidak dipakai untuk player carry, player diatur dari allow-carry-player
+    - ZOMBIE
+    - ZOMBIE_VILLAGER
+    - HUSK
+    - DROWNED
+    - SKELETON
+    - STRAY
+    - WITHER_SKELETON
+    - CREEPER
+    - SPIDER
+    - CAVE_SPIDER
+    - ENDERMAN
+    - BLAZE
+    - GHAST
+    - SLIME
+    - MAGMA_CUBE
+    - WITCH
+    - PILLAGER
+    - VINDICATOR
+    - EVOKER
+    - RAVAGER
+    - VEX
+    - WARDEN
+    - IRON_GOLEM
+    - SNOW_GOLEM
+    - VILLAGER
+    - WANDERING_TRADER
+    - HORSE
+    - DONKEY
+    - MULE
+    - LLAMA
+    - TRADER_LLAMA
+    - CAMEL
+    - SNIFFER
+    - POLAR_BEAR
+    - PANDA
+    - HOGLIN
+    - ZOGLIN
+    - ENDER_DRAGON
+    - WITHER
+
+  # Proteksi land/claim.
+  # Kalau target entity berada di claim orang lain, player tidak bisa gendong.
+  protection:
+    enabled: true
+    deny-if-hook-error: true
+    debug: false
+
+    griefprevention:
+      enabled: true
+
+  allowed-worlds:
+    - world
+
+  messages:
+    picked-player: "&8[&dCarry&8] &aKamu menggendong &f%target%&a."
+    picked-entity: "&8[&dCarry&8] &aKamu menggendong entity &f%target%&a."
+    dropped: "&8[&dCarry&8] &eCarry dilepas."
+    disabled: "&8[&dCarry&8] &cCarry sedang dimatikan."
+    no-permission: "&cKamu tidak punya permission."
+    too-far: "&cTarget terlalu jauh."
+    blocked: "&cEntity itu tidak bisa digendong."
+    too-heavy: "&cEntity itu terlalu berat / tidak masuk akal untuk digendong."
+    land-denied: "&cKamu tidak bisa mengambil mob/hewan di land/claim orang lain."
+    not-found: "&cTarget tidak ditemukan."
+    only-player: "&cCommand ini hanya bisa dipakai player."
+
+bansos:
+  enabled: true
+
+  # Default Jumat jam 20:00 WIB.
+  timezone: "Asia/Jakarta"
+  day-of-week: "FRIDAY"
+  time: "20:00"
+
+  # Kalau server baru nyala lewat jam bansos di hari yang sama, tetap jalankan sekali.
+  catch-up-same-day: true
+
+  rewards:
+    - material: DIAMOND
+      amount: 5
+      display: "5 Diamond"
+    - material: EMERALD
+      amount: 10
+      display: "10 Emerald"
+    - material: COOKED_BEEF
+      amount: 20
+      display: "20 Beef"
+
+  broadcast-enabled: true
+  broadcast-lines:
+    - "&8&m--------------------------------"
+    - "&a&lBANSOS JUMAT RUMAHKITA"
+    - "&fSemua player online mendapatkan:"
+    - "&b5 Diamond &7+ &a10 Emerald &7+ &c20 Beef"
+    - "&7Terima kasih sudah main di RumahKita S2!"
+    - "&8&m--------------------------------"
+
+  title-enabled: true
+  title: "&a&lBANSOS JUMAT"
+  subtitle: "&b+5 Diamond &a+10 Emerald &c+20 Beef"
+
+  discord:
+    enabled: true
+
+    # Demi aman, paste webhook kamu di sini setelah plugin terpasang.
+    # Jangan upload config yang berisi webhook ke publik.
+    webhook-url: "PASTE_WEBHOOK_DISCORD_DI_SINI"
+
+    role-mention: "<@&1461386284726620273>"
+    role-id: "1461386284726620273"
+
+    username: "RumahKita Bansos"
+    avatar-url: ""
+
+    content: "<@&1461386284726620273> 🎁 **Bansos Jumat RumahKita S2 sudah dibagikan!**"
+    embed-title: "🎁 Bansos Jumat RumahKita S2"
+    embed-description: "Semua player online mendapatkan **5 Diamond**, **10 Emerald**, dan **20 Beef**."
+    embed-color: 5763719
+
+messages:
+  prefix: "&8[&bRumahKitaUtilities&8] "
+  reloaded: "&aConfig berhasil direload."
+  enabled: "&aFitur diaktifkan."
+  disabled: "&cFitur dimatikan."
+  no-permission: "&cKamu tidak punya permission."
+
+vanish:
+  enabled: true
+
+  # Simpan status vanish ke plugins/RumahKitaUtilities/vanish.yml.
+  # Kalau server restart, player yang masih vanish tetap vanish saat join lagi.
+  persist: true
+
+  # Ini inti fitur: tidak pakai potion invisibility, jadi tidak ada particle potion.
+  # Sistem pakai hidePlayer server-side, aman untuk Java + Bedrock/Geyser.
+  no-potion-particle: true
+
+  # Kalau player punya efek invisibility dari plugin lain/potion, hapus saat /rkvanish supaya tidak muncul particle.
+  remove-invisibility-effect: true
+
+  # Hide join/quit message untuk player yang sedang vanish.
+  hide-join-quit-message: true
+
+  # Cegah player vanish pickup item, biar tidak kelihatan item tiba-tiba hilang.
+  block-item-pickup: true
+
+  # Mob tidak target player vanish.
+  prevent-mob-target: true
+
+  # Kalau true, player vanish tidak bisa chat supaya tidak ketahuan.
+  block-chat-while-vanished: true
+
+  # Biar tidak dorong-dorongan / tabrakan aneh.
+  disable-collision: true
+
+  # Staff dengan permission ini tetap bisa lihat player vanish.
+  see-permission: "rumahkita.vanish.see"
+
+  notify-staff: true
+
+  messages:
+    enabled: "&8[&7RKVanish&8] &aVanish ON. Kamu sekarang tidak terlihat tanpa particle."
+    disabled: "&8[&7RKVanish&8] &cVanish OFF. Kamu terlihat lagi."
+    feature-disabled: "&8[&7RKVanish&8] &cRKVanish sedang dimatikan."
+    chat-blocked: "&8[&7RKVanish&8] &cKamu sedang vanish. Chat diblok agar tidak ketahuan."
+    toggled-other: "&8[&7RKVanish&8] &aRKVanish &f%player%&a: &f%state%"
+    staff-notify: "&8[&7RKVanish&8] &f%player% &7%state%"
+    list: "&8[&7RKVanish&8] &bVanished: &f%list%"

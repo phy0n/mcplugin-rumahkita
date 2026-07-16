@@ -1,0 +1,22 @@
+name: RumahKitaCaptureFlag
+version: 1.5.3
+main: id.rumahkita.ctf.RumahKitaCaptureFlag
+api-version: 1.5.3
+author: HansM x ChatGPT
+description: Capture point event for RumahKita S2 with PlaceholderAPI TAB scoreboard mode.
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  rkctf:
+    description: RumahKita Capture Flag / Capture Point event command.
+    usage: /rkctf help
+    aliases: [ctf, captureflag]
+
+permissions:
+  rumahkita.ctf.use:
+    description: Allows player to join CTF event.
+    default: true
+  rumahkita.ctf.admin:
+    description: Allows admin to manage CTF event.
+    default: op

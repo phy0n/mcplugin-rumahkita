@@ -1,0 +1,59 @@
+name: RumahKitaUtilities
+version: 1.2.0
+main: id.rumahkita.utilities.RumahKitaUtilitiesPlugin
+api-version: '1.21'
+author: HansM
+description: One/percentage player sleep, carry protect, Friday bansos, and particle-free vanish.
+
+commands:
+  rksleep:
+    description: RumahKita Sleep command.
+    usage: /rksleep <status|reload|on|off>
+  carry:
+    description: Carry player/entity command.
+    usage: /carry <player|drop|toggle>
+  rkcarry:
+    description: RumahKita Carry admin/user command.
+    usage: /rkcarry <toggle|drop|reload>
+  rkbansos:
+    description: RumahKita Friday bansos command.
+    usage: /rkbansos <status|now|reload>
+  rkvanish:
+    description: Particle-free RumahKita vanish.
+    usage: /rkvanish [player|list|reload]
+    aliases: [rkv]
+
+permissions:
+  rumahkita.utilities.admin:
+    description: Admin access to all RumahKitaUtilities commands.
+    default: op
+  rumahkita.sleep.use:
+    description: Allow player to trigger sleep skip.
+    default: true
+  rumahkita.carry.use:
+    description: Allow player to use carry.
+    default: true
+  rumahkita.carry.admin:
+    description: Carry admin.
+    default: op
+  rumahkita.carry.bypassland:
+    description: Bypass land claim protection for carry.
+    default: op
+  rumahkita.bansos.admin:
+    description: Bansos admin.
+    default: op
+  rumahkita.vanish.use:
+    description: Allow using /rkvanish for self.
+    default: op
+  rumahkita.vanish.others:
+    description: Allow vanishing other players.
+    default: op
+  rumahkita.vanish.see:
+    description: Allow seeing vanished players.
+    default: op
+  rumahkita.vanish.admin:
+    description: Allow vanish admin commands.
+    default: op
+  rumahkita.vanish.chatbypass:
+    description: Allow chatting while vanished if chat block is enabled.
+    default: op

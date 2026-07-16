@@ -1,0 +1,98 @@
+# RumahKitaDiscordVerify v1.0.1
+# Verifikasi Discord sebelum player bisa main penuh.
+# Catatan penting: MAC address asli tidak bisa dibaca oleh server Minecraft/VPS.
+# Pengganti paling aman: Discord ID + UUID + nama + IP + subnet + Floodgate XUID Bedrock.
+
+enabled: true
+
+discord:
+  enabled: true
+  # Isi token bot di sini. Jangan kirim token ke chat publik.
+  bot-token: "PASTE_BOT_TOKEN_BARU_DI_SINI"
+  verify-channel-id: "1519313030024921118"
+  invite-url: "https://discord.gg/4gPCW3ynyt"
+  poll-interval-seconds: 3
+  read-message-limit: 20
+  ignore-old-messages-on-startup: true
+  success-message: "✅ Selamat <@%discord_id%>, kamu sudah terverifikasi sebagai **%player%** di RumahKita S2. Selamat bermain! 🏡"
+  failed-limit-message: "❌ Verifikasi gagal untuk <@%discord_id%>. Limit akun/IP terdeteksi. Hubungi staff RumahKita di https://discord.gg/4gPCW3ynyt"
+
+code:
+  length: 5
+  expire-seconds: 300
+  reuse-existing-pending-code: true
+
+anti-alt:
+  enabled: true
+  # Maksimal akun Minecraft terverifikasi per Discord ID.
+  max-accounts-per-discord: 2
+  # Maksimal akun Minecraft terverifikasi per IP exact.
+  max-accounts-per-ip: 2
+  # Maksimal akun Minecraft terverifikasi per subnet. Berguna kalau pelaku ganti IP dekat-dekat.
+  max-accounts-per-subnet: 4
+  ipv4-subnet-prefix: 24
+  ipv6-subnet-prefix: 64
+  count-bedrock-xuid: true
+  max-accounts-per-bedrock-xuid: 1
+
+securityban-integration:
+  enabled: true
+  # Kalau true, player yang gagal verify karena limit akan otomatis diban lewat RumahKitaSecurityBan (/rkban).
+  # Default false supaya tidak salah ban keluarga/satu WiFi. Kalau mau super ketat, ubah true.
+  auto-rkban-on-limit-exceeded: false
+  ban-reason: "Verify limit exceeded / suspected alt or VPN"
+  alert-staff: true
+
+loginsecurity:
+  # Plugin ini sengaja mengizinkan /login dan /register untuk player belum verify.
+  # Setelah login berhasil, player ketik /verify.
+  allowed-before-verify-commands:
+    - login
+    - l
+    - register
+    - reg
+    - verify
+    - help
+
+lock:
+  block-movement: true
+  allow-look-around: true
+  block-chat: true
+  block-block-break: true
+  block-block-place: true
+  block-interact: true
+  block-damage: true
+  block-inventory: true
+  send-reminder-every-seconds: 20
+
+on-verified-commands:
+  enabled: true
+  console-commands:
+    - "lp user %player% permission set rumahkita.verified true"
+
+messages:
+  prefix: "&8[&bVerify&8] "
+  no-permission: "&cKamu tidak punya permission."
+  already-verified: "&aAkun Minecraft kamu sudah terverifikasi dengan Discord."
+  generate-code:
+    - "&8&m--------------------------------"
+    - "&b&lDiscord Verification"
+    - "&7Belum join Discord? Masuk dulu:"
+    - "&bhttps://discord.gg/4gPCW3ynyt"
+    - ""
+    - "&7Kirim kode ini di channel verify Discord:"
+    - "&e&l%code%"
+    - "&7Channel ID: &f%channel%"
+    - "&7Kode expired dalam &f%seconds% detik&7."
+    - "&cJangan kasih kode ini ke orang lain."
+    - "&8&m--------------------------------"
+  pending-reminder:
+    - "&cAkun kamu belum verifikasi Discord."
+    - "&7Join Discord dulu: &bhttps://discord.gg/4gPCW3ynyt"
+    - "&7Login/register dulu, lalu ketik &e/verify &7untuk dapat kode."
+  verified-success: "&aVerifikasi berhasil! Selamat bermain di RumahKita S2."
+  code-expired: "&cKode kamu sudah expired. Ketik /verify lagi."
+  locked-command: "&cKamu harus verifikasi Discord dulu. Join: &bhttps://discord.gg/4gPCW3ynyt &7lalu ketik &e/verify&c."
+  locked-action: "&cKamu belum verifikasi Discord. Join: &bhttps://discord.gg/4gPCW3ynyt &7lalu ketik &e/verify&c."
+  limit-exceeded: "&cVerifikasi ditolak. Limit akun/IP terdeteksi, hubungi staff."
+  reloaded: "&aDiscordVerify berhasil direload."

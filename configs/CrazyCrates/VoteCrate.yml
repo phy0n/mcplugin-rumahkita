@@ -1,0 +1,366 @@
+Crate:
+  CrateType: CSGO
+  StartingKeys: 0
+  RequiredKeys: 0
+  Max-Mass-Open: 10
+  InGUI: true
+  Slot: 11
+  OpeningBroadCast: true
+  BroadCast: "<bold><yellow>%player%</bold> <gray>is opening a <bold><green>Vote Crate</bold><gray>! Type /vote now!"
+  opening-command:
+    toggle: false
+    commands: []
+  sound:
+    cycle-sound:
+      toggle: true
+      value: "block.note_block.xylophone"
+      volume: 1.0
+      pitch: 1.0
+    click-sound:
+      toggle: true
+      value: "ui.button.click"
+      volume: 1.0
+      pitch: 1.0
+    stop-sound:
+      toggle: true
+      value: "entity.player.levelup"
+      volume: 1.0
+      pitch: 1.0
+  Prize-Message:
+    - "<gray>Congratulations! You won <green>%reward% <gray>from the <yellow>Vote Crate!"
+  Prize-Commands: []
+  Settings:
+    Tracking-Crate-Opening: true
+    Border:
+      Glass-Border:
+        Toggle: true
+    Broadcast:
+      Toggle: false
+      Messages:
+        - "<red>%player% won the prize <yellow>%reward%."
+      Permission: ""
+    Rewards:
+      Re-Roll-Spin: false
+      Permission:
+        Toggle: false
+        Persist: false
+        Max-Cap: 20
+        
+  Item: "paper"
+  Hide-Flags: false
+  Components:
+    - "enchantments"
+  Custom-Model-Data: -1
+  Model:
+    Namespace: ""
+    Id: ""
+  Glowing: "add_glow"
+  Name: "<bold><yellow>⭐ Vote Crate ⭐</bold>"
+  Lore:
+    - "<gray>Special rewards for server supporters!"
+    - "<gray>Get keys by typing <aqua>/vote</aqua>!"
+    - ""
+    - "<gray>Keys you own: <yellow>%keys% Keys"
+    - "<gray>Times opened: <gold>%crate_opened% times"
+    - "<gray>(<yellow>!<gray>) Right-Click to preview rewards."
+    
+  Preview:
+    Name: "<green>Vote Crate Preview"
+    Toggle: true
+    Rows: 6
+    Glass:
+      Toggle: true
+      Name: " "
+      Item: "lime_stained_glass_pane"
+      Custom-Model-Data: -1
+      Model:
+        Namespace: ""
+        Id: ""
+        
+  Animation:
+    Name: "<yellow>Rolling Rewards..."
+    Glass-Frame:
+      Toggle: true
+      Items:
+        "1":
+          name: " "
+          lore: [ ]
+          material: "lime_stained_glass_pane"
+          amount: 1
+      Random:
+        Toggle: true
+        Items:
+          "1":
+            name: " "
+            lore: [ ]
+            material: "yellow_stained_glass_pane"
+            amount: 1
+          "2":
+            name: " "
+            lore: [ ]
+            material: "lime_stained_glass_pane"
+            amount: 1
+            
+  PhysicalKey:
+    Name: "<bold><yellow>🔑 Vote Key 🔑</bold>"
+    Lore:
+      - "<gray>A special key from <aqua>/vote</aqua>"
+      - "<gray>Use it on the <yellow>Vote Crate</yellow> at Spawn!"
+    Item: "tripwire_hook"
+    Custom-Model-Data: -1
+    Model:
+      Namespace: ""
+      Id: ""
+    Glowing: "add_glow"
+    flags:
+      components: []
+      
+  Hologram:
+    Toggle: true
+    Height: 1.5
+    Range: 8
+    Update-Interval: -1
+    Color: "transparent"
+    TextShadow: false
+    Message:
+      - "<bold><yellow>⭐ Vote Crate ⭐</bold>"
+      - "<gray>Type <aqua>/vote</aqua> to get a key!"
+
+  Prizes:
+    "1":
+      DisplayName: "<yellow>Rp 20,000 Cash"
+      DisplayItem: "sunflower"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 1
+      Weight: 50.0
+      Commands:
+        - "eco give %player% 20000"
+      Messages:
+        - "<gray>Congratulations! You received <green>Rp 20,000<gray>."
+
+    "2":
+      DisplayName: "<yellow>Rp 50,000 Cash"
+      DisplayItem: "sunflower"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 1
+      Weight: 30.0
+      Commands:
+        - "eco give %player% 50000"
+      Messages:
+        - "<gray>Congratulations! You received <green>Rp 50,000<gray>."
+
+    "3":
+      DisplayName: "<yellow>Rp 70,000 Cash"
+      DisplayItem: "sunflower"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 1
+      Weight: 20.0
+      Commands:
+        - "eco give %player% 70000"
+      Messages:
+        - "<gray>Congratulations! You received <green>Rp 70,000<gray>."
+
+    "4":
+      DisplayName: "<yellow>Rp 90,000 Cash"
+      DisplayItem: "sunflower"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 1
+      Weight: 10.0
+      Commands:
+        - "eco give %player% 90000"
+      Messages:
+        - "<gray>Congratulations! You received <green>Rp 90,000<gray>."
+
+    "5":
+      DisplayName: "<yellow>Rp 150,000 Cash"
+      DisplayItem: "sunflower"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 1
+      Weight: 5.0
+      Commands:
+        - "eco give %player% 150000"
+      Messages:
+        - "<gray>Congratulations! You received <green>Rp 150,000<gray>."
+
+    "6":
+      DisplayName: "<green>64x Steak"
+      DisplayItem: "cooked_beef"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 64
+      Weight: 45.0
+      Items:
+        "1":
+          name: "<green>Steak"
+          material: "cooked_beef"
+          amount: 64
+          
+    "7":
+      DisplayName: "<aqua>32x Wind Charge"
+      DisplayItem: "wind_charge"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 32
+      Weight: 35.0
+      Items:
+        "1":
+          name: "<aqua>Wind Charge"
+          material: "wind_charge"
+          amount: 32
+          
+    "8":
+      DisplayName: "<green>32x Emerald"
+      DisplayItem: "emerald"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 32
+      Weight: 25.0
+      Items:
+        "1":
+          name: "<green>Emerald"
+          material: "emerald"
+          amount: 32
+          
+    "9":
+      DisplayName: "<aqua>16x Diamond"
+      DisplayItem: "diamond"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 16
+      Weight: 15.0
+      Items:
+        "1":
+          name: "<aqua>Diamond"
+          material: "diamond"
+          amount: 16
+          
+    "10":
+      DisplayName: "<light_purple>16x Golden Apple"
+      DisplayItem: "golden_apple"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 16
+      Weight: 8.0
+      Items:
+        "1":
+          name: "<light_purple>Golden Apple"
+          material: "golden_apple"
+          amount: 16
+
+    "11":
+      DisplayName: "<light_purple><bold>2x Enchanted Golden Apple"
+      DisplayItem: "enchanted_golden_apple"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 2
+      Weight: 2.0
+      Items:
+        "1":
+          name: "<light_purple><bold>Enchanted Golden Apple"
+          material: "enchanted_golden_apple"
+          amount: 2
+
+    "12":
+      DisplayName: "<dark_gray><bold>1x Netherite Ingot"
+      DisplayItem: "netherite_ingot"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+      DisplayAmount: 1
+      Weight: 3.0
+      Items:
+        "1":
+          name: "<dark_gray><bold>Netherite Ingot"
+          material: "netherite_ingot"
+          amount: 1
+          
+    "13":
+      DisplayName: "<gold><bold>JACKPOT: Rp 250,000!</bold>"
+      DisplayItem: "gold_block"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+        Broadcast:
+          Toggle: true
+          Messages:
+            - "<bold><yellow>⭐ %player%</bold> <gray>just won the <bold><gold>Rp 250,000 JACKPOT</bold> <gray>from the Vote Crate!"
+      DisplayAmount: 1
+      Weight: 1.0
+      Firework: true
+      Commands:
+        - "eco give %player% 250000"
+      Messages:
+        - "<gray>Unbelievable! You won the <bold><gold>Rp 250,000 JACKPOT</bold><gray>!"
+
+    "14":
+      DisplayName: "<aqua><bold>Poseidon's Trident</bold>"
+      DisplayItem: "trident"
+      DisplayEnchantments:
+        - "mending:1"
+        - "unbreaking:3"
+        - "impaling:5"
+      Settings:
+        Custom-Model-Data: -1
+        Model:
+          Namespace: ""
+          Id: ""
+        Broadcast:
+          Toggle: true
+          Messages:
+            - "<bold><aqua>🌊 %player%</bold> <gray>just won the <bold><aqua>SUPER JACKPOT TRIDENT</bold> <gray>from the Vote Crate!"
+      DisplayAmount: 1
+      Weight: 0.5
+      Firework: true
+      Items:
+        "1":
+          name: "<aqua><bold>Poseidon's Trident"
+          material: "trident"
+          amount: 1
+          enchantments:
+            mending: 1
+            unbreaking: 3
+            impaling: 5
+      Messages:
+        - "<gray>Unbelievable! You won the <bold><aqua>SUPER JACKPOT TRIDENT</bold><gray>!"

@@ -1,0 +1,10 @@
+name: phyAntiCheat
+version: 1.0.0
+main: id.rumahkita.anticheat.PhyAntiCheat
+api-version: 1.13
+authors: [phy0n, RumahKita]
+description: Custom Anti-Cheat for RumahKita S2
+commands:
+  pac:
+    description: Main command for phyAntiCheat
+    permission: phyanticheat.admin

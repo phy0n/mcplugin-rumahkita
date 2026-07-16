@@ -1,0 +1,17 @@
+name: RumahKitaAntiXray
+version: 1.0.7
+main: id.rumahkita.antixray.RumahKitaAntiXrayPlugin
+api-version: '1.13'
+author: HansM
+description: Behavior AntiXray for Java and Bedrock players.
+commands:
+  rkxray:
+    description: RumahKita AntiXray command.
+    usage: /rkxray <status|reload|check|top|reset|freeze|unfreeze|logs|on|off>
+permissions:
+  rumahkita.antixray.admin:
+    default: op
+  rumahkita.antixray.notify:
+    default: op
+  rumahkita.antixray.bypass:
+    default: false

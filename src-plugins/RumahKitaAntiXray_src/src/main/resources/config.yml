@@ -1,0 +1,100 @@
+enabled: true
+worlds:
+  - world
+  - world_nether
+
+detection:
+  bypass-permission: true
+  detect-bedrock: true
+  recent-window-minutes: 15
+  newbie-playtime-minutes: 120
+  newbie-risk-multiplier: 1.35
+  bedrock-risk-multiplier: 1.00
+  java-risk-multiplier: 1.00
+
+risk:
+  decay-every-minutes: 10
+  decay-amount: 8
+  alert-score: 60
+  high-risk-score: 110
+  critical-score: 170
+  action-mode: "alert_only" # alert_only / limited / freeze / command
+  freeze-seconds: 300
+  limited-seconds: 300
+  command-on-critical:
+    - "say [AntiXray] %player% critical xray risk %score%: %reason%"
+
+thresholds:
+  diamond-window-minutes: 10
+  diamond-max-in-window: 14
+  ancient-window-minutes: 20
+  ancient-max-in-window: 6
+  emerald-window-minutes: 10
+  emerald-max-in-window: 10
+  min-blocks-for-ratio-check: 80
+  rare-ore-ratio-percent: 9.0
+  newbie-rare-ore-limit: 6
+  diamond-suspicious-y-min: -64
+  diamond-suspicious-y-max: -45
+  ancient-suspicious-y-min: 8
+  ancient-suspicious-y-max: 18
+
+ore-points:
+  DIAMOND_ORE: 9
+  DEEPSLATE_DIAMOND_ORE: 11
+  ANCIENT_DEBRIS: 18
+  EMERALD_ORE: 7
+  DEEPSLATE_EMERALD_ORE: 8
+  GOLD_ORE: 3
+  DEEPSLATE_GOLD_ORE: 4
+  LAPIS_ORE: 3
+  DEEPSLATE_LAPIS_ORE: 4
+
+rare-ores:
+  - DIAMOND_ORE
+  - DEEPSLATE_DIAMOND_ORE
+  - ANCIENT_DEBRIS
+  - EMERALD_ORE
+  - DEEPSLATE_EMERALD_ORE
+  - GOLD_ORE
+  - DEEPSLATE_GOLD_ORE
+  - LAPIS_ORE
+  - DEEPSLATE_LAPIS_ORE
+
+normal-mining-blocks:
+  - STONE
+  - DEEPSLATE
+  - TUFF
+  - COBBLESTONE
+  - COBBLED_DEEPSLATE
+  - NETHERRACK
+  - BLACKSTONE
+  - BASALT
+  - GRANITE
+  - DIORITE
+  - ANDESITE
+
+alerts:
+  in-game: true
+  cooldown-seconds: 20
+  message: "&8[&bAntiXray&8] &e%player% &7risk &c%score% &8| &f%reason% &8| &7%x% %y% %z%"
+
+discord:
+  enabled: false
+  webhook-url: "PASTE_WEBHOOK_DI_SINI"
+  cooldown-seconds: 20
+  title: "RumahKita AntiXray Alert"
+  color: 16753920
+
+logs:
+  enabled: true
+  file: "logs/antixray.log"
+  save-data-every-minutes: 5
+
+messages:
+  prefix: "&8[&bAntiXray&8] "
+  no-permission: "&cKamu tidak punya permission."
+  reloaded: "&aAntiXray berhasil direload."
+  reset: "&aRisk player berhasil direset."
+  frozen: "&cKamu sedang dibekukan sementara karena mining mencurigakan. Hubungi staff."
+  limited: "&cKamu sedang dibatasi mining ore langka sementara karena mining mencurigakan."

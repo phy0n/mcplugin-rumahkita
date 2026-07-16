@@ -1,0 +1,105 @@
+general:
+  enabled: true
+  prefix: "&8[&cPvP&8] &f"
+
+arena:
+  # Region dari screenshot Hans:
+  # Pos1: world 4205 157 2198
+  # Pos2: world 4251 157 2191
+  world: "world"
+  pos1:
+    x: 4205
+    y: 157
+    z: 2198
+  pos2:
+    x: 4251
+    y: 157
+    z: 2191
+
+  # Karena pos1/pos2 dari screenshot Y-nya sama, tinggi arena dikasih range aman.
+  min-y: 140
+  max-y: 230
+
+  spawn1:
+    x: 4210.5
+    y: 158.0
+    z: 2195.5
+    yaw: 90.0
+    pitch: 0.0
+  spawn2:
+    x: 4246.5
+    y: 158.0
+    z: 2194.5
+    yaw: -90.0
+    pitch: 0.0
+
+  # Kalau true, setelah duel selesai player balik ke lokasi sebelum join duel.
+  return-to-original-location: true
+  end-delay-ticks: 40
+
+match:
+  prevent-real-death: true
+  keep-inventory-in-duel: true
+  heal-on-start: true
+  heal-on-end: true
+  clear-fire-on-start: true
+  clear-fire-on-end: true
+  food-level-on-start: 20
+  food-level-on-end: 20
+  countdown-seconds: 3
+  max-duration-seconds: 300
+
+protection:
+  block-break-place-in-arena: true
+  block-buckets-in-arena: true
+  deny-mob-spawn-in-arena: true
+  deny-explosions-in-arena: true
+  only-duel-participants-can-pvp-in-arena: true
+  remove-projectiles-on-end: true
+
+queue:
+  invite-expire-seconds: 60
+  quickjoin-enabled: true
+
+commands:
+  block-during-duel: true
+  blocked-during-duel:
+    - spawn
+    - home
+    - homes
+    - warp
+    - warps
+    - tpa
+    - tpahere
+    - tpaccept
+    - tpdeny
+    - rtp
+    - wild
+    - back
+    - fly
+    - gamemode
+    - gm
+    - vanish
+    - spec2
+    - hub
+    - lobby
+
+messages:
+  invite-sent: "&aInvite PvP terkirim ke &e%target%&a."
+  invite-received: "&e%player% &amengajak kamu PvP 1v1. Ketik &f/pvp accept %player% &auntuk terima."
+  invite-expired: "&cInvite PvP sudah expired."
+  quickjoin-waiting: "&aKamu masuk queue PvP. Menunggu lawan..."
+  quickjoin-found: "&aLawan ditemukan! Duel dimulai."
+  arena-busy: "&cArena sedang dipakai. Coba lagi sebentar."
+  match-starting: "&eDuel dimulai dalam &f%seconds% &edetik."
+  match-started: "&aDuel mulai! Lawan: &e%opponent%"
+  match-win: "&aKamu menang melawan &e%loser%&a!"
+  match-lose: "&cKamu kalah melawan &e%winner%&c."
+  match-forfeit: "&c%player% keluar dari duel."
+  no-permission: "&cKamu tidak punya permission."
+  not-player: "&cCommand ini hanya untuk player."
+  not-in-duel: "&cKamu sedang tidak dalam duel."
+  already-in-duel: "&cKamu sedang dalam duel."
+  target-busy: "&cPlayer itu sedang sibuk / sudah duel."
+  cannot-hit: "&cKamu hanya bisa PvP dengan lawan duelmu di arena ini."
+  command-blocked: "&cCommand itu diblok saat duel. Gunakan &f/pvp leave &cjika ingin menyerah."

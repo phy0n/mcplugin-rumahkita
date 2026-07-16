@@ -1,0 +1,30 @@
+name: RumahKitaDiscordVerify
+version: 1.0.1
+main: id.rumahkita.discordverify.RumahKitaDiscordVerifyPlugin
+api-version: 1.0.1
+author: HansM
+description: Discord verification gate with IP/Discord anti-alt limits for RumahKita S2.
+softdepend:
+  - Floodgate
+  - LoginSecurity
+  - LuckPerms
+  - RumahKitaSecurityBan
+
+commands:
+  verify:
+    description: Generate Discord verification code.
+    usage: /verify
+  rkverify:
+    description: Admin command for Discord Verify.
+    usage: /rkverify <status|reload|check|unverify|forceverify|clearpending|resyncdiscord>
+
+permissions:
+  rumahkita.verify.admin:
+    description: Manage Discord verification.
+    default: op
+  rumahkita.verify.bypass:
+    description: Bypass verification lock.
+    default: false
+  rumahkita.verify.notify:
+    description: Receive verification alerts.
+    default: op

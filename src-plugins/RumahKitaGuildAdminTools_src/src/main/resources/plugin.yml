@@ -1,0 +1,39 @@
+name: RumahKitaGuildAdminTools
+version: 1.0.0
+main: id.rumahkita.guildadmin.RumahKitaGuildAdminToolsPlugin
+api-version: '1.21'
+author: HansM
+softdepend:
+  - RumahKitaGuilds
+  - LuckPerms
+  - RumahKitaSecurityBan
+description: Admin tools addon untuk mengelola guild bermasalah.
+
+commands:
+  rkgadmin:
+    description: Admin tools for RumahKita guilds.
+    usage: /rkgadmin help
+    aliases: [guildadmin, rkga]
+
+permissions:
+  rumahkita.guild.admin:
+    description: Access all guild admin tools.
+    default: op
+  rumahkita.guild.admin.disband:
+    description: Disband guilds by force.
+    default: op
+  rumahkita.guild.admin.home:
+    description: Manage guild homes by force.
+    default: op
+  rumahkita.guild.admin.player:
+    description: Manage guild players by force.
+    default: op
+  rumahkita.guild.admin.freeze:
+    description: Freeze/unfreeze guilds.
+    default: op
+  rumahkita.guild.admin.reload:
+    description: Reload admin tools.
+    default: op
+  rumahkita.guild.admin.bypass:
+    description: Bypass frozen guild command block.
+    default: op

@@ -1,0 +1,63 @@
+# RumahKitaGuildAdminTools v1.0.0
+# Ini ADDON untuk plugin RumahKitaGuilds, bukan pengganti plugin guild utama.
+# Semua aksi berbahaya wajib confirm dan otomatis backup file data dulu.
+
+guild-plugin-folder: "RumahKitaGuilds"
+
+# File data yang akan dicari di plugins/RumahKitaGuilds/
+# Kalau plugin guild kamu pakai nama file lain, tambahin di sini.
+data-files:
+  - "guilds.yml"
+  - "data.yml"
+  - "guild-data.yml"
+  - "storage.yml"
+
+# Root path umum tempat daftar guild disimpan.
+# Contoh: guilds.NamaGuild atau data.guilds.NamaGuild
+root-paths:
+  - "guilds"
+  - "data.guilds"
+  - "storage.guilds"
+  - ""
+
+# Command guild yang akan diblok kalau guild di-freeze admin.
+frozen-guild-command-block:
+  enabled: true
+  commands:
+    - "/guild"
+    - "/g"
+    - "/clan"
+    - "/rkgalaxy"
+    - "/rkguild"
+  blocked-subcommands:
+    - "invite"
+    - "kick"
+    - "sethome"
+    - "delhome"
+    - "home"
+    - "claim"
+    - "unclaim"
+    - "war"
+    - "rename"
+    - "prefix"
+    - "promote"
+    - "demote"
+    - "transfer"
+    - "leave"
+
+backup:
+  enabled: true
+  folder: "backups"
+
+logs:
+  enabled: true
+  file: "admin-actions.log"
+
+messages:
+  prefix: "&8[&bGuildAdmin&8] "
+  no-permission: "&cKamu tidak punya permission."
+  need-confirm: "&eCommand ini berbahaya. Ulangi dengan &fconfirm &edi belakang."
+  not-found: "&cGuild/player tidak ditemukan di data guild."
+  backup-made: "&aBackup dibuat: &f%file%"
+  reloaded: "&aGuildAdminTools berhasil reload."
+  guild-frozen: "&cGuild kamu sedang dibekukan oleh admin, command ini diblok sementara."

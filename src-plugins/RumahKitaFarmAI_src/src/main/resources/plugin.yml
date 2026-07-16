@@ -1,0 +1,21 @@
+name: RumahKitaFarmAI
+version: 1.0.0
+main: id.rumahkita.farmai.RumahKitaFarmAI
+api-version: '1.21'
+author: HansMosesP
+folia-supported: false
+description: Keeps mob farm hostile mobs active, aware, and targeting nearby survival players.
+
+commands:
+  rkfarmai:
+    description: RumahKitaFarmAI admin command.
+    usage: /rkfarmai <status|scan|reload|zonehere>
+    permission: rumahkita.farmai.admin
+    aliases:
+      - farmai
+      - mobfarmai
+
+permissions:
+  rumahkita.farmai.admin:
+    description: Allows admin to manage RumahKitaFarmAI.
+    default: op

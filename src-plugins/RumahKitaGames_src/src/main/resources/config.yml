@@ -1,0 +1,11 @@
+# RumahKitaGames Configuration
+
+# Pengaturan Coinflip
+coinflip:
+  min_bet: 1000
+  tax_percentage: 5.0
+
+# Pengaturan Rock Paper Scissors (RPS)
+rps:
+  min_bet: 1000
+  tax_percentage: 5.0

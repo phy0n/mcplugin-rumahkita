@@ -1,0 +1,23 @@
+name: RumahKitaOreSpectator
+version: 1.0.3
+main: id.rumahkita.orespec.RumahKitaOreSpectatorPlugin
+api-version: '1.21'
+author: HansM
+description: Admin spectator mode with visible see-through ore markers and stealth online hiding for anti-xray monitoring.
+
+commands:
+  spec2:
+    description: Spectator ore vision admin mode.
+    usage: /spec2 <on|off|toggle|scan|radius|vradius|deep|filter|list|reload|status>
+    aliases: [orespec, rkorespec, rkore]
+
+permissions:
+  rumahkita.orespec.use:
+    description: Use /spec2 ore spectator mode.
+    default: op
+  rumahkita.orespec.admin:
+    description: Reload and manage OreSpectator.
+    default: op
+  rumahkita.orespec.see:
+    description: See admins in spec2 stealth and see full /online list.
+    default: op

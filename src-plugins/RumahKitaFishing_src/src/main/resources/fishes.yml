@@ -1,0 +1,2429 @@
+fishes:
+  ikan_lele:
+    display-name: '&fIkan Lele'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.25
+    max-weight: 4.5
+    base-price-per-kg: 350
+    chance: 18.0
+    allowed-biomes:
+      - SWAMP
+      - MANGROVE_SWAMP
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_nila:
+    display-name: '&fIkan Nila'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.2
+    max-weight: 3.0
+    base-price-per-kg: 300
+    chance: 18.0
+    allowed-biomes:
+      - RIVER
+      - PLAINS
+      - FOREST
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_mujair:
+    display-name: '&fIkan Mujair'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.25
+    max-weight: 3.5
+    base-price-per-kg: 320
+    chance: 16.0
+    allowed-biomes:
+      - RIVER
+      - SWAMP
+      - PLAINS
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_mas:
+    display-name: '&fIkan Mas'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.3
+    max-weight: 5.0
+    base-price-per-kg: 420
+    chance: 14.0
+    allowed-biomes:
+      - RIVER
+      - PLAINS
+      - FOREST
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_teri:
+    display-name: '&fIkan Teri'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.05
+    max-weight: 0.35
+    base-price-per-kg: 250
+    chance: 20.0
+    allowed-biomes:
+      - OCEAN
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_wader:
+    display-name: '&fIkan Wader'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.05
+    max-weight: 0.4
+    base-price-per-kg: 220
+    chance: 20.0
+    allowed-biomes:
+      - RIVER
+      - FOREST
+      - PLAINS
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_sepat:
+    display-name: '&fIkan Sepat'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.08
+    max-weight: 0.8
+    base-price-per-kg: 260
+    chance: 18.0
+    allowed-biomes:
+      - SWAMP
+      - MANGROVE_SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_gabus_kecil:
+    display-name: '&fIkan Gabus Kecil'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.3
+    max-weight: 2.2
+    base-price-per-kg: 380
+    chance: 15.0
+    allowed-biomes:
+      - SWAMP
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_belanak:
+    display-name: '&fIkan Belanak'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.2
+    max-weight: 1.8
+    base-price-per-kg: 310
+    chance: 16.0
+    allowed-biomes:
+      - BEACH
+      - OCEAN
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_seluang:
+    display-name: '&fIkan Seluang'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.05
+    max-weight: 0.5
+    base-price-per-kg: 230
+    chance: 19.0
+    allowed-biomes:
+      - RIVER
+      - JUNGLE
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_betok:
+    display-name: '&fIkan Betok'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.1
+    max-weight: 1.2
+    base-price-per-kg: 280
+    chance: 17.0
+    allowed-biomes:
+      - SWAMP
+      - MANGROVE_SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kembung:
+    display-name: '&fIkan Kembung'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.2
+    max-weight: 1.5
+    base-price-per-kg: 330
+    chance: 15.0
+    allowed-biomes:
+      - OCEAN
+      - COLD_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_layang:
+    display-name: '&fIkan Layang'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.2
+    max-weight: 1.4
+    base-price-per-kg: 300
+    chance: 15.0
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_sarden:
+    display-name: '&fIkan Sarden'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.05
+    max-weight: 0.45
+    base-price-per-kg: 240
+    chance: 19.0
+    allowed-biomes:
+      - OCEAN
+      - COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_sungai_kecil:
+    display-name: '&fIkan Sungai Kecil'
+    material: COD
+    rarity: COMMON
+    min-weight: 0.08
+    max-weight: 0.7
+    base-price-per-kg: 260
+    chance: 20.0
+    allowed-biomes:
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_gurame:
+    display-name: '&fIkan Gurame'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 1.0
+    max-weight: 8.0
+    base-price-per-kg: 650
+    chance: 8.5
+    allowed-biomes:
+      - RIVER
+      - PLAINS
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_patin:
+    display-name: '&fIkan Patin'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 1.0
+    max-weight: 10.0
+    base-price-per-kg: 720
+    chance: 8.0
+    allowed-biomes:
+      - RIVER
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_bandeng:
+    display-name: '&fIkan Bandeng'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.8
+    max-weight: 6.0
+    base-price-per-kg: 600
+    chance: 9.0
+    allowed-biomes:
+      - BEACH
+      - OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_bawal:
+    display-name: '&fIkan Bawal'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.7
+    max-weight: 5.5
+    base-price-per-kg: 620
+    chance: 8.8
+    allowed-biomes:
+      - RIVER
+      - OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kakap_kecil:
+    display-name: '&fIkan Kakap Kecil'
+    material: SALMON
+    rarity: UNCOMMON
+    min-weight: 1.0
+    max-weight: 7.0
+    base-price-per-kg: 780
+    chance: 7.0
+    allowed-biomes:
+      - OCEAN
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_tongkol:
+    display-name: '&fIkan Tongkol'
+    material: SALMON
+    rarity: UNCOMMON
+    min-weight: 2.0
+    max-weight: 14.0
+    base-price-per-kg: 820
+    chance: 6.2
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_cakalang:
+    display-name: '&fIkan Cakalang'
+    material: SALMON
+    rarity: UNCOMMON
+    min-weight: 2.0
+    max-weight: 18.0
+    base-price-per-kg: 850
+    chance: 5.8
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+      - WARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kerapu_kecil:
+    display-name: '&fIkan Kerapu Kecil'
+    material: SALMON
+    rarity: UNCOMMON
+    min-weight: 1.5
+    max-weight: 9.0
+    base-price-per-kg: 900
+    chance: 5.5
+    allowed-biomes:
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_baronang:
+    display-name: '&fIkan Baronang'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.5
+    max-weight: 3.5
+    base-price-per-kg: 580
+    chance: 8.2
+    allowed-biomes:
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+      - BEACH
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_sidat:
+    display-name: '&fIkan Sidat'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.5
+    max-weight: 4.0
+    base-price-per-kg: 950
+    chance: 4.5
+    allowed-biomes:
+      - RIVER
+      - SWAMP
+      - MANGROVE_SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_baung:
+    display-name: '&fIkan Baung'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.8
+    max-weight: 6.5
+    base-price-per-kg: 680
+    chance: 7.0
+    allowed-biomes:
+      - RIVER
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_tawes:
+    display-name: '&fIkan Tawes'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.4
+    max-weight: 3.5
+    base-price-per-kg: 520
+    chance: 9.0
+    allowed-biomes:
+      - RIVER
+      - PLAINS
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_hampala:
+    display-name: '&fIkan Hampala'
+    material: COD
+    rarity: UNCOMMON
+    min-weight: 0.8
+    max-weight: 5.0
+    base-price-per-kg: 700
+    chance: 6.7
+    allowed-biomes:
+      - RIVER
+      - JUNGLE
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_sepat_biru:
+    display-name: '&fIkan Sepat Biru'
+    material: TROPICAL_FISH
+    rarity: UNCOMMON
+    min-weight: 0.1
+    max-weight: 1.0
+    base-price-per-kg: 720
+    chance: 5.0
+    allowed-biomes:
+      - SWAMP
+      - MANGROVE_SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_gurame_merah:
+    display-name: '&fIkan Gurame Merah'
+    material: TROPICAL_FISH
+    rarity: UNCOMMON
+    min-weight: 1.0
+    max-weight: 7.5
+    base-price-per-kg: 850
+    chance: 4.5
+    allowed-biomes:
+      - RIVER
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_koi:
+    display-name: '&fIkan Koi'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 0.5
+    max-weight: 6.0
+    base-price-per-kg: 1400
+    chance: 3.0
+    allowed-biomes:
+      - RIVER
+      - LUSH_CAVES
+      - CHERRY_GROVE
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_salmon_besar:
+    display-name: '&fIkan Salmon Besar'
+    material: SALMON
+    rarity: RARE
+    min-weight: 4.0
+    max-weight: 22.0
+    base-price-per-kg: 1200
+    chance: 3.5
+    allowed-biomes:
+      - COLD_OCEAN
+      - DEEP_COLD_OCEAN
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_tuna:
+    display-name: '&fIkan Tuna'
+    material: SALMON
+    rarity: RARE
+    min-weight: 8.0
+    max-weight: 35.0
+    base-price-per-kg: 1200
+    chance: 3.2
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+      - COLD_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_pari:
+    display-name: '&fIkan Pari'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 5.0
+    max-weight: 30.0
+    base-price-per-kg: 1500
+    chance: 2.5
+    allowed-biomes:
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  lobster:
+    display-name: '&fLobster'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 0.5
+    max-weight: 8.0
+    base-price-per-kg: 1800
+    chance: 2.6
+    allowed-biomes:
+      - OCEAN
+      - COLD_OCEAN
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  kepiting_bakau:
+    display-name: '&fKepiting Bakau'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 0.3
+    max-weight: 5.0
+    base-price-per-kg: 1600
+    chance: 3.0
+    allowed-biomes:
+      - MANGROVE_SWAMP
+      - SWAMP
+      - BEACH
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_arwana_silver:
+    display-name: '&fIkan Arwana Silver'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 2.0
+    max-weight: 12.0
+    base-price-per-kg: 2200
+    chance: 1.5
+    allowed-biomes:
+      - RIVER
+      - JUNGLE
+      - LUSH_CAVES
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kakap_merah:
+    display-name: '&fIkan Kakap Merah'
+    material: SALMON
+    rarity: RARE
+    min-weight: 3.0
+    max-weight: 18.0
+    base-price-per-kg: 1350
+    chance: 3.0
+    allowed-biomes:
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kerapu_macan:
+    display-name: '&fIkan Kerapu Macan'
+    material: SALMON
+    rarity: RARE
+    min-weight: 3.0
+    max-weight: 25.0
+    base-price-per-kg: 1700
+    chance: 2.4
+    allowed-biomes:
+      - WARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_tenggiri:
+    display-name: '&fIkan Tenggiri'
+    material: SALMON
+    rarity: RARE
+    min-weight: 4.0
+    max-weight: 28.0
+    base-price-per-kg: 1250
+    chance: 3.0
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_dorado:
+    display-name: '&fIkan Dorado'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 2.0
+    max-weight: 16.0
+    base-price-per-kg: 1800
+    chance: 2.2
+    allowed-biomes:
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_barracuda:
+    display-name: '&fIkan Barracuda'
+    material: SALMON
+    rarity: RARE
+    min-weight: 5.0
+    max-weight: 32.0
+    base-price-per-kg: 1700
+    chance: 2.0
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+      - WARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_belida:
+    display-name: '&fIkan Belida'
+    material: COD
+    rarity: RARE
+    min-weight: 2.0
+    max-weight: 15.0
+    base-price-per-kg: 1550
+    chance: 2.2
+    allowed-biomes:
+      - RIVER
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_napoleon_muda:
+    display-name: '&fIkan Napoleon Muda'
+    material: TROPICAL_FISH
+    rarity: RARE
+    min-weight: 5.0
+    max-weight: 25.0
+    base-price-per-kg: 2100
+    chance: 1.6
+    allowed-biomes:
+      - WARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_piranha:
+    display-name: '&fIkan Piranha'
+    material: COD
+    rarity: RARE
+    min-weight: 0.5
+    max-weight: 3.0
+    base-price-per-kg: 2000
+    chance: 1.7
+    allowed-biomes:
+      - JUNGLE
+      - RIVER
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_arwana_emas:
+    display-name: '&fIkan Arwana Emas'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 2.5
+    max-weight: 12.0
+    base-price-per-kg: 3500
+    chance: 1.0
+    allowed-biomes:
+      - RIVER
+      - LUSH_CAVES
+      - SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_napoleon:
+    display-name: '&fIkan Napoleon'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 10.0
+    max-weight: 55.0
+    base-price-per-kg: 3000
+    chance: 0.9
+    allowed-biomes:
+      - WARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_marlin:
+    display-name: '&fIkan Marlin'
+    material: SALMON
+    rarity: EPIC
+    min-weight: 20.0
+    max-weight: 90.0
+    base-price-per-kg: 2800
+    chance: 0.8
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  kepiting_emas:
+    display-name: '&fKepiting Emas'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 1.0
+    max-weight: 10.0
+    base-price-per-kg: 4200
+    chance: 0.8
+    allowed-biomes:
+      - BEACH
+      - MANGROVE_SWAMP
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  lobster_biru:
+    display-name: '&fLobster Biru'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 0.8
+    max-weight: 9.0
+    base-price-per-kg: 4500
+    chance: 0.7
+    allowed-biomes:
+      - COLD_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_pari_raksasa:
+    display-name: '&fIkan Pari Raksasa'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 20.0
+    max-weight: 80.0
+    base-price-per-kg: 2600
+    chance: 0.75
+    allowed-biomes:
+      - DEEP_LUKEWARM_OCEAN
+      - WARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_tuna_raksasa:
+    display-name: '&fIkan Tuna Raksasa'
+    material: SALMON
+    rarity: EPIC
+    min-weight: 30.0
+    max-weight: 120.0
+    base-price-per-kg: 2600
+    chance: 0.65
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_hiu_karang:
+    display-name: '&fIkan Hiu Karang'
+    material: SALMON
+    rarity: EPIC
+    min-weight: 15.0
+    max-weight: 70.0
+    base-price-per-kg: 3300
+    chance: 0.55
+    allowed-biomes:
+      - WARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_pedang:
+    display-name: '&fIkan Pedang'
+    material: SALMON
+    rarity: EPIC
+    min-weight: 18.0
+    max-weight: 85.0
+    base-price-per-kg: 3200
+    chance: 0.55
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_komet_laut:
+    display-name: '&fIkan Komet Laut'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 3.0
+    max-weight: 16.0
+    base-price-per-kg: 5000
+    chance: 0.45
+    allowed-biomes:
+      - WARM_OCEAN
+      - LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kristal_sungai:
+    display-name: '&fIkan Kristal Sungai'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 1.0
+    max-weight: 8.0
+    base-price-per-kg: 5200
+    chance: 0.4
+    allowed-biomes:
+      - LUSH_CAVES
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_lava_reef:
+    display-name: '&fIkan Lava Reef'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 2.0
+    max-weight: 12.0
+    base-price-per-kg: 5500
+    chance: 0.35
+    allowed-biomes:
+      - WARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_bulan:
+    display-name: '&fIkan Bulan'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 2.0
+    max-weight: 14.0
+    base-price-per-kg: 4800
+    chance: 0.5
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_sakura:
+    display-name: '&fIkan Sakura'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 0.8
+    max-weight: 6.0
+    base-price-per-kg: 5300
+    chance: 0.45
+    allowed-biomes:
+      - CHERRY_GROVE
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_emerald_scale:
+    display-name: '&fIkan Emerald Scale'
+    material: TROPICAL_FISH
+    rarity: EPIC
+    min-weight: 2.0
+    max-weight: 15.0
+    base-price-per-kg: 5600
+    chance: 0.35
+    allowed-biomes:
+      - LUSH_CAVES
+      - JUNGLE
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_raja_laut:
+    display-name: '&fIkan Raja Laut'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 20.0
+    max-weight: 85.0
+    base-price-per-kg: 7500
+    chance: 0.18
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_COLD_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_kristal_rumahkita:
+    display-name: '&fIkan Kristal RumahKita'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 5.0
+    max-weight: 30.0
+    base-price-per-kg: 9000
+    chance: 0.16
+    allowed-biomes:
+      - LUSH_CAVES
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_arwana_naga:
+    display-name: '&fIkan Arwana Naga'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 8.0
+    max-weight: 45.0
+    base-price-per-kg: 8500
+    chance: 0.14
+    allowed-biomes:
+      - JUNGLE
+      - RIVER
+      - LUSH_CAVES
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_hiu_putih:
+    display-name: '&fIkan Hiu Putih'
+    material: SALMON
+    rarity: LEGENDARY
+    min-weight: 100.0
+    max-weight: 420.0
+    base-price-per-kg: 6500
+    chance: 0.1
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: ANY
+    allowed-weather: ANY
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_paus_mini:
+    display-name: '&fIkan Paus Mini'
+    material: SALMON
+    rarity: LEGENDARY
+    min-weight: 120.0
+    max-weight: 500.0
+    base-price-per-kg: 6000
+    chance: 0.09
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_phantom_ocean:
+    display-name: '&fIkan Phantom Ocean'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 10.0
+    max-weight: 60.0
+    base-price-per-kg: 9200
+    chance: 0.1
+    allowed-biomes:
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_golden_koi:
+    display-name: '&fIkan Golden Koi'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 1.0
+    max-weight: 12.0
+    base-price-per-kg: 14000
+    chance: 0.12
+    allowed-biomes:
+      - CHERRY_GROVE
+      - RIVER
+      - LUSH_CAVES
+    allowed-worlds:
+      - world
+    allowed-time: DAY
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_black_pearl:
+    display-name: '&fIkan Black Pearl'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 2.0
+    max-weight: 20.0
+    base-price-per-kg: 13000
+    chance: 0.1
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_thunderfin:
+    display-name: '&fIkan Thunderfin'
+    material: TROPICAL_FISH
+    rarity: LEGENDARY
+    min-weight: 5.0
+    max-weight: 35.0
+    base-price-per-kg: 12000
+    chance: 0.08
+    allowed-biomes:
+      - OCEAN
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_ancient_river:
+    display-name: '&fIkan Ancient River'
+    material: COD
+    rarity: LEGENDARY
+    min-weight: 4.0
+    max-weight: 40.0
+    base-price-per-kg: 11000
+    chance: 0.09
+    allowed-biomes:
+      - RIVER
+      - JUNGLE
+      - LUSH_CAVES
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_naga_air:
+    display-name: '&fIkan Naga Air'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 10.0
+    max-weight: 150.0
+    base-price-per-kg: 15000
+    chance: 0.035
+    allowed-biomes:
+      - DEEP_OCEAN
+      - LUSH_CAVES
+      - RIVER
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_yaysters_mythic:
+    display-name: '&fIkan Yaysters Mythic'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 10.0
+    max-weight: 120.0
+    base-price-per-kg: 16000
+    chance: 0.03
+    allowed-biomes:
+      - DEEP_OCEAN
+      - WARM_OCEAN
+      - LUSH_CAVES
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_voidfin:
+    display-name: '&fIkan Voidfin'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 5.0
+    max-weight: 80.0
+    base-price-per-kg: 18000
+    chance: 0.025
+    allowed-biomes:
+      - DEEP_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_aurora:
+    display-name: '&fIkan Aurora'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 3.0
+    max-weight: 55.0
+    base-price-per-kg: 19000
+    chance: 0.022
+    allowed-biomes:
+      - FROZEN_OCEAN
+      - DEEP_FROZEN_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_leviathan_kecil:
+    display-name: '&fIkan Leviathan Kecil'
+    material: SALMON
+    rarity: MYTHIC
+    min-weight: 150.0
+    max-weight: 700.0
+    base-price-per-kg: 12000
+    chance: 0.018
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_bintang_laut:
+    display-name: '&fIkan Bintang Laut'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 1.0
+    max-weight: 25.0
+    base-price-per-kg: 22000
+    chance: 0.02
+    allowed-biomes:
+      - WARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: CLEAR
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_eclipse:
+    display-name: '&fIkan Eclipse'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 4.0
+    max-weight: 70.0
+    base-price-per-kg: 21000
+    chance: 0.018
+    allowed-biomes:
+      - DEEP_OCEAN
+      - LUSH_CAVES
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_ocean_spirit:
+    display-name: '&fIkan Ocean Spirit'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 8.0
+    max-weight: 100.0
+    base-price-per-kg: 20000
+    chance: 0.016
+    allowed-biomes:
+      - DEEP_OCEAN
+      - WARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: RAIN
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_nether_tide:
+    display-name: '&fIkan Nether Tide'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 3.0
+    max-weight: 50.0
+    base-price-per-kg: 24000
+    chance: 0.014
+    allowed-biomes:
+      - WARM_OCEAN
+      - DEEP_LUKEWARM_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'
+  ikan_guardian_royal:
+    display-name: '&fIkan Guardian Royal'
+    material: TROPICAL_FISH
+    rarity: MYTHIC
+    min-weight: 6.0
+    max-weight: 90.0
+    base-price-per-kg: 23000
+    chance: 0.012
+    allowed-biomes:
+      - DEEP_OCEAN
+      - DEEP_COLD_OCEAN
+    allowed-worlds:
+      - world
+    allowed-time: NIGHT
+    allowed-weather: THUNDER
+    custom-model-data: 0
+    lore:
+      - '&8Custom Fish'
+      - '&r'
+      - '&7Jenis: &f{fish_name}'
+      - '&7Rarity: {rarity_color}{rarity}'
+      - '&7Berat: &f{weight} kg'
+      - '&7Harga / Kg: &aRp {base_price_per_kg}'
+      - '&7Multiplier: &e{x_multiplier}'
+      - '&7Harga Jual: &aRp {final_price}'
+      - '&7Ditangkap oleh: &f{player}'
+      - '&7Lokasi: &f{biome}'
+      - '&7Tanggal: &f{date}'
+      - '&r'
+      - '&eJual di &f/fish sell hand &eatau &f/fish sell all'

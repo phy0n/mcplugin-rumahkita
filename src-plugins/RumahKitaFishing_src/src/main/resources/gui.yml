@@ -1,0 +1,42 @@
+fish-market:
+  title: '&8RumahKita Fish Market'
+  size: 27
+  filler:
+    enabled: true
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  buttons:
+    sell-hand:
+      slot: 10
+      material: COD
+      name: '&aJual Ikan di Tangan'
+      lore:
+        - '&7Jual ikan custom yang sedang kamu pegang.'
+        - '&eKlik untuk jual.'
+    sell-all:
+      slot: 12
+      material: CHEST
+      name: '&aJual Semua Ikan'
+      lore:
+        - '&7Jual semua ikan custom di inventory.'
+        - '&eKlik untuk jual semua.'
+    stats:
+      slot: 14
+      material: FISHING_ROD
+      name: '&bStatistik Mancing'
+      lore:
+        - '&7Lihat level, EXP, dan rekor ikan kamu.'
+        - '&eKlik untuk lihat.'
+    leaderboard:
+      slot: 16
+      material: GOLD_INGOT
+      name: '&6Leaderboard'
+      lore:
+        - '&7Lihat top pemancing server.'
+        - '&eKlik untuk lihat top weight.'
+    close:
+      slot: 22
+      material: BARRIER
+      name: '&cTutup'
+      lore:
+        - '&7Tutup menu ini.'

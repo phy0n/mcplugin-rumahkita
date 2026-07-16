@@ -1,0 +1,33 @@
+name: RumahKitaFishing
+version: '1.0.0'
+main: id.rumahkita.fishing.RumahKitaFishingPlugin
+api-version: '1.21'
+author: RumahKita
+softdepend:
+  - Vault
+  - PlaceholderAPI
+commands:
+  fish:
+    description: RumahKita custom fishing command
+    usage: /fish
+    aliases:
+      - mancing
+      - fishing
+  fishadmin:
+    description: RumahKita fishing admin command
+    usage: /fishadmin
+    aliases:
+      - rfadmin
+permissions:
+  rumahkitafishing.sell:
+    default: true
+  rumahkitafishing.shop:
+    default: true
+  rumahkitafishing.stats:
+    default: true
+  rumahkitafishing.top:
+    default: true
+  rumahkitafishing.admin:
+    default: op
+  rumahkitafishing.bonus.vip:
+    default: false

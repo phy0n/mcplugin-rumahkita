@@ -1,0 +1,47 @@
+# ==========================================
+# phyAntiCheat Configuration
+# ==========================================
+
+settings:
+  prefix: "&8[&cPAC&8] &7"
+  alert-permission: "phyanticheat.admin"
+  bypass-permission: "phyanticheat.bypass"
+  
+modules:
+  client-detector:
+    enabled: true
+    blacklisted-brands:
+      - "meteor"
+      - "freecam"
+      - "wurst"
+      - "aristois"
+      - "bleachhack"
+      - "mathax"
+      - "schematica"
+      - "xray"
+      - "hack"
+      - "cheat"
+  
+  combat:
+    anti-autoclicker: true
+    max-cps: 20
+    cancel-cps: 30
+    
+  movement:
+    anti-speed-fly: true
+    max-distance-per-tick: 1.5
+    anti-jesus: true
+    
+  interaction:
+    anti-freecam: true
+    
+  chat:
+    anti-spam: true
+    cooldown-ms: 2000
+    
+  items:
+    anti-illegal-enchants: true
+    max-enchant-level: 5
+
+logging:
+  file-logging: true

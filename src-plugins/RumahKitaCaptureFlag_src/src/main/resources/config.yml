@@ -1,0 +1,247 @@
+# RumahKitaCaptureFlag
+# Game type: capture point / king of the hill.
+# Player berdiri di area capture = dapat point per detik.
+# Versi 1.5.3:
+# - 5 capture points total
+# - Capture tengah tetap ada
+# - 4 capture points dari screenshot kamu
+# - Rotating capture point
+# - Player mati respawn ke spawn team dan lanjut main
+# - PlaceholderAPI TAB mode
+
+enabled: true
+
+settings:
+  min-players: 2
+  countdown-seconds: 15
+  duration-seconds: 300
+  points-per-second: 1
+  freeze-before-start: true
+  teleport-to-exit-after-event: true
+  restore-scoreboard-after-event: true
+  announce-every-minute: true
+  allow-join-while-countdown: true
+  allow-join-while-running: false
+
+  # Player mati tidak jadi spectator.
+  # Respawn balik ke spawn team dan lanjut main.
+  only-alive-can-score: true
+  winners-only-alive: false
+
+inventory:
+  enabled: true
+  clear-on-join: true
+  restore-after-event: true
+  restore-backup-on-join: true
+  prevent-item-drop: true
+  prevent-item-pickup: true
+  prevent-inventory-click: false
+  clear-death-drops: true
+  prevent-block-break: true
+  prevent-block-place: true
+  reset-health-food-on-join: true
+
+kit:
+  enabled: true
+  knockback-stick:
+    enabled: true
+    slot: 0
+    knockback-level: 2
+    name: '&c&lCTF Stick &7(Knockback II)'
+    lore:
+      - '&7Item khusus Capture Flag.'
+      - '&7Dorong lawan dari capture zone.'
+      - '&8Item ini akan hilang setelah event.'
+  commands: []
+
+# Arena luar.
+# Kalau pernah bikin point tidak masuk karena boundary, biarkan false.
+arena:
+  enabled: false
+  world: world
+  center-x: 4283.0
+  center-y: 141.0
+  center-z: 2334.0
+  radius: 140.0
+
+# Capture point.
+# Radius disamakan = 9.0
+# Y mengikuti aturan: 1 block bawah, 2 block atas.
+# Tengah lama tetap dipertahankan dari config kamu.
+capture:
+  world: world
+
+  # Fallback / tengah lama.
+  name: Tengah
+  shape: CIRCLE
+  center-x: 4283.58
+  center-z: 2334.36
+  radius: 9.0
+  radius-x: 9.0
+  radius-z: 9.0
+  min-y: 130.0
+  max-y: 134.0
+  ignore-y: false
+  points-per-second-message: false
+  chat-message-every-second: false
+  actionbar:
+    enabled: true
+
+  rotation:
+    enabled: true
+    # Capture aktif pindah setiap 30 detik.
+    interval-seconds: 30
+    # false = urut, true = random tapi tidak pilih titik sama berturut-turut.
+    random: false
+    announce: true
+
+  points:
+    tengah:
+      enabled: true
+      name: Tengah
+      world: world
+      shape: CIRCLE
+      x: 4283.58
+      z: 2334.36
+      radius: 9.0
+      min-y: 130.0
+      max-y: 134.0
+
+    selatan:
+      enabled: true
+      name: Selatan
+      world: world
+      shape: CIRCLE
+      x: 4283.0
+      z: 2378.0
+      radius: 9.0
+      # Dari screenshot: Y 141
+      # 1 block bawah, 2 block atas = 140 sampai 143.
+      min-y: 140.0
+      max-y: 143.0
+
+    utara:
+      enabled: true
+      name: Utara
+      world: world
+      shape: CIRCLE
+      x: 4283.0
+      z: 2289.0
+      radius: 9.0
+      # Dari screenshot: Y 141
+      # 1 block bawah, 2 block atas = 140 sampai 143.
+      min-y: 140.0
+      max-y: 143.0
+
+    timur:
+      enabled: true
+      name: Timur
+      world: world
+      shape: CIRCLE
+      x: 4334.0
+      z: 2334.0
+      radius: 9.0
+      # Dari screenshot: Y 153
+      # 1 block bawah, 2 block atas = 152 sampai 155.
+      min-y: 152.0
+      max-y: 155.0
+
+    barat:
+      enabled: true
+      name: Barat
+      world: world
+      shape: CIRCLE
+      x: 4232.0
+      z: 2334.0
+      radius: 9.0
+      # Dari screenshot: Y 153
+      # 1 block bawah, 2 block atas = 152 sampai 155.
+      min-y: 152.0
+      max-y: 155.0
+
+spawns:
+  side1:
+    world: world
+    x: 4245.5
+    y: 131.0
+    z: 2334.5
+    yaw: 90.0
+    pitch: 0.0
+  side2:
+    world: world
+    x: 4321.5
+    y: 131.0
+    z: 2334.5
+    yaw: -90.0
+    pitch: 0.0
+  exit:
+    world: world
+    x: 4283.5
+    y: 131.0
+    z: 2334.5
+    yaw: 0.0
+    pitch: 0.0
+
+scoreboard:
+  title: '&d&lRumahKita CTF'
+  line: '&8&m----------------'
+  show-capture-status: true
+  # Default false supaya tidak rebutan dengan TAB.
+  # Scoreboard event disarankan pakai TAB + PlaceholderAPI.
+  force-update:
+    enabled: false
+    interval-ticks: 1
+
+placeholder:
+  no-top: '-'
+  top-format: '%player% - %points%'
+  state:
+    idle: 'Menunggu'
+    countdown: 'Countdown'
+    running: 'Berjalan'
+    ending: 'Selesai'
+
+sounds:
+  enabled: true
+
+particles:
+  enabled: true
+  show-capture-ring: true
+  # Kalau plugin support marker tambahan, ini akan dipakai.
+  marker:
+    enabled: true
+    beam: true
+    ring: true
+    pulse: true
+
+rewards:
+  enabled: true
+  rank1:
+    - 'give %player% diamond 10'
+    - 'give %player% emerald 24'
+  rank2:
+    - 'give %player% diamond 6'
+    - 'give %player% emerald 16'
+  rank3:
+    - 'give %player% diamond 3'
+    - 'give %player% emerald 8'
+
+messages:
+  prefix: '&8[&dRumahKita CTF&8] '
+  join: '&a%player% bergabung ke event Capture Flag! Team: &e%team% &7Inventory aman dibackup dan kamu diberi kit event.'
+  leave: '&e%player% keluar dari event Capture Flag. Inventory asli dikembalikan.'
+  already-joined: '&cKamu sudah join event.'
+  not-joined: '&cKamu belum join event.'
+  countdown: '&eEvent mulai dalam &c%time% &edetik. Bersiap di sisi masing-masing!'
+  started: '&aCapture Flag dimulai! Ikuti marker partikel yang menyala untuk mendapatkan point. Kalau point tidak naik, pakai /rkctf check.'
+  capture-active: '&eCapture point aktif sekarang: &d%point%&e. Ikuti marker partikel yang menyala.'
+  capture-moved: '&eCapture point pindah ke &d%point%&e! Ikuti marker partikel yang menyala.'
+  eliminated: '&c%player% mati di event Capture Flag.'
+  death-respawn: '&e%player% mati dan respawn ke spawn team untuk lanjut main.'
+  zone-score: '&a+%points% point &7karena kamu berada di area capture.'
+  zone-actionbar: '&a+%points% point &7| Total: &e%score% &7| &fKamu sedang capture!'
+  out-of-arena: '&cKamu keluar arena dan dikembalikan ke spawn team.'
+  time-left: '&eSisa waktu Capture Flag: &c%time%'
+  ended: '&dEvent Capture Flag selesai! Inventory asli player akan dikembalikan sebelum reward diberikan.'
+  no-winners: '&cTidak ada pemenang karena tidak ada score.'
+  winner-line: '&6#%rank% &e%player% &7- &a%points% point'

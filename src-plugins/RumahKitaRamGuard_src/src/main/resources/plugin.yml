@@ -1,0 +1,19 @@
+name: RumahKitaRamGuard
+version: 1.0.0
+main: id.rumahkita.ramguard.RumahKitaRamGuardPlugin
+api-version: '1.21'
+author: RumahKita
+folia-supported: false
+commands:
+  ramguard:
+    description: Monitor dan cleanup RAM server RumahKita S2
+    usage: /ramguard <status|cleanup|restore|reload>
+    aliases:
+      - rkg
+permissions:
+  rumahkitaramguard.admin:
+    description: Akses semua command RumahKitaRamGuard
+    default: op
+  rumahkitaramguard.notify:
+    description: Menerima notifikasi RAM guard
+    default: op

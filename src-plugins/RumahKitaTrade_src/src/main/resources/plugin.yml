@@ -1,0 +1,12 @@
+name: RumahKitaTrade
+version: 1.0.0
+main: id.rumahkita.trade.RumahKitaTradePlugin
+api-version: 1.13
+author: RumahKita
+depend: [RumahKitaEconomyV2]
+
+commands:
+  trade:
+    description: "Pertukaran item aman antar pemain"
+    aliases: [barter, tukar]
+    usage: "/trade <nama_player> | /trade accept | /trade deny"

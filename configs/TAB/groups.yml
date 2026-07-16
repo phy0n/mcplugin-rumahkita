@@ -1,0 +1,72 @@
+# plugins/TAB/groups.yml
+# RumahKita S2 - TAB Groups + Guild Tag
+# Tag guild muncul di kanan nama player.
+# Pastikan PlaceholderAPI + RumahKitaGuilds v2 sudah aktif.
+
+Owner:
+  tabprefix: "&0&l[&a&lOwner&0&l] &a"
+  tagprefix: "&2&lOwner &a"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+developer:
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+helper:
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+streamer:
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+Player:
+  tabprefix: "&0&l[&7&lPlayer&0&l] &3"
+  tagprefix: "&2&lPlayer &3"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+default:
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+# Default settings untuk semua group.
+# Semua group akan pakai bagian ini kalau primary group-nya tidak ada di atas.
+_DEFAULT_:
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%%essentials_afk%"
+  customtagname: "%player%%essentials_afk%"
+  tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+  tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+
+per-world:
+  world1:
+    Owner:
+      tabprefix: "&0&l[&a&lOwner&0&l] &a"
+      tagprefix: "&2&lOwner &a"
+      customtabname: "%player%%essentials_afk%"
+      customtagname: "%player%%essentials_afk%"
+      tabsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"
+      tagsuffix: "%luckperms-suffix% %rumahkitaguilds_tag%"

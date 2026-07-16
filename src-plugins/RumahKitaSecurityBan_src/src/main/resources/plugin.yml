@@ -1,0 +1,24 @@
+name: RumahKitaSecurityBan
+version: 1.0.3
+main: id.rumahkita.securityban.RumahKitaSecurityBanPlugin
+api-version: 1.0.3
+author: HansM
+description: Strict UUID, name, IP, and subnet ban system for RumahKita S2.
+commands:
+  rksec:
+    description: Main strict ban command.
+    usage: /rksec <status|reload|ban|banip|unban|check|history|list>
+  rkban:
+    description: Strict ban player.
+    usage: /rkban <player> [reason]
+  rkipban:
+    description: Ban IP or CIDR subnet.
+    usage: /rkipban <ip|cidr> [reason]
+  rkunban:
+    description: Unban UUID, name, IP, or CIDR.
+    usage: /rkunban <uuid|name|ip|cidr>
+permissions:
+  rumahkita.securityban.admin:
+    default: op
+  rumahkita.securityban.bypass:
+    default: false

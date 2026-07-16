@@ -1,0 +1,169 @@
+settings:
+  prefix: "&8[&bRumahKitaGuilds&8] "
+  create-cost:
+    enabled: true
+    material: DIAMOND
+    amount: 5
+  max-members-per-guild: 25
+  tag:
+    min-length: 2
+    max-length: 5
+    pattern: "^[A-Za-z0-9]+$"
+  name:
+    min-length: 3
+    max-length: 24
+  invite-expire-seconds: 120
+
+guild-home:
+  teleport-delay-seconds: 5
+  cooldown-seconds: 60
+  cancel-on-move: true
+  cancel-distance: 0.35
+
+guild-chat:
+  enabled: true
+  # /guildchat tanpa pesan = toggle mode guild chat.
+  # /guildchat <pesan> atau /guild chat <pesan> = kirim sekali ke anggota guild.
+  toggle-command: true
+  admin-spy: false
+  format: "&8[&bGuild &8| &f%guild_tag%&8] &e%role% &f%player% &8» &f%message%"
+  spy-format: "&8[&cGuildSpy &8| &f%guild_tag%&8] &7%player% &8» &f%message%"
+
+placeholder:
+  no-guild: ""
+  tag-format: "&8[&b%tag%&8]"
+  role-leader: "Leader"
+  role-admin: "Admin"
+  role-member: "Member"
+
+chat-format:
+  enabled: false
+  format: "%guild_tag% &7%player% &8» &f%message%"
+
+gui:
+  title: "&8RumahKita Guild"
+  list-title: "&8Guild List"
+  members-title: "&8Guild Members"
+  size: 27
+
+messages:
+  no-permission: "&cKamu tidak punya izin."
+  only-player: "&cCommand ini hanya untuk player."
+  not-in-guild: "&cKamu belum punya guild."
+  already-in-guild: "&cKamu sudah berada di guild."
+  player-not-found: "&cPlayer tidak ditemukan."
+  guild-not-found: "&cGuild tidak ditemukan."
+  guild-created: "&aGuild &e%name% &aberhasil dibuat dengan tag &b%tag%&a."
+  create-cost-missing: "&cKamu membutuhkan &b%amount% %material% &cuntuk membuat guild."
+  invalid-tag: "&cTag guild tidak valid. Gunakan huruf/angka, maksimal 5 karakter."
+  invalid-name: "&cNama guild tidak valid atau terlalu panjang."
+  duplicate-tag: "&cTag guild itu sudah dipakai."
+  duplicate-name: "&cNama guild itu sudah dipakai."
+  invite-sent: "&aInvite guild dikirim ke &e%player%&a."
+  invite-received: "&e%player% &amengundang kamu ke guild &b%guild%&a. Gunakan &e/guild accept %tag%&a."
+  invite-expired: "&cInvite guild sudah expired."
+  joined-guild: "&aKamu berhasil join guild &b%guild%&a."
+  target-already-guild: "&cPlayer itu sudah punya guild."
+  max-members: "&cGuild ini sudah mencapai batas maksimal member."
+  kicked: "&e%player% &ctelah dikeluarkan dari guild."
+  cannot-kick-leader: "&cLeader tidak bisa dikick."
+  promoted: "&e%player% &aberhasil dipromote menjadi Admin."
+  demoted: "&e%player% &aberhasil didemote menjadi Member."
+  transfer-done: "&aLeader guild berhasil dipindahkan ke &e%player%&a."
+  rename-done: "&aNama guild berhasil diganti menjadi &e%name%&a."
+  tag-done: "&aTag guild berhasil diganti menjadi &b%tag%&a."
+  home-set: "&aGuild home berhasil diset."
+  home-deleted: "&aGuild home berhasil dihapus."
+  home-not-set: "&cGuild home belum diset."
+  teleport-start: "&aTeleport ke guild home dalam &e%seconds% &adetik. Jangan bergerak."
+  teleport-cancelled: "&cTeleport dibatalkan karena kamu bergerak."
+  teleport-cooldown: "&cTunggu &e%seconds% &cdetik lagi untuk menggunakan guild home."
+  teleport-done: "&aBerhasil teleport ke guild home."
+  disbanded: "&cGuild &e%guild% &ctelah dibubarkan."
+  leave-leader: "&cLeader tidak bisa leave sebelum transfer leader atau disband guild."
+  left-guild: "&aKamu keluar dari guild."
+  reloaded: "&aConfig dan data berhasil direload."
+  admin-saved: "&aData guild berhasil disimpan."
+  guild-chat-disabled: "&cGuild chat sedang dimatikan di config."
+  guild-chat-empty: "&cPesan guild chat tidak boleh kosong."
+  guild-chat-toggle-on: "&aGuild chat mode &eON&a. Chat biasa kamu sekarang hanya masuk ke guild. Ketik &e/guildchat &auntuk mematikan."
+  guild-chat-toggle-off: "&cGuild chat mode OFF. Chat kamu kembali ke public."
+
+
+guild-war:
+  enabled: true
+  countdown-seconds: 10
+  duration-seconds: 300
+  challenge-expire-seconds: 120
+  reward-emerald: 2
+  min-online-per-guild: 1
+  teleport-all-online-members: true
+  keep-inventory-during-war: true
+  keep-level-during-war: true
+  respawn-continue: true
+  restore-location-after-war: true
+  prevent-friendly-fire: true
+  reset-health-food-on-start: true
+  announce-kills: true
+  actionbar: true
+  command-blocker:
+    enabled: true
+
+    # true = semua command diblok saat player sedang ikut Guild War,
+    # kecuali command yang ada di allowed-commands.
+    # Ini mencegah /home, /spawn, /warp, /back, /tpa, /rtp, dll buat kabur.
+    block-all: true
+
+    # Command yang masih boleh dipakai saat war.
+    # Jangan masukkan home/spawn/warp/back/tpa di sini.
+    allowed-commands:
+      - guild
+      - guildchat
+      - gc
+      - gchat
+      - msg
+      - tell
+      - w
+      - r
+      - reply
+
+    # Dipakai kalau block-all: false.
+    blocked-commands:
+      - home
+      - homes
+      - sethome
+      - spawn
+      - warp
+      - warps
+      - back
+      - tpa
+      - tpahere
+      - tpaccept
+      - tpdeny
+      - rtp
+      - wild
+      - shop
+      - market
+      - ec
+      - enderchest
+      - fly
+      - gamemode
+      - gm
+      - suicide
+      - kill
+
+    block-message: "&cKamu sedang Guild War, command dibatasi supaya tidak bisa kabur. Selesaikan war dulu!"
+  arena:
+    world: world
+    side1:
+      x: 4245.5
+      y: 131.0
+      z: 2334.5
+      yaw: 90.0
+      pitch: 0.0
+    side2:
+      x: 4321.5
+      y: 131.0
+      z: 2334.5
+      yaw: -90.0
+      pitch: 0.0

@@ -1,0 +1,72 @@
+settings:
+  debug: false
+  language: id
+  date-format: 'dd/MM/yyyy HH:mm'
+  save-player-data-on-catch: false
+  auto-save-interval-minutes: 10
+
+custom-catch:
+  enabled: true
+  # Peluang global setelah vanilla fishing berhasil. Setelah lolos, ikan dipilih berdasarkan chance di fishes.yml.
+  global-chance-percent: 85.0
+  keep-vanilla-if-no-match: true
+  luck-of-the-sea-bonus-percent-per-level: 4.0
+  vip-bonus-percent: 5.0
+
+economy:
+  # VAULT = pakai Vault jika ada
+  # COMMAND = jalankan command console untuk tambah uang
+  # NONE = testing, ikan tetap terjual tapi uang tidak masuk economy eksternal
+  mode: COMMAND
+  deposit-command: 'eco give {player} {amount}'
+  amount-format-no-decimals: true
+  currency-symbol: 'Rp'
+
+rarity-multiplier:
+  COMMON: 1.00
+  UNCOMMON: 1.20
+  RARE: 1.50
+  EPIC: 2.00
+  LEGENDARY: 3.50
+  MYTHIC: 5.00
+
+level-system:
+  enabled: true
+  required-exp-formula: 'level * 100'
+  exp-by-rarity:
+    COMMON: 5
+    UNCOMMON: 8
+    RARE: 15
+    EPIC: 30
+    LEGENDARY: 75
+    MYTHIC: 150
+  bonus:
+    every-levels: 10
+    rare-chance-percent: 1.0
+    sell-price-percent: 2.0
+    max-weight-percent: 1.0
+    max-rare-chance-percent: 10.0
+    max-sell-price-percent: 20.0
+    max-weight-percent-cap: 10.0
+
+anti-afk:
+  enabled: true
+  max-same-location-minutes: 10
+  max-catches-per-5-minutes: 25
+  require-small-movement: true
+  blocked-worlds: []
+  action-when-detected: VANILLA
+
+daily-sell-limit:
+  enabled: true
+  max-fish-sold-per-day: 500
+  max-money-earned-per-day: 250000
+  reset-timezone: 'Asia/Jakarta'
+
+leaderboard:
+  max-entries: 10
+  async-load: true
+
+item:
+  prevent-custom-fish-stack: true
+  use-custom-model-data: true

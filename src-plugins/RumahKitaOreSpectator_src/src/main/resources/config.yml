@@ -1,0 +1,118 @@
+# RumahKitaOreSpectator v1.0.3
+# /spec2 = spectator stealth untuk admin + marker ore yang terlihat tembus block.
+
+# Kenapa v1.0.3?
+# - v1.0.2 marker kadang tidak kelihatan karena block display berada di dalam block.
+# - v1.0.3 pakai TextDisplay see-through + glowing, jadi marker lebih gampang terlihat.
+# - Placeholder %filter% dan %radius% sudah diperbaiki.
+
+general:
+  enabled: true
+
+  # Update marker tiap berapa tick. 20 tick = 1 detik.
+  # Jangan terlalu kecil biar server ringan.
+  update-interval-ticks: 60
+
+  # Radius horizontal default saat /spec2 aktif.
+  default-radius: 48
+  max-radius: 128
+
+  # Radius atas-bawah. Ini penting karena ore sering jauh di bawah player.
+  default-vertical-radius: 96
+  max-vertical-radius: 192
+
+  default-filter: "valuable"
+  max-markers: 350
+  restore-gamemode-on-disable: true
+
+  # Kalau true, saat /spec2 on akan kasih info scan detail.
+  debug-scan-on-enable: false
+
+markers:
+  # symbol = cuma simbol ◆
+  # short  = ◆ DIAMOND 20m
+  # full   = DIAMOND 20m
+  text-mode: "short"
+  symbol: "◆"
+
+  # Default false: marker hanya kelihatan untuk admin yang pakai /spec2.
+  # Kalau true, staff dengan permission rumahkita.orespec.see bisa lihat marker admin lain.
+  staff-can-see-other-markers: false
+
+presets:
+  deep:
+    radius: 64
+    vertical-radius: 192
+    filter: "valuable"
+
+stealth:
+  enabled: true
+  fake-quit-on-enable: true
+  fake-quit-message: "&e%player% left the game"
+  fake-join-on-disable: true
+  fake-join-message: "&e%player% joined the game"
+  hide-from-players: true
+  see-permission: "rumahkita.orespec.see"
+  hide-from-online-commands: true
+  online-command-aliases:
+    - "online"
+    - "list"
+    - "who"
+    - "players"
+  online-message-header: "&6Online Players &7(&e%online%&7/&e%max%&7):"
+  online-message-empty: "&7Tidak ada player online yang terlihat."
+  online-name-color: "&f"
+  online-separator: "&7, "
+
+filters:
+  valuable:
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - ANCIENT_DEBRIS
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+  diamond:
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+  netherite:
+    - ANCIENT_DEBRIS
+  emerald:
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+  all:
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - REDSTONE_ORE
+    - DEEPSLATE_REDSTONE_ORE
+    - LAPIS_ORE
+    - DEEPSLATE_LAPIS_ORE
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+    - NETHER_GOLD_ORE
+    - NETHER_QUARTZ_ORE
+    - ANCIENT_DEBRIS
+
+messages:
+  prefix: "&8[&bSpec2&8] "
+  no-permission: "&cKamu tidak punya permission."
+  already-enabled: "&eSpec2 sudah aktif. Marker: &f%count% &7| Filter: &f%filter% &7| Radius: &f%radius%/%vradius%"
+  enabled: "&aSpec2 aktif. Marker: &f%count% &7| Filter: &f%filter% &7| Radius: &f%radius%/%vradius%"
+  disabled: "&cSpec2 nonaktif. Kamu muncul kembali."
+  no-markers-tip: "&eMarker masih 0. Terbang lebih dekat ke tanah/underground, atau pakai &f/spec2 filter all &edan &f/spec2 deep&e."
+  reloaded: "&aConfig OreSpectator direload."
+  status: "&7Spec2 kamu: &f%active% &7| Marker: &f%count% &7| Ditemukan: &f%found% &7| Filter: &f%filter% &7| Radius: &f%radius%/%vradius% &7| Semua session: &f%sessions%"
+  radius-set: "&aRadius horizontal diubah ke &f%radius%&a. Marker: &f%count%"
+  vradius-set: "&aVertical radius diubah ke &f%vradius%&a. Marker: &f%count%"
+  filter-set: "&aFilter diubah ke &f%filter%&a. Marker: &f%count%"
+  deep-set: "&aMode deep aktif. Marker: &f%count% &7| Filter: &f%filter% &7| Radius: &f%radius%/%vradius%"
+  scan-done: "&aScan selesai. Marker tampil: &f%count% &7| Ore ditemukan: &f%found% &7| Filter: &f%filter%"
+  list-header: "&bAdmin yang sedang /spec2:"
+  list-empty: "&7Tidak ada admin yang sedang /spec2."

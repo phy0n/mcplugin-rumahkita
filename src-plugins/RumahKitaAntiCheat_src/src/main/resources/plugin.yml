@@ -1,0 +1,23 @@
+name: RumahKitaAntiCheat
+version: 1.2.0
+main: id.rumahkita.anticheat.RumahKitaAntiCheatPlugin
+api-version: '1.21'
+author: HansM
+description: Advanced lightweight anti fly, speed, jesus and movement abuse for RumahKita S2.
+
+commands:
+  rkac:
+    description: RumahKita AntiCheat command.
+    usage: /rkac
+    aliases: [rumahkitaac, ac]
+
+permissions:
+  rumahkita.anticheat.admin:
+    description: Allows managing RumahKitaAntiCheat.
+    default: op
+  rumahkita.anticheat.notify:
+    description: Receives AntiCheat alerts.
+    default: op
+  rumahkita.anticheat.bypass:
+    description: Bypasses AntiCheat checks.
+    default: op

@@ -1,0 +1,90 @@
+# RumahKitaFarmAI
+# Plugin ringan untuk bantu mob farm yang mob-nya diam/freeze walaupun player dekat.
+# Fokus: hostile mobs tetap AI aktif, aware, target player survival/adventure, follow range naik, dan ada stuck nudge ringan.
+
+enabled: true
+
+scan:
+  # 10 tick = 0.5 detik. Kalau server berat, naikkan ke 20.
+  interval-ticks: 10
+
+  # Batas mob yang diproses tiap scan, supaya tidak berat.
+  max-mobs-per-scan: 250
+
+  # Cari mob dari sekitar player, bukan scan semua entity di world. Lebih ringan.
+  use-player-nearby-scan: true
+
+worlds:
+  - world
+
+# Kalau zone enabled false, plugin aktif di world yang ada di list worlds.
+# Kalau enabled true, plugin cuma jalan di area zone yang didaftarkan.
+zones:
+  enabled: false
+  list:
+    # Contoh:
+    # spawn_mobfarm:
+    #   world: world
+    #   center-x: 0
+    #   center-y: 64
+    #   center-z: 0
+    #   radius-x: 80
+    #   radius-y: 80
+    #   radius-z: 80
+
+player:
+  allow-survival: true
+  allow-adventure: true
+  ignore-creative: true
+  ignore-spectator: true
+
+# Ini yang bikin mob tetap ngejar player walaupun kehalang block.
+targeting:
+  horizontal-radius: 64
+  vertical-radius: 48
+  force-target-through-blocks: true
+  retarget-every-scan: true
+
+mob:
+  set-ai-enabled: true
+  set-aware-enabled: true
+  remove-no-ai: true
+  apply-follow-range: true
+  follow-range: 80.0
+
+  # Movement speed default monster biasanya 0.23. Jangan terlalu besar.
+  apply-minimum-movement-speed: false
+  minimum-movement-speed: 0.28
+
+  ignore-named-mobs: false
+  make-persistent: false
+
+# Stuck helper ini buat kasus mob farm: mob sudah target player tapi diam karena activation/pathfinding kaku.
+# Plugin akan kasih dorongan kecil kalau mob stuck beberapa scan.
+stuck-helper:
+  enabled: true
+  after-scans: 3
+  minimum-move-distance: 0.08
+  nudge-strength: 0.10
+  max-y-difference-for-nudge: 6.0
+  only-when-has-target: true
+
+# Jangan masukin terlalu banyak mob kalau nggak perlu.
+allowed-mobs:
+  - ZOMBIE
+  - ZOMBIE_VILLAGER
+  - HUSK
+  - DROWNED
+  - SKELETON
+  - STRAY
+  - CREEPER
+  - SPIDER
+  - CAVE_SPIDER
+  - PILLAGER
+  - VINDICATOR
+  - EVOKER
+  - WITCH
+  - BOGGED
+
+messages:
+  prefix: '&8[&aRumahKitaFarmAI&8] '

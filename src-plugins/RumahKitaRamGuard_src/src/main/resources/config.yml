@@ -1,0 +1,88 @@
+settings:
+  # Cek RAM setiap berapa detik.
+  check-interval-seconds: 30
+
+  # Di 85% plugin hanya warning admin/console.
+  warn-threshold-percent: 85
+
+  # Di 90% plugin mulai auto cleanup ringan.
+  cleanup-threshold-percent: 90
+
+  # Di 95% plugin menjalankan emergency cleanup yang lebih agresif.
+  emergency-threshold-percent: 95
+
+  # Supaya cleanup tidak spam terus menerus.
+  cleanup-cooldown-seconds: 120
+  emergency-cooldown-seconds: 300
+
+  # System.gc() bisa bantu setelah cleanup, tapi bisa bikin freeze sebentar.
+  run-garbage-collector-after-cleanup: true
+
+  # Kirim notifikasi ke OP / player yang punya permission rumahkitaramguard.notify.
+  notify-admins: true
+
+  # Log semua aksi ke console.
+  log-to-console: true
+
+# Dynamic view distance akan menurunkan view/simulation distance saat RAM tinggi.
+# Ini salah satu cara paling aman untuk meringankan server tanpa restart.
+dynamic-view-distance:
+  enabled: true
+  normal-view-distance: 5
+  normal-simulation-distance: 3
+  cleanup-view-distance: 4
+  cleanup-simulation-distance: 2
+  emergency-view-distance: 3
+  emergency-simulation-distance: 2
+  restore-when-below-percent: 75
+
+clear:
+  ground-items: true
+  xp-orbs: true
+  projectiles: true
+  falling-blocks: true
+
+  # Jangan nyalakan kecuali memang perlu, karena bisa hapus dekorasi player.
+  paintings-and-item-frames: false
+
+  # Entity yang punya custom name tidak akan dihapus.
+  exclude-named-entities: true
+
+mob-limiter:
+  enabled: true
+
+  # Jika jumlah mob lebih dari angka ini per world, plugin hapus mob paling jauh dari player.
+  max-hostile-per-world: 350
+  max-passive-per-world: 250
+
+  # Biar cleanup tidak terlalu berat dalam 1 tick.
+  max-removal-per-world-per-cleanup: 150
+
+  # Mob dekat player tidak dihapus.
+  keep-mobs-within-blocks-of-player: 48
+
+chunk-cleanup:
+  enabled: true
+  save-before-unload: true
+
+  # Chunk dekat player tidak di-unload.
+  keep-chunks-within-blocks-of-player: 192
+
+commands:
+  # Command tambahan saat cleanup 90%.
+  # Kosongkan jika tidak perlu.
+  cleanup: []
+  # Contoh:
+  # cleanup:
+  #   - 'save-all'
+
+  # Command tambahan saat emergency 95%.
+  emergency:
+    - 'save-all'
+
+messages:
+  prefix: '&8[&aRamGuard&8] '
+  warning: '&eRAM server sudah &6%percent%%&e. Plugin mulai memantau lebih ketat.'
+  cleanup: '&cRAM server sudah &4%percent%%&c. Auto cleanup dijalankan untuk meringankan server.'
+  emergency: '&4RAM server sudah &c%percent%%&4. Emergency cleanup dijalankan.'
+  restored: '&aRAM sudah turun ke &f%percent%%&a. View distance dikembalikan normal.'

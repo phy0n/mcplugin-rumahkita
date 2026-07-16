@@ -1,0 +1,117 @@
+settings:
+  enabled: true
+  prefix: "&8[&cRumahKitaAC&8] "
+  notify-permission: "rumahkita.anticheat.notify"
+  admin-permission: "rumahkita.anticheat.admin"
+  bypass-permission: "rumahkita.anticheat.bypass"
+
+  # Bypass hanya permission ini.
+  # Jadi default yang tiba-tiba allowFlight/flying tetap kena.
+  strict-default-no-fly: true
+
+checks:
+  illegal-flight:
+    enabled: true
+    # Audit berkala supaya player default yang diam sambil flying tetap kena.
+    audit-every-ticks: 20
+    remove-allow-flight: true
+    cancel-move: true
+    kick: true
+    kick-threshold: 1
+
+  build-safe:
+    enabled: true
+    # Anti false saat player lagi build/mining di tepi block, slab, stair, cave, scaffolding, dll.
+    after-block-place-seconds: 5
+    after-block-break-seconds: 3
+    exempt-near-solid-block: true
+    exempt-while-sneaking-on-edge: true
+
+  speed:
+    enabled: true
+    # Dibuat lebih aman. Jangan terlalu ketat agar tidak false saat build, lompat, knockback, air, ice, ping.
+    max-ground-blocks-per-tick: 1.05
+    max-air-blocks-per-tick: 1.32
+    speed-potion-extra-per-level: 0.20
+    soul-speed-extra: 0.40
+    ice-extra: 0.85
+    ping-leniency-per-100ms: 0.045
+    max-ping-leniency: 0.45
+    min-consecutive-flags: 5
+    kick-threshold: 8
+    cancel-move: true
+    kick: true
+
+  fly-sustain:
+    enabled: true
+    # BuildSafe membuat false saat build jauh berkurang.
+    # Melayang terlalu lama tetap kena.
+    max-air-ticks: 80
+    max-stable-y-ticks: 32
+    kick-threshold: 7
+    cancel-move: true
+    kick: true
+
+  jesus:
+    enabled: true
+    # Khusus jalan di atas air. Normal berenang/boat tidak kena.
+    min-water-walk-ticks: 14
+    kick-threshold: 4
+    cancel-move: true
+    kick: true
+
+  permission-audit:
+    enabled: true
+    # Ini cuma alert staff kalau default punya permission fly/bypass dari plugin lain.
+    suspicious-permissions:
+      - "essentials.fly"
+      - "cmi.command.fly"
+      - "minecraft.command.fly"
+      - "worldguard.region.bypass.world"
+      - "worldguard.region.bypass.*"
+
+exemptions:
+  after-join-seconds: 6
+  after-teleport-seconds: 5
+  after-velocity-seconds: 4
+  after-damage-seconds: 3
+  after-world-change-seconds: 5
+  after-respawn-seconds: 5
+
+  # Ping terlalu tinggi di-skip supaya tidak false.
+  max-ping-exempt-ms: 900
+
+  # Integrasi aman untuk plugin troll.
+  # Tambahkan tag ini sebelum troll yang membuat player mental/rocket/spin.
+  scoreboard-tags:
+    - "rkac_ignore"
+    - "rk_troll"
+    - "rumahkita_troll"
+    - "troll_exempt"
+
+  metadata-keys:
+    - "rkac_ignore"
+    - "rk_troll_active"
+    - "rumahkita_troll_active"
+
+actions:
+  staff-alerts: true
+  log-to-console: true
+  log-to-file: true
+  reset-vl-after-seconds: 35
+  kick-reason: "&cKamu terdeteksi menggunakan movement tidak wajar.\n&7Kalau ini error, lapor Admin RumahKita."
+
+logs:
+  file-name: "violations.log"
+
+messages:
+  enabled: "&aAntiCheat diaktifkan."
+  disabled: "&cAntiCheat dimatikan."
+  reloaded: "&aConfig AntiCheat berhasil direload."
+  no-permission: "&cKamu tidak punya permission."
+  status: "&7Status: %status% &8| &7Online: &f%online% &8| &7Exempt: &f%exempt%"
+  alert: "&c%player% &7terdeteksi &e%type% &8(&fVL %vl%&8) &7%detail%"
+  kicked: "&c%player% dikick karena %type%."
+  exempt-added: "&a%player% di-exempt selama %seconds% detik. Reason: %reason%"
+  exempt-removed: "&aExempt %player% dihapus."
+  check: "&7Player: &f%player% &8| &7Ping: &f%ping%ms &8| &7Bypass: &f%bypass% &8| &7Exempt: &f%exempt% &8| &7AllowFlight: &f%allowflight% &8| &7Flying: &f%flying% &8| &7GM: &f%gamemode%"

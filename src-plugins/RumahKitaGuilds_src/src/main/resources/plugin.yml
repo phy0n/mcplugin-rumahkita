@@ -1,0 +1,43 @@
+name: RumahKitaGuilds
+version: 2.3.3
+main: id.rumahkita.guilds.RumahKitaGuildsPlugin
+api-version: 2.3.3
+author: HansM
+description: Guild system for RumahKita S2 with guild war, guild wallet, roles, guild home, guild chat, PlaceholderAPI, and GUI.
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  guild:
+    description: Main RumahKita Guild command.
+    usage: /guild
+    aliases: [g]
+  guildchat:
+    description: Toggle or send private guild chat.
+    usage: /guildchat [message]
+    aliases: [gc, gchat]
+
+permissions:
+  rumahkitaguilds.use:
+    description: Allows basic guild commands.
+    default: true
+  rumahkitaguilds.create:
+    description: Allows creating guilds.
+    default: true
+  rumahkitaguilds.admin:
+    description: Allows admin guild commands.
+    default: op
+  rumahkitaguilds.chatformat:
+    description: Allows guild prefix in public chat when enabled.
+    default: true
+  rumahkitaguilds.spy:
+    description: Allows seeing guild chat spy when enabled.
+    default: op
+
+  rumahkitaguilds.war.admin:
+    description: Allows force stopping guild wars.
+    default: op
+
+  rumahkitaguilds.war.commandbypass:
+    description: Bypass command block during Guild War.
+    default: op
